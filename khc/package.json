@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install && chmod +x .husky/*",
+    "prepare": "cd .. && husky install khc/.husky",
     "check-format": "prettier --check .",
     "check-lint": "eslint .  --ext js",
     "format": "prettier --write .",
