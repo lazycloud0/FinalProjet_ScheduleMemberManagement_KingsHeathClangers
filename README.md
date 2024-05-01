@@ -1,1 +1,1 @@
-# FinalProjet_ScheduleMemberManagement_KingsHeathClangers
+# FinalProject_ScheduleMemberManagement_KingsHeathClangers
