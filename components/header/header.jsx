@@ -1,38 +1,41 @@
-"use client"
-import React, { useState} from 'react';
-import styles from './header.module.css'
-import Link from 'next/link';
+"use client";
+import React, { useState } from "react";
+import styles from "./header.module.css";
+import Smalllogo from "../logos/smallLogo.jsx";
+import Link from "next/link";
 
 export default function Header() {
-
-const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className={styles.header}>
-       <nav className={styles.navbar} >
-        <a href="#" className={styles.navbranding}>Logo</a>
+      <nav className={styles.navbar}>
+        <Smalllogo className={styles.navbranding} />
 
-        <ul className={`${styles.navmenu} ${isMenuOpen ? styles.active : ''}`}>
+        <ul className={`${styles.navmenu} ${isMenuOpen ? styles.active : ""}`}>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>Shop</a>
+            <a href="#" className={styles.navlink}>
+              Home
+            </a>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>About</a>
+            <a href="#" className={styles.navlink}>
+              Whats On
+            </a>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>Work</a>
+            <a href="#" className={styles.navlink}>
+              About
+            </a>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>Contact</a>
-          </li>
-          <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>Socials</a>
-          </li>
-          <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>Cart</a>
+            <a href="#" className={styles.navlink}>
+              Contact
+            </a>
           </li>
         </ul>
-        <div className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}
+        <div
+          className={`${styles.hamburger} ${isMenuOpen ? styles.active : ""}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className={styles.bar}></span>
@@ -43,4 +46,3 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
     </header>
   );
 }
-
