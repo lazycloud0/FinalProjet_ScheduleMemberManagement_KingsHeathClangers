@@ -9,13 +9,15 @@
 }
 
 .navitem {
+  /*The list of items in the navigation bar*/
   list-style: none;
 }
 
 .navlink {
+  /*The individual links in the navigation bar*/
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 800; /* adjust as needed */
+  font-weight: 600;
   font-style: normal;
   text-decoration: none;
   color: #161617;
@@ -27,6 +29,7 @@
 }
 
 .navbar {
+  /*Container for logo and navigation links*/
   min-height: 70px;
   display: flex;
   justify-content: space-between;
@@ -35,6 +38,7 @@
 }
 
 .navmenu {
+  /*Constainer for the list of navigation links*/
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,16 +46,19 @@
 }
 
 .navbranding {
+  /*The logo*/
   height: 50px;
   width: 80px;
 }
 
 .hamburger {
+  /*The hamburger(menu) icon*/
   display: none;
   cursor: pointer;
 }
 
 .bar {
+  /*Each line of the hamburger icon*/
   display: block;
   width: 25px;
   height: 3px;
@@ -62,11 +69,13 @@
 }
 
 @media screen and (max-width: 768px) {
+  /*The hamburger icon is visible on screens smaller than 768px*/
   .hamburger {
     display: block;
   }
 
   .hamburger.active .bar:nth-child(2) {
+    /*When the hamburger is clicked, it changes from hamburger to cross*/
     opacity: 0;
   }
   .hamburger.active .bar:nth-child(1) {
@@ -76,7 +85,7 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* hide the menu options when the hamburger is clicked */
+  /* The hamburger styles when it is closed and when it's open(active)*/
   .navmenu {
     position: fixed;
     left: -100%;
