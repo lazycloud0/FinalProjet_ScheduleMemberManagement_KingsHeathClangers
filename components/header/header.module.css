@@ -1,5 +1,5 @@
 .header {
-  background-color: #CDCFD0;
+  background-color: #cdcfd0;
 }
 
 .navitem {
@@ -73,7 +73,7 @@
     top: 70px;
     gap: 0;
     flex-direction: column;
-    background-color: #CDCFD0;
+    background-color: #cdcfd0;
     width: 100%;
     text-align: center;
     transition: 0.3s;
