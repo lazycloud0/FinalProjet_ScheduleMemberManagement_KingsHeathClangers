@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 const Smalllogo = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -15,5 +15,5 @@ const Smalllogo = (props) => (
       transform="scale(.24)"
     />
   </svg>
-)
+);
 export default Smalllogo;
