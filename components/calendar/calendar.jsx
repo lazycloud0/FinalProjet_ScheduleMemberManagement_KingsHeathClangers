@@ -6,6 +6,7 @@ import Fullcalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import styles from "./calendar.module.css";
 
 //Calendar component that will display the calendar view of the application
 function Calendar() {
@@ -15,10 +16,12 @@ function Calendar() {
     //Initial view of the calendar will be dayGridMonth
     //Header toolbar that will display the title, today and previous and next buttons
     //Height of the calendar is set to 90vh (potentially change this through CSS modules)
-    <div>
+    <div className={styles.calendar}>
+      {" "}
+      {/* Using the CSS module class for styling */}
       <Fullcalendar
         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        intialView={"dayGridMonth"}
+        initialView={"dayGridMonth"}
         headerToolbar={{
           start: "title",
           center: "",

@@ -1,0 +1,16 @@
+.calendar {
+  width: 50%;
+  height: auto;
+  background-color: #ffffff;
+  padding: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #161617;
+}
+
+@media (max-width: 768px) {
+  .calendar {
+    width: 100%;
+    padding: 20px;
+  }
+}
