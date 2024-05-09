@@ -1,5 +1,9 @@
 .header {
   background-color: #cdcfd0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .navitem {
@@ -13,7 +17,7 @@
 }
 
 .navlink:hover {
-  color: #f1c40f;
+  color: #ffffff;
 }
 
 .navbar {
@@ -76,7 +80,7 @@
     background-color: #cdcfd0;
     width: 100%;
     text-align: center;
-    transition: 0.3s;
+    transition: 0.8s;
   }
 
   .navitem {
