@@ -16,7 +16,7 @@ export default function Header() {
     //the navmenu uses state to determine if it should be active(in view) or not
     //The hamburger icon uses the onClick event listener and state to determine if it should look like a burger or a cross
     //When the hamburger icon is clicked, the state is toggled to show or hide the navigation links
-    <header className={styles.header}>
+    <header className={`${styles.container} ${styles.header}`}>
       <nav className={styles.navbar}>
         <Smalllogo className={styles.navbranding} />
 
