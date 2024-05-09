@@ -14,22 +14,22 @@ export default function Header() {
 
         <ul className={`${styles.navmenu} ${isMenuOpen ? styles.active : ""}`}>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>
+            <a href="#" className={`${styles.navlink}`}>
               Home
             </a>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>
-              Whats On
+            <a href="#" className={`${styles.navlink}`}>
+              {"What's On"}
             </a>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>
+            <a href="#" className={`${styles.navlink}`}>
               About
             </a>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={styles.navlink}>
+            <a href="#" className={`${styles.navlink}`}>
               Contact
             </a>
           </li>
