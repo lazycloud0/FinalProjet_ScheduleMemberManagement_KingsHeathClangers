@@ -27,7 +27,9 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.navitem}>
-          <Link href="/whatson" className={styles.navlink}>Whats On</Link>
+            <Link href="/whatson" className={styles.navlink}>
+              Whats On
+            </Link>
           </li>
           <li className={styles.navitem}>
             <a href="#" className={`${styles.navlink}`}>
