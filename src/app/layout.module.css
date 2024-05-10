@@ -1,0 +1,5 @@
+.container {
+  /* Ensures the content of each page will not exceed 1024px in width and will be centered on larger screens */
+  max-width: 1024px;
+  margin: 0 auto;
+}
