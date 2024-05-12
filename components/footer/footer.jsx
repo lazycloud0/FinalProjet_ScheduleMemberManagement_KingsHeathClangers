@@ -17,9 +17,7 @@ export default function Footer() {
         </div>
         <div className={styles.copyright}>
           <h4>Kings Heath Clangers Community Basketball Club</h4>
-          <h6>
-            Copyright &copy; 2024 Kings Heath Clangers
-          </h6>
+          <h6>Copyright &copy; 2024 Kings Heath Clangers</h6>
         </div>
         <div className={styles.legalStuff}>
           <h6>Legal Stuff</h6>
