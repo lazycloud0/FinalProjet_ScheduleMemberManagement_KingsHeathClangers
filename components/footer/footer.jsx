@@ -8,29 +8,27 @@ import YoutubeLogo from "../logos/youtubeLogo.jsx";
 
 export default function Footer() {
   return (
-    <>
-      <div className={styles.footerMenu}>
-        <div className={styles.footerIcons}>
-          <FacebookLogo className={styles.socialIcon} />
-          <YoutubeLogo className={styles.socialIconY} />
-          <InstagramLogo className={styles.socialIcon} />
-        </div>
-        <div className={styles.copyright}>
-          <h2>Kings Heath Clangers Community Basketball Club</h2>
-          <h5>
-            Copyright &copy; 2024 Kings Heath Clangers Community Basketball Club
-          </h5>
-        </div>
-        <div className={styles.legalStuff}>
-          <div>Legal Stuff</div>
-          <div className={styles.nothing}>|</div>
-          <div>Privacy Policy</div>
-          <div className={styles.nothing}>|</div>
-          <div>SiteMap</div>
-          <div className={styles.nothing}>|</div>
-          <div>Contact</div>
-        </div>
+    <div className={styles.footerMenu}>
+      <div className={styles.footerIcons}>
+        <FacebookLogo className={styles.socialIcon} />
+        <YoutubeLogo className={styles.socialIconY} />
+        <InstagramLogo className={styles.socialIcon} />
       </div>
-    </>
+      <div className={styles.copyright}>
+        <h2>Kings Heath Clangers Community Basketball Club</h2>
+        <h5>
+          Copyright &copy; 2024 Kings Heath Clangers Community Basketball Club
+        </h5>
+      </div>
+      <div className={styles.legalStuff}>
+        <div>Legal Stuff</div>
+        <div className={styles.nothing}>|</div>
+        <div>Privacy Policy</div>
+        <div className={styles.nothing}>|</div>
+        <div>SiteMap</div>
+        <div className={styles.nothing}>|</div>
+        <div>Contact</div>
+      </div>
+    </div>
   );
 }

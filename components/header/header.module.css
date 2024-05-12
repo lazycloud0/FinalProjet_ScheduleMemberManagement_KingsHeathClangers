@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-.container {
-  /* Ensures the content of each page will not exceed 1024px in width and will be centered on larger screens */
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 .header {
   background-color: #cdcfd0;
   position: fixed;
@@ -41,6 +35,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 24px 0 12px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .navmenu {
