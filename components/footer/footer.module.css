@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 .footerMenu {
   background-color: #dfe1e2;
   min-height: 100px;
@@ -7,6 +9,12 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  text-decoration: none;
+  color: #161617;
 }
 .footerIcons {
   display: flex;
@@ -18,25 +26,38 @@
 }
 
 .socialIcon {
-  max-width: 60px;
+  max-width: 40px;
 }
 
 .socialIconY {
-  max-width: 70px;
+  max-width: 50px;
 }
 
 .copyright {
   border-bottom-style: solid;
   text-align: center;
   margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .legalStuff {
   display: flex;
   justify-content: space-evenly;
   font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .nothing {
   font-weight: lighter;
+}
+
+@media (max-width: 450px) {
+  .copyright {
+    font-size: 70%;
+  }
+  .legalStuff {
+    font-size: 70%;
+  }
 }
