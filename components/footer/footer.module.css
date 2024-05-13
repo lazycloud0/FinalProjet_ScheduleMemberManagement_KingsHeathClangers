@@ -19,28 +19,33 @@
 .footerIcons {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
   border-bottom-style: solid;
   align-items: center;
 }
 
 .socialIcon {
-  max-width: 40px;
-}
+  height: 30px;
+  width:30px;
+  /* margin: 0 10px; */
+  /* max-width: 40px; */
+} 
 
 .socialIconY {
-  max-width: 50px;
-}
+  height: 40px;
+  width:40px;
+  /* max-width: 50px; */
+} 
 
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
   .socialIcon {
-    max-width: 20px; /* Adjust the size as needed */
+    max-width: 20px; 
   }
   .socialIconY {
-    max-width: 30px; /* Adjust the size as needed */
+    max-width: 30px; 
   }
-}
+} */
 
 .copyright {
   border-bottom-style: solid;
