@@ -2,7 +2,6 @@
 
 .footerMenu {
   background-color: #dfe1e2;
-  /* min-height: 100px; */
   margin-top: 100px;
   width: 100%;
 }
@@ -19,33 +18,19 @@
 .footerIcons {
   display: flex;
   justify-content: space-evenly;
-  /* padding-top: 5px;
-  padding-bottom: 5px; */
   border-bottom-style: solid;
   align-items: center;
 }
 
 .socialIcon {
   height: 30px;
-  width:30px;
-  /* margin: 0 10px; */
-  /* max-width: 40px; */
-} 
+  width: 30px;
+}
 
 .socialIconY {
   height: 40px;
-  width:40px;
-  /* max-width: 50px; */
-} 
-
-/* @media (max-width: 450px) {
-  .socialIcon {
-    max-width: 20px; 
-  }
-  .socialIconY {
-    max-width: 30px; 
-  }
-} */
+  width: 40px;
+}
 
 .copyright {
   border-bottom-style: solid;
