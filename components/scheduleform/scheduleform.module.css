@@ -1,0 +1,63 @@
+
+.contactForm {
+    font-family: "Montserrat", sans-serif;
+    font-size: 120%;
+    background-color:#DFE1E2;
+    padding: 30px;
+    border-radius: 40px;
+    width: 40%;
+
+}
+.contactForm input[type="text"],
+.contactForm input[type="search"] {
+    background-color: #484D58;  /* Replace #yourColor with the color you want */
+    color: #ffffff;
+    padding: 2%;
+    width: 100%  
+}
+
+.subtitle {
+    padding-bottom: 5%;
+    text-align: center;
+    font-size: 180%;
+}
+
+.formSection {
+    margin-bottom: 10px;
+    font-size: 120%;
+}
+
+
+.error {
+    color: red;
+}
+
+
+.requestButton {
+    background-color: #F25E05;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 120%;
+    margin-top: 20px;
+}
+
+@media (max-width: 860px) {
+    .contactForm {
+        width: 90%;
+    }
+
+    .subtitle {
+        font-size: 170%;
+    }
+    .formSection {
+        margin-bottom: 10px;
+        font-size: 100%;
+    }
+    
+    .requestButton {
+        font-size: 100%;
+    }
+}

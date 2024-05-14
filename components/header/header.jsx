@@ -1,15 +1,19 @@
 //The header component contains the navigation bar for the website
-
 "use client";
 import React, { useState } from "react";
 import styles from "./header.module.css";
 import Smalllogo from "../logos/smallLogo.jsx";
 import Link from "next/link";
 
-//tThe header component
+//The header component
 export default function Header() {
   //State to manage the menu open and close
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  //Function to close menu when a link is clicked
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     //The ul contains the navigation links and the hamburger icon
@@ -22,27 +26,52 @@ export default function Header() {
 
         <ul className={`${styles.navmenu} ${isMenuOpen ? styles.active : ""}`}>
           <li className={styles.navitem}>
-            <Link href="./" className={`${styles.navlink}`}>
+            <Link
+              href="./"
+              passHref
+              className={`${styles.navlink}`}
+              onClick={handleLinkClick}
+            >
               Home
             </Link>
           </li>
           <li className={styles.navitem}>
-            <Link href="/about" className={styles.navlink}>
+            <Link
+              href="/about"
+              passHref
+              className={styles.navlink}
+              onClick={handleLinkClick}
+            >
               About
             </Link>
           </li>
           <li className={styles.navitem}>
-            <Link href="/whatson" className={styles.navlink}>
+            <Link
+              href="/whatson"
+              passHref
+              className={styles.navlink}
+              onClick={handleLinkClick}
+            >
               {"What's On"}
             </Link>
           </li>
           <li className={styles.navitem}>
-            <Link href="/merch" className={styles.navlink}>
+            <Link
+              href="/merch"
+              passHref
+              className={styles.navlink}
+              onClick={handleLinkClick}
+            >
               Merch
             </Link>
           </li>
           <li className={styles.navitem}>
-            <Link href="/contact" className={styles.navlink}>
+            <Link
+              href="/contact"
+              passHref
+              className={styles.navlink}
+              onClick={handleLinkClick}
+            >
               Contact
             </Link>
           </li>
