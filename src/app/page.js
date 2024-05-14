@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     async function getGames() {
-      const { data: game } = await supabase.from("games").select("id");
+      const { data: game } = await supabase.from("games").select("*");
 
       if (games) {
         setGames(game);
@@ -22,23 +22,15 @@ export default function Home() {
   return (
     <div>
       {games.map((game) => (
-        <Link key={game.id} href={`/games/${game.id}`}>
-          <h2>{game.id}</h2>
-        </Link>
+        <>
+          <Link key={game.tpye_event} href={`/games/${game.type_event}`}>
+            <h2>{game.type_event}</h2>
+          </Link>
+          <Link key={game.id} href={`/games/${game.id}`}>
+            <h2>{game.id}</h2>
+          </Link>
+        </>
       ))}
     </div>
   );
 }
-
-// import styles from "./page.module.css";
-// import  {getGames}  from "./_app.js";
-
-// export default function Home() {
-//   return (
-//     <main className={styles.main}>
-//       <p>Hello World</p>
-
-//       <button onClick={getGamesGames}>Fetch Games</button>
-//     </main>
-//   );
-// }
