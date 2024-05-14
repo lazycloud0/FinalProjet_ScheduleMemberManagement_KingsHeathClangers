@@ -32,9 +32,9 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={`${styles.navlink}`}>
+            <Link href="/about" className={styles.navlink}>
               About
-            </a>
+            </Link>
           </li>
           <li className={styles.navitem}>
             <a href="#" className={`${styles.navlink}`}>
