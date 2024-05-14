@@ -25,7 +25,7 @@ function Calendar() {
           center: "",
           end: "today prev,next",
         }}
-        height={"90vh"}
+        aspectRatio={1.5}
       />
     </div>
   );
