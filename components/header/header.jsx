@@ -27,19 +27,24 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.navitem}>
-            <Link href="/whatson" className={styles.navlink}>
-              Whats On
+            <Link href="/about" className={styles.navlink}>
+              About
             </Link>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={`${styles.navlink}`}>
-              About
-            </a>
+            <Link href="/whatson" className={styles.navlink}>
+              {"What's On"}
+            </Link>
           </li>
           <li className={styles.navitem}>
-            <a href="#" className={`${styles.navlink}`}>
+            <Link href="/merch" className={styles.navlink}>
+              Merch
+            </Link>
+          </li>
+          <li className={styles.navitem}>
+            <Link href="/contact" className={styles.navlink}>
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <div
