@@ -1,29 +1,32 @@
+"use client";
 
-import { useState, useEffect } from 'react'
-import { supabase } from '../utils/supabase'
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { supabase } from "/Users/winnielau/Desktop/Site/FinalProject_ScheduleMemberManagement_KingsHeathClangers/utils/supabase.js";
 
-function Page() {
-  const [todos, setTodos] = useState([])
+function Home() {
+  const [games, setGames] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-    async function getTodos() {
-        const { data: todos } = await supabase.from('todos').select()
+  useEffect(() => {
+    async function getGames() {
+      const { data: game } = await supabase.from("games").select("type_event");
 
-        if (todos.length > 1) {
-            setTodos(todos)
-        }
+      if (games) {
+        setGames(game);
+      }
     }
 
-    getTodos()
-}, [])
+    getGames();
+  }, [games]);
 
   return (
     <div>
-      {todos.map((todo) => (
-        <li key={todo}>{todo}</li>
+      {games.map((game) => (
+        <Link key={game.id} href={`/games/${game.id}`}>
+          <h2>{game.id}</h2>
+        </Link>
       ))}
     </div>
-  )
+  );
 }
-export default Page
-
