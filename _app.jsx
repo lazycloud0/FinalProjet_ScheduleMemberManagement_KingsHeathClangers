@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { supabase } from "/Users/winnielau/Desktop/Site/FinalProject_ScheduleMemberManagement_KingsHeathClangers/utils/supabase.js";
+import { supabase } from "../../utils/supabase.js";
 
 function Home() {
   const [games, setGames] = useState([]);
