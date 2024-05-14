@@ -1,34 +1,54 @@
-// Pseudo Code: Calendar component to display the calendar view of the application
 "use client";
+
+// Import React from the 'react' package.
 import React from "react";
-//All of the dependencies that are required to use the Fullcalendar component
-import Fullcalendar from "@fullcalendar/react";
-import timeGridPlugin from "@fullcalendar/timegrid";
+
+// Import FullCalendar from '@fullcalendar/react', which is the React wrapper for FullCalendar.
+import FullCalendar from "@fullcalendar/react";
+
+// Import necessary plugins (`dayGridPlugin`, `timeGridPlugin`, `interactionPlugin`, `bootstrap5Plugin`) from their respective packages.
 import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import bootstrap5Plugin from "@fullcalendar/bootstrap5";
+
+// Import Bootstrap CSS and Bootstrap Icons CSS for styling.
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Import a CSS module (`styles`) for custom styling of the calendar component.
 import styles from "./calendar.module.css";
 
-//Calendar component that will display the calendar view of the application
-function Calendar() {
+// Define a functional component named `Calendar`.
+function CalendarComponent() {
+  // Return a JSX structure that represents the calendar UI.
   return (
-    //Fullcalendar component that will display the calendar
-    //Plugins that are required to display the calendar (day, time and interaction)
-    //Initial view of the calendar will be dayGridMonth
-    //Header toolbar that will display the title, today and previous and next buttons
-    //Height of the calendar is set to 90vh (potentially change this through CSS modules)
     <div className={styles.calendar}>
-      <Fullcalendar
-        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-        intialView={"dayGridMonth"}
+      {/* Render the FullCalendar component with specific configurations and plugins */}
+      <FullCalendar
+        // Plugins to enable specific functionalities
+        plugins={[
+          dayGridPlugin,
+          timeGridPlugin,
+          interactionPlugin,
+          bootstrap5Plugin,
+        ]}
+        // Specifies the initial view of the calendar
+        initialView="dayGridMonth"
+        // Indicates the theme system to use
+        themeSystem="bootstrap5"
+        // Configures the toolbar at the top of the calendar
         headerToolbar={{
-          start: "title",
-          center: "",
-          end: "today prev,next",
+          left: "prev,next today",
+          center: "title",
+          right: "dayGridMonth,timeGridWeek,timeGridDay",
         }}
+        // Sets the aspect ratio of the calendar
         aspectRatio={1.5}
       />
     </div>
   );
 }
 
-export default Calendar;
+// Export the `Calendar` component as the default export of the module.
+export default CalendarComponent;
