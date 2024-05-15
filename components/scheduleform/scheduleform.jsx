@@ -9,7 +9,7 @@ const initialState = {
     date: "",
     time: "",
     location: "",
-    team: ""
+    team: "",
   },
   errors: {},
   loading: false, // Initially set to false
@@ -324,20 +324,18 @@ export default function Form() {
         </div>
 
         <div className={styles.formSection}>
-  <label htmlFor="team">Team:</label>
-  <br />
-  <input
-    type="text"
-    id="team"
-    name="team"
-    value={formData.team}
-    onChange={handleInputChanges}
-  />
-  <br />
-  {errors.team && (
-    <span className={styles.error}>{errors.team}</span>
-  )}
-</div>
+          <label htmlFor="team">Team:</label>
+          <br />
+          <input
+            type="text"
+            id="team"
+            name="team"
+            value={formData.team}
+            onChange={handleInputChanges}
+          />
+          <br />
+          {errors.team && <span className={styles.error}>{errors.team}</span>}
+        </div>
 
         {/* Loading message */}
         {loading && <div>Loading...</div>}
