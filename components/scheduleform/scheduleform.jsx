@@ -222,7 +222,7 @@ export default function Form() {
         const inputDate = new Date(year, month - 1, day); // JavaScript months are 0-indexed
         const currentDate = new Date();
         currentDate.setHours(0, 0, 0, 0); // Reset time part, to compare only the date part
-      
+
         if (inputDate < currentDate) {
           newErrors.date = "Date cannot be before the current date";
         } else if (month > 12) {

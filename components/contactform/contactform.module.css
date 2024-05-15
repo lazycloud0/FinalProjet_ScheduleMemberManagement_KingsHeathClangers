@@ -1,0 +1,71 @@
+.formContainer {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-size: 120%;
+  background-color: #dfe1e2;
+  padding: 30px;
+  border-radius: 40px;
+  width: 40%;
+}
+
+.formContainer input[type="text"],
+.formContainer input[type="email"] {
+  background-color: #ffffff; /* Replace #yourColor with the color you want */
+  color: #484d58;
+  padding: 2%;
+  width: 100%;
+}
+.subtitle {
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 180%;
+}
+
+.contactBox {
+  background-color: #ffffff; /* Replace #yourColor with the color you want */
+  color: #484d58;
+  padding: 2%;
+  width: 100%;
+  height: 60%;
+}
+
+.contact {
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 180%;
+}
+
+.contactLabel {
+  margin-bottom: 10px;
+  font-size: 120%;
+}
+
+.contactButton {
+  background-color: #f25e05;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 120%;
+  margin-top: 20px;
+}
+
+@media (max-width: 860px) {
+  .formContainer {
+    width: 90%;
+  }
+
+  .subtitle {
+    font-size: 170%;
+  }
+  .contactLabel {
+    margin-bottom: 10px;
+    font-size: 100%;
+  }
+
+  .contactButton {
+    font-size: 100%;
+  }
+}
