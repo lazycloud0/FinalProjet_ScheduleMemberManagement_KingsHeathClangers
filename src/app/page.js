@@ -23,12 +23,15 @@ export default function Home() {
     <div>
       {games.map((game) => (
         <>
-          <Link key={game.tpye_event} href={`/games/${game.type_event}`}>
-            <h2>{game.type_event}</h2>
-          </Link>
-          <Link key={game.id} href={`/games/${game.id}`}>
-            <h2>{game.id}</h2>
-          </Link>
+          {/* <Link key={game.event_type} href={`/games/${game.event_type}`}> */}
+          <h2>
+            {game.team} {game.event_type}
+          </h2>
+          <h2>location: {game.location}</h2>
+          {/* </Link> */}
+          {/* <Link key={game.id} href={`/games/${game.id}`}>
+            <h2>{game.}</h2>
+          </Link> */}
         </>
       ))}
     </div>
