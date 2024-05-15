@@ -1,0 +1,53 @@
+:root {
+    --fc-today-bg-color: #EDEDED;  /* changed the highlight colour for today from yellow to grey */
+
+
+}
+
+/* primary colours */
+
+$primary: #E1682D;
+$secondary: red;
+$dark: #484D58;
+$light: #fff;
+$success: green;
+$info: #EDEDED;
+$warning: #e49b1f;
+$danger: #f44336;
+
+/* custom styles */
+
+
+/* Specific styles for the first two buttons */
+.btn-group >.btn.fc-prev-button,.btn-group >.btn.fc-next-button {
+    padding-left: 1rem!important; 
+    padding-right: 1rem!important; 
+}
+
+  /* toggle buttons for today, month, week, day */
+.btn-primary {
+    color: $light!important; 
+    border-radius: 200px!important;
+    padding-left: 2rem!important;
+    padding-right: 2rem!important;
+    margin: 1px!important;
+    font-weight: lighter!important;
+  }
+
+/* makes the first letter on the button text uppercase */
+.btn-primary::first-letter {
+    text-transform: uppercase;
+} 
+
+/* colour for events */
+.fc-daygrid-event {
+    background-color: $dark!important;
+    border-color: $dark!important;
+    color: $light!important;
+    
+}
+
+
+// IMPORTANT! this sentence must stay at the end of the file! */
+@import '~bootstrap/scss/bootstrap.scss';
+
