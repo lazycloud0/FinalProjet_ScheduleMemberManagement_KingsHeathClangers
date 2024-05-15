@@ -19,6 +19,17 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 // Import a CSS module (`styles`) for custom styling of the calendar component.
 import styles from "./calendar.module.css";
 
+// A placeholder array of events to be displayed on the calendar.
+const eventsPlaceholder = [
+  { title: "Event 1", date: "2024-05-14" },
+  { title: "Event 2", date: "2024-05-15" },
+  { title: "Event 3", date: "2024-05-16" },
+  { title: "Event 4", date: "2024-05-16" },
+  { title: "Event 5", date: "2024-05-19" },
+  { title: "Event 6", date: "2024-05-20" },
+  { title: "Event 7", date: "2024-05-23" },
+];
+
 // Define a functional component named `Calendar`.
 function CalendarComponent() {
   // Return a JSX structure that represents the calendar UI.
@@ -45,6 +56,8 @@ function CalendarComponent() {
         }}
         // Sets the aspect ratio of the calendar
         aspectRatio={1.5}
+        //Events array passed as a prop for the calendar to display
+        events={eventsPlaceholder}
       />
     </div>
   );
