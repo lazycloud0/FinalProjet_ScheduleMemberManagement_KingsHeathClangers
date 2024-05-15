@@ -9,10 +9,13 @@ const initialState = {
     date: "",
     time: "",
     location: "",
+    team: ""
   },
   errors: {},
   loading: false, // Initially set to false
 };
+
+const allowedTeams = ["youth1", "youth2", "women", "men"];
 
 const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const timeRegex = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
@@ -161,6 +164,28 @@ export default function Form() {
         });
       }
     }
+    if (name === "team") {
+      if (!allowedTeams.includes(value)) {
+        dispatch({
+          type: "UPDATE_ERRORS",
+          payload: {
+            ...errors,
+            team: "Team must be one of: " + allowedTeams.join(", "),
+          },
+        });
+      } else {
+        // Clear the team error message if it was previously shown
+        if (errors.team) {
+          dispatch({
+            type: "UPDATE_ERRORS",
+            payload: {
+              ...errors,
+              team: "",
+            },
+          });
+        }
+      }
+    }
   }
 
   function handleSubmit(e) {
@@ -297,6 +322,22 @@ export default function Form() {
             <span className={styles.error}>{errors.location}</span>
           )}
         </div>
+
+        <div className={styles.formSection}>
+  <label htmlFor="team">Team:</label>
+  <br />
+  <input
+    type="text"
+    id="team"
+    name="team"
+    value={formData.team}
+    onChange={handleInputChanges}
+  />
+  <br />
+  {errors.team && (
+    <span className={styles.error}>{errors.team}</span>
+  )}
+</div>
 
         {/* Loading message */}
         {loading && <div>Loading...</div>}
