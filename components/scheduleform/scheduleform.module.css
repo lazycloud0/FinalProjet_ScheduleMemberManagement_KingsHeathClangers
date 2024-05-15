@@ -8,8 +8,8 @@
 }
 .contactForm input[type="text"],
 .contactForm input[type="search"] {
-  background-color: #484d58; /* Replace #yourColor with the color you want */
-  color: #ffffff;
+  background-color: #ffffff; /* Replace #yourColor with the color you want */
+  color: #484d58;
   padding: 2%;
   width: 100%;
 }
@@ -38,6 +38,7 @@
   cursor: pointer;
   font-size: 120%;
   margin-top: 20px;
+  width: 100%;
 }
 
 @media (max-width: 860px) {
