@@ -1,7 +1,7 @@
 .calendar {
-  margin: 75px auto 0;
   max-width: 1440px;
   padding: 20px;
   font-family: "gotham", sans-serif;
   font-weight: lighter;
+  margin-top: 10vh;
 }

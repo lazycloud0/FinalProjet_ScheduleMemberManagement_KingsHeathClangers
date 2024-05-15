@@ -56,6 +56,7 @@ function CalendarComponent() {
         }}
         // Sets the aspect ratio of the calendar
         aspectRatio={1.5}
+        height="auto"
         //Events array passed as a prop for the calendar to display
         events={eventsPlaceholder}
       />
