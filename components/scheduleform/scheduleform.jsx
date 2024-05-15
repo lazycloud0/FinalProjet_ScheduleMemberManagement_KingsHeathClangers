@@ -9,10 +9,13 @@ const initialState = {
     date: "",
     time: "",
     location: "",
+    team: "",
   },
   errors: {},
   loading: false, // Initially set to false
 };
+
+const allowedTeams = ["youth1", "youth2", "women", "men"];
 
 const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const timeRegex = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
@@ -161,6 +164,28 @@ export default function Form() {
         });
       }
     }
+    if (name === "team") {
+      if (!allowedTeams.includes(value)) {
+        dispatch({
+          type: "UPDATE_ERRORS",
+          payload: {
+            ...errors,
+            team: "Team must be one of: " + allowedTeams.join(", "),
+          },
+        });
+      } else {
+        // Clear the team error message if it was previously shown
+        if (errors.team) {
+          dispatch({
+            type: "UPDATE_ERRORS",
+            payload: {
+              ...errors,
+              team: "",
+            },
+          });
+        }
+      }
+    }
   }
 
   function handleSubmit(e) {
@@ -194,8 +219,12 @@ export default function Form() {
         newErrors.date = "Date must be in YYYY-MM-DD format";
       } else {
         const [year, month, day] = formData.date.split("-").map(Number);
-        if (year < 2024) {
-          newErrors.date = "Year cannot be less than 2024";
+        const inputDate = new Date(year, month - 1, day); // JavaScript months are 0-indexed
+        const currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0); // Reset time part, to compare only the date part
+
+        if (inputDate < currentDate) {
+          newErrors.date = "Date cannot be before the current date";
         } else if (month > 12) {
           newErrors.date = "Month cannot be more than 12";
         } else if (day > 31) {
@@ -296,6 +325,20 @@ export default function Form() {
           {errors.location && (
             <span className={styles.error}>{errors.location}</span>
           )}
+        </div>
+
+        <div className={styles.formSection}>
+          <label htmlFor="team">Team:</label>
+          <br />
+          <input
+            type="text"
+            id="team"
+            name="team"
+            value={formData.team}
+            onChange={handleInputChanges}
+          />
+          <br />
+          {errors.team && <span className={styles.error}>{errors.team}</span>}
         </div>
 
         {/* Loading message */}

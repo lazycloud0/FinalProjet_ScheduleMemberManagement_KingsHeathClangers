@@ -12,6 +12,7 @@
     "check": "prettier --check \"**/*.{ts,tsx,js,jsx,md,mdx,css,yaml,yml}\""
   },
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@fullcalendar/bootstrap5": "^6.1.11",
     "@fullcalendar/core": "^6.1.11",
     "@fullcalendar/daygrid": "^6.1.11",

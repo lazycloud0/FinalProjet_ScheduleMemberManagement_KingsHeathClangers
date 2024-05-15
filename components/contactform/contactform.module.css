@@ -1,35 +1,47 @@
-.contactForm {
+.formContainer {
   font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
   font-size: 120%;
   background-color: #dfe1e2;
   padding: 30px;
   border-radius: 40px;
   width: 40%;
 }
-.contactForm input[type="text"],
-.contactForm input[type="search"] {
+
+.formContainer input[type="text"],
+.formContainer input[type="email"] {
   background-color: #ffffff; /* Replace #yourColor with the color you want */
   color: #484d58;
   padding: 2%;
   width: 100%;
 }
-
 .subtitle {
   padding-bottom: 5%;
   text-align: center;
   font-size: 180%;
 }
 
-.formSection {
+.contactBox {
+  background-color: #ffffff; /* Replace #yourColor with the color you want */
+  color: #484d58;
+  padding: 2%;
+  width: 100%;
+  height: 60%;
+}
+
+.contact {
+  padding-bottom: 5%;
+  text-align: center;
+  font-size: 180%;
+}
+
+.contactLabel {
   margin-bottom: 10px;
   font-size: 120%;
 }
 
-.error {
-  color: red;
-}
-
-.requestButton {
+.contactButton {
   background-color: #f25e05;
   color: white;
   border: none;
@@ -38,23 +50,22 @@
   cursor: pointer;
   font-size: 120%;
   margin-top: 20px;
-  width: 100%;
 }
 
 @media (max-width: 860px) {
-  .contactForm {
+  .formContainer {
     width: 90%;
   }
 
   .subtitle {
     font-size: 170%;
   }
-  .formSection {
+  .contactLabel {
     margin-bottom: 10px;
     font-size: 100%;
   }
 
-  .requestButton {
+  .contactButton {
     font-size: 100%;
   }
 }
