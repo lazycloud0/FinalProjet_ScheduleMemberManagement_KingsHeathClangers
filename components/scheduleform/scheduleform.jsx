@@ -219,8 +219,12 @@ export default function Form() {
         newErrors.date = "Date must be in YYYY-MM-DD format";
       } else {
         const [year, month, day] = formData.date.split("-").map(Number);
-        if (year < 2024) {
-          newErrors.date = "Year cannot be less than 2024";
+        const inputDate = new Date(year, month - 1, day); // JavaScript months are 0-indexed
+        const currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0); // Reset time part, to compare only the date part
+      
+        if (inputDate < currentDate) {
+          newErrors.date = "Date cannot be before the current date";
         } else if (month > 12) {
           newErrors.date = "Month cannot be more than 12";
         } else if (day > 31) {
