@@ -1,6 +1,5 @@
 import Calendar from "/components/calendar/calendar.jsx";
 import styles from "./whatson.module.css";
-import "./custom.scss";
 
 export default function Whatson() {
   return (

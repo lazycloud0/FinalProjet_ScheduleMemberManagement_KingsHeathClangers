@@ -13,10 +13,11 @@ import interactionPlugin from "@fullcalendar/interaction";
 import bootstrap5Plugin from "@fullcalendar/bootstrap5";
 
 // Import Bootstrap CSS and Bootstrap Icons CSS for styling.
-import "bootstrap/dist/css/bootstrap.css";
+// import "bootstrap/dist/css/bootstrap.css"; - leave commented out for now
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 // Import a CSS module (`styles`) for custom styling of the calendar component.
+import "./module.scss";
 import styles from "./calendar.module.css";
 
 // A placeholder array of events to be displayed on the calendar.
