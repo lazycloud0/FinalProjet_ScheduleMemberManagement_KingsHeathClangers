@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useReducer } from "react";
 import styles from "./scheduleform.module.css";
+import { supabase } from "../../utils/supabase";
 
 // 1. Initial state for form data and errors
 const initialState = {
@@ -245,17 +246,19 @@ export default function Form() {
       >
         <h3 className={styles.subtitle}>Add New Event</h3>
         <div className={styles.formSection}>
-          <label htmlFor="event">Event:</label>
+          <label htmlFor="event_type">Event:</label>
           <br />
           <input
             type="text"
-            id="event"
-            name="event"
-            value={formData.event}
+            id="event_type"
+            name="event_type"
+            value={formData.event_type}
             onChange={handleInputChanges}
           />
           <br />
-          {errors.event && <span className={styles.error}>{errors.event}</span>}
+          {errors.event_type && (
+            <span className={styles.error}>{errors.event_type}</span>
+          )}
         </div>
 
         <div className={styles.formSection}>
