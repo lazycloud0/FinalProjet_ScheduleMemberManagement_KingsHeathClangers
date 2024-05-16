@@ -1,11 +1,14 @@
 "use client";
 import React, { useState, useReducer } from "react";
 import styles from "./scheduleform.module.css";
+import { supabase } from "../../utils/supabase";
+
+//trial merge
 
 // 1. Initial state for form data and errors
 const initialState = {
   formData: {
-    event: "",
+    event_type: "",
     date: "",
     time: "",
     location: "",
@@ -51,58 +54,6 @@ export default function Form() {
 
   // Destructure state variables
   const { formData, errors, loading } = state;
-
-  function handleInputChanges(e) {
-    const { name, value } = e.target;
-    dispatch({
-      type: "UPDATE_FORM_DATA",
-      payload: { name, value },
-    });
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    // If already loading, prevent form submission
-    if (loading) return;
-
-    // Set loading state to true when form is submitted
-    dispatch({ type: "SET_LOADING", payload: true });
-
-    // Clear previous error messages
-    dispatch({ type: "UPDATE_ERRORS", payload: {} });
-
-    // Simulate a delay to mimic form submission
-    setTimeout(() => {
-      // Reset loading state to false after delay
-      dispatch({ type: "SET_LOADING", payload: false });
-
-      // Check each field for empty value and set error message if empty
-      const newErrors = {};
-      for (const field in formData) {
-        if (!formData[field]) {
-          newErrors[field] =
-            `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
-        }
-      }
-
-      // Update errors state
-      dispatch({
-        type: "UPDATE_ERRORS",
-        payload: newErrors,
-      });
-
-      // If there are errors, prevent form submission
-      if (Object.keys(newErrors).length > 0) {
-        console.log("Errors:", newErrors);
-        return;
-      }
-
-      // If all required fields are filled, proceed with form submission
-      console.log("Form submitted successfully!");
-      // You can continue with your form submission logic here
-    }, 1000); // Change the delay as needed
-  }
 
   function handleInputChanges(e) {
     const { name, value } = e.target;
@@ -187,15 +138,18 @@ export default function Form() {
       }
     }
   }
-
+  //--------------------------------------------------------------------------------
+  // modified handleSubmit function
+  //
   function handleSubmit(e) {
     e.preventDefault();
-
     // If already loading, prevent form submission
     if (loading) return;
 
     // Set loading state to true when form is submitted
     dispatch({ type: "SET_LOADING", payload: true });
+    // Set loading state to true when form is submitted
+    dispatch({ type: "UPDATE_ERRORS", payload: {} });
 
     // Clear previous error messages
     dispatch({ type: "UPDATE_ERRORS", payload: {} });
@@ -243,6 +197,9 @@ export default function Form() {
         }
       }
 
+      // Additional validation for location field if needed
+      // Example: Check if location is not empty
+
       // Update errors state
       dispatch({
         type: "UPDATE_ERRORS",
@@ -252,14 +209,35 @@ export default function Form() {
       // If there are errors, prevent form submission
       if (Object.keys(newErrors).length > 0) {
         console.log("Errors:", newErrors);
+        dispatch({ type: "SET_LOADING", payload: false });
         return;
       }
-
-      // If all required fields are filled and correctly formatted, proceed with form submission
+      // If all required fields are filled, proceed with form submission
       console.log("Form submitted successfully!");
-      // You can continue with your form submission logic here
+
+      const { event_type, date, time, location, team } = formData;
+
+      // Send a post request to Supabase with the formData
+      supabase
+        .from("games")
+        .insert([{ event_type, date, time, location, team }])
+        .then(({ data, error }) => {
+          if (error) {
+            console.error("Error inserting data:", error.message);
+            dispatch({ type: "SET_LOADING", payload: false });
+          } else {
+            console.log("Game added successfully:", data);
+            dispatch({ type: "RESET_FIELDS" });
+          }
+        })
+        .catch((error) => {
+          console.error("Error inserting data:", error.message);
+          dispatch({ type: "SET_LOADING", payload: false });
+        });
     }, 1000); // Change the delay as needed
   }
+
+  //--------------------------------------------------------------------------------
 
   return (
     <>
@@ -270,17 +248,19 @@ export default function Form() {
       >
         <h3 className={styles.subtitle}>Add New Event</h3>
         <div className={styles.formSection}>
-          <label htmlFor="event">Event:</label>
+          <label htmlFor="event_type">Event:</label>
           <br />
           <input
             type="text"
-            id="event"
-            name="event"
-            value={formData.event}
+            id="event_type"
+            name="event_type"
+            value={formData.event_type}
             onChange={handleInputChanges}
           />
           <br />
-          {errors.event && <span className={styles.error}>{errors.event}</span>}
+          {errors.event_type && (
+            <span className={styles.error}>{errors.event_type}</span>
+          )}
         </div>
 
         <div className={styles.formSection}>
