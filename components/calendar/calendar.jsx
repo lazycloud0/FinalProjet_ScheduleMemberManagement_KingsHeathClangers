@@ -2,6 +2,10 @@
 
 // Import React from the 'react' package.
 import React from "react";
+import { useState, useEffect } from "react";
+
+// import supabase
+import { supabase } from "../../utils/supabase";
 
 // Import FullCalendar from '@fullcalendar/react', which is the React wrapper for FullCalendar.
 import FullCalendar from "@fullcalendar/react";
@@ -21,18 +25,33 @@ import "./module.scss";
 import styles from "./calendar.module.css";
 
 // A placeholder array of events to be displayed on the calendar.
-const eventsPlaceholder = [
-  { title: "Event 1", date: "2024-05-14", time: "10:00" },
-  { title: "Event 2", date: "2024-05-15", time: "10:00" },
-  { title: "Event 3", date: "2024-05-16", time: "10:00" },
-  { title: "Event 4", date: "2024-05-16", time: "10:00" },
-  { title: "Event 5", date: "2024-05-19", time: "10:00" },
-  { title: "Event 6", date: "2024-05-20", time: "10:00" },
-  { title: "Event 7", date: "2024-05-23", time: "10:00" },
-];
+// const eventsPlaceholder = [
+//   { title: "Event 1", date: "2024-05-14", time: "10:00" },
+//   { title: "Event 2", date: "2024-05-15", time: "10:00" },
+//   { title: "Event 3", date: "2024-05-16", time: "10:00" },
+//   { title: "Event 4", date: "2024-05-16", time: "10:00" },
+//   { title: "Event 5", date: "2024-05-19", time: "10:00" },
+//   { title: "Event 6", date: "2024-05-20", time: "10:00" },
+//   { title: "Event 7", date: "2024-05-23", time: "10:00" },
+// ];
 
 // Define a functional component named `CalendarComponent`.
 function CalendarComponent() {
+  // Define a state variable `events` and a function `setEvents` to update the state variable.
+  const [events, setEvents] = useState([]);
+
+  // Define a `useEffect` hook that performs a get request from supabase and map the desired data out.
+  useEffect(() => {
+    const getGames = async () => {
+      const { data: games } = await supabase.from("games").select("*");
+      const eventData = games.map((game) => ({
+        title: game.event_type,
+        date: game.date,
+      }));
+      setEvents(eventData);
+    };
+    getGames();
+  }, []);
   // Return a JSX structure that represents the calendar UI.
   return (
     <div className={styles.calendar}>
@@ -58,7 +77,7 @@ function CalendarComponent() {
         // Sets the aspect ratio of the calendar
         aspectRatio={1.5}
         //Events array passed as a prop for the calendar to display
-        events={eventsPlaceholder}
+        events={events}
       />
     </div>
   );
