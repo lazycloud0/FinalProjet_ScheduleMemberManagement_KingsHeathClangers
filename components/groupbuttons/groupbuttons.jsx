@@ -2,11 +2,12 @@ import styles from "./groupbuttons.module.css";
 
 export default function GroupButtons() {
   return (
-    <div className={styles.groupButtons}>
-      <button className={styles.groupButton}>Group 1</button>
-      <button className={styles.groupButton}>Group 2</button>
-      <button className={styles.groupButton}>Group 3</button>
-      <button className={styles.groupButton}>Group 4</button>
+    <div className={styles.buttonContainer}>
+      <button className={styles.groupButton}>Open sessions</button>
+      <button className={styles.groupButton}>Men</button>
+      <button className={styles.groupButton}>Women</button>
+      <button className={styles.groupButton}>Youth: 15-18</button>
+      <button className={styles.groupButton}>Youth: Under 14s</button>
     </div>
   );
 }

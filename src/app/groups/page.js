@@ -5,11 +5,9 @@ import GroupButtons from "/components/groupbuttons/groupbuttons.jsx";
 
 export default function Groups() {
   return (
-    <div className={styles.groupsPage}>
-      <div className={styles.container}>
-        <LargeLogo className={styles.largeLogo} />
-        <GroupButtons />
-      </div>
+    <div className={styles.groupsContainer}>
+      <LargeLogo className={styles.largeLogo} />
+      <GroupButtons />
     </div>
   );
 }
