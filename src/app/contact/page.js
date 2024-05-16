@@ -4,7 +4,7 @@ import styles from "./contact.module.css";
 import LargeLogo from "../../../components/logos/largeLogo";
 import ContactForm from "/components/contactform/contactform.jsx";
 
-export default function Schedule() {
+export default function Contact() {
   return (
     <div className={styles.contactPage}>
       <div className={styles.container}>

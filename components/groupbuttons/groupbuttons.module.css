@@ -1,0 +1,15 @@
+.groupButton {
+  background-color: #f25e05;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 120%;
+  margin-top: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+}
