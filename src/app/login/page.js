@@ -1,15 +1,14 @@
 import React from "react";
-
-import styles from "./contact.module.css";
 import LargeLogo from "../../../components/logos/largeLogo";
-import ContactForm from "/components/contactform/contactform.jsx";
+import styles from "./login.module.css";
+import LoginForm from "/components/loginform/loginform.jsx";
 
-export default function Contact() {
+export default function Login() {
   return (
-    <div className={styles.contactPage}>
+    <div className={styles.LoginPage}>
       <div className={styles.container}>
         <LargeLogo className={styles.largeLogo} />
-        <ContactForm />
+        <LoginForm />
       </div>
     </div>
   );

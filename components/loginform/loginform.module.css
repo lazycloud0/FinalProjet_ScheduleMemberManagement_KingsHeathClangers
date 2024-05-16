@@ -1,0 +1,55 @@
+.loginContainer {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signupContainer {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.loginButton {
+  margin-top: 10px;
+  background-color: #e1682d;
+  color: white;
+  border-radius: 200px;
+}
+
+.signupButton {
+  margin-top: 10px;
+  background-color: #e1682d;
+  color: white;
+  border-radius: 200px;
+}
+
+.forgotPassword {
+  margin-top: 10px;
+  text-align: right;
+  color: #484d58;
+  font-size: 14px;
+}
+
+.privacyPolicy {
+  margin-top: 10px;
+  text-align: right;
+  color: #484d58;
+  font-size: 14px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  color: #484d58;
+}
+
+.form label {
+  font-size: 14px;
+}
+
+.form input {
+  margin-top: 10px;
+  padding: 10px;
+}
