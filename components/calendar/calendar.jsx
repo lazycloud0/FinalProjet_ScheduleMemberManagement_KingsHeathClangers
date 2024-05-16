@@ -2,6 +2,7 @@
 
 // Import React from the 'react' package.
 import React from "react";
+import { useState, useEffect } from "react";
 
 // Import FullCalendar from '@fullcalendar/react', which is the React wrapper for FullCalendar.
 import FullCalendar from "@fullcalendar/react";
@@ -18,11 +19,12 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 // Import a CSS module (`styles`) for custom styling of the calendar component.
 import styles from "./calendar.module.css";
-import GetEvents from "../../backend/getCalendar.jsx";
+// import GetEvents from "../../backend/getCalendar.jsx";
+// import supabase
+import { supabase } from "../../utils/supabase";
 
 // A placeholder array of events to be displayed on the calendar.
-const eventsPlaceholder = <GetEvents />;
-
+// const eventsPlaceholder = <GetEvents />;
 
 // [
 //   { title: "Event 1", date: "2024-05-14"},
@@ -37,31 +39,35 @@ const eventsPlaceholder = <GetEvents />;
 // Define a functional component named `CalendarComponent`.
 function CalendarComponent() {
   // Return a JSX structure that represents the calendar UI.
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const getGames = async () => {
+      const { data: games } = await supabase.from("games").select("*");
+      const eventData = games.map((game) => ({
+        title: game.event_type,
+        date: game.date,
+      }));
+
+      setEvents(eventData);
+    };
+    getGames();
+  }, []);
+
   return (
     <div className={styles.calendar}>
-      {/* Render the FullCalendar component with specific configurations and plugins */}
       <FullCalendar
-        // Plugins to enable specific functionalities
         plugins={[
           dayGridPlugin,
           timeGridPlugin,
           interactionPlugin,
           bootstrap5Plugin,
         ]}
-        // Specifies the initial view of the calendar
         initialView="dayGridMonth"
-        // Indicates the theme system to use
         themeSystem="bootstrap5"
-        // Configures the toolbar at the top of the calendar
-        headerToolbar={{
-          left: "title",
-          center: "",
-          right: "today,prev,next",
-        }}
-        // Sets the aspect ratio of the calendar
+        headerToolbar={{ left: "title", center: "", right: "today,prev,next" }}
         aspectRatio={1.5}
-        //Events array passed as a prop for the calendar to display
-        events={eventsPlaceholder}
+        events={events} // Use the state variable here
       />
     </div>
   );
