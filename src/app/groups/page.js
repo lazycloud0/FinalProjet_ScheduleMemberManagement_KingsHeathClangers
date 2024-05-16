@@ -1,15 +1,14 @@
 import React from "react";
-
-import styles from "./contact.module.css";
+import styles from "./groups.module.css";
 import LargeLogo from "../../../components/logos/largeLogo";
-import ContactForm from "/components/contactform/contactform.jsx";
+import GroupButtons from "/components/groupbuttons/groupbuttons.jsx";
 
-export default function Contact() {
+export default function Groups() {
   return (
-    <div className={styles.contactPage}>
+    <div className={styles.groupsPage}>
       <div className={styles.container}>
         <LargeLogo className={styles.largeLogo} />
-        <ContactForm />
+        <GroupButtons />
       </div>
     </div>
   );
