@@ -3,6 +3,8 @@ import React, { useState, useReducer } from "react";
 import styles from "./scheduleform.module.css";
 import { supabase } from "../../utils/supabase";
 
+//trial merge
+
 // 1. Initial state for form data and errors
 const initialState = {
   formData: {
