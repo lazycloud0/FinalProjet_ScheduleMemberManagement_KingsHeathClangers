@@ -21,25 +21,20 @@
     "@fullcalendar/interaction": "^6.1.11",
     "@fullcalendar/react": "^6.1.11",
     "@fullcalendar/timegrid": "^6.1.11",
-
-
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.17",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-
     "@supabase/supabase-js": "^2.43.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "next": "14.2.3",
     "next-fonts": "^1.5.1",
-    "node-sass": "^9.0.0",
+   
     "react": "^18",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18",
-    "sass": "^1.77.1",
-
+    
     "styled-components": "^6.1.11",
-
     "supabase": "^1.167.4"
   },
   "devDependencies": {
