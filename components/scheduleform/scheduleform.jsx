@@ -18,7 +18,13 @@ const initialState = {
   loading: false, // Initially set to false
 };
 
-const allowedTeams = ["youth1", "youth2", "women", "men"];
+const allowedTeams = [
+  "Open Scrimmage",
+  "Under 14s",
+  "Under 18s",
+  "Men",
+  "Women",
+];
 
 const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const timeRegex = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
@@ -44,6 +50,12 @@ function reducer(state, action) {
         ...state,
         loading: action.payload,
       };
+    case "RESET_FIELDS":
+      return {
+        ...state,
+        formData: initialState.formData,
+        message: action.payload,
+      };
     default:
       return state;
   }
@@ -51,7 +63,7 @@ function reducer(state, action) {
 
 export default function Form() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const [message, setMessage] = useState("");
   // Destructure state variables
   const { formData, errors, loading } = state;
 
@@ -227,7 +239,16 @@ export default function Form() {
             dispatch({ type: "SET_LOADING", payload: false });
           } else {
             console.log("Game added successfully:", data);
-            dispatch({ type: "RESET_FIELDS" });
+
+            setMessage("Event added to the calendar"); // Set the success message immediately
+
+            setTimeout(() => {
+              setMessage(""); // Clear the message after 2 seconds
+            }, 2000); // 2000ms = 2 seconds
+
+            setTimeout(() => {
+              dispatch({ type: "RESET_FIELDS", payload: "" }); // Clear the form after a delay
+            }, 2000); // 1000ms = 1 seconds
           }
         })
         .catch((error) => {
@@ -323,6 +344,9 @@ export default function Form() {
 
         {/* Loading message */}
         {loading && <div>Loading...</div>}
+
+        {/* Success message */}
+        {message && <div>{message}</div>}
 
         <button
           className={styles.requestButton}
