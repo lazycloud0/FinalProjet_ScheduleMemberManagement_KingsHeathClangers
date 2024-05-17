@@ -18,13 +18,15 @@ const initialState = {
   loading: false, // Initially set to false
 };
 
-const allowedTeams = [
-  "Open Scrimmage",
-  "Under 14s",
-  "Under 18s",
-  "Men",
-  "Women",
-];
+const times = Array.from({ length: 48 }, (v, i) => {
+  const hour = Math.floor(i / 2)
+    .toString()
+    .padStart(2, "0");
+  const minute = ((i % 2) * 30).toString().padStart(2, "0");
+  return `${hour}:${minute}`;
+});
+
+const allowedTeams = ["Men", "Women", "Under 14s", "Under 18s", "Open to All"];
 
 const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const timeRegex = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
@@ -96,7 +98,7 @@ export default function Form() {
           type: "UPDATE_ERRORS",
           payload: {
             ...errors,
-            date: "Date must be in YYYY-MM-DD format",
+            date: "Date is required",
           },
         });
       }
@@ -122,7 +124,7 @@ export default function Form() {
           type: "UPDATE_ERRORS",
           payload: {
             ...errors,
-            time: "Time must be in HH:MM format",
+            time: "Time is required",
           },
         });
       }
@@ -133,7 +135,6 @@ export default function Form() {
           type: "UPDATE_ERRORS",
           payload: {
             ...errors,
-            team: "Team must be one of: " + allowedTeams.join(", "),
           },
         });
       } else {
@@ -175,14 +176,17 @@ export default function Form() {
       const newErrors = {};
       for (const field in formData) {
         if (!formData[field]) {
-          newErrors[field] =
-            `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
+          let fieldName = field.charAt(0).toUpperCase() + field.slice(1);
+          if (field === "event_type") {
+            fieldName = "Event";
+          }
+          newErrors[field] = `${fieldName} is required`;
         }
       }
 
       // Check for format errors in the date and time fields
       if (!dateRegex.test(formData.date)) {
-        newErrors.date = "Date must be in YYYY-MM-DD format";
+        newErrors.date = "Date is required";
       } else {
         const [year, month, day] = formData.date.split("-").map(Number);
         const inputDate = new Date(year, month - 1, day); // JavaScript months are 0-indexed
@@ -199,7 +203,7 @@ export default function Form() {
       }
 
       if (!timeRegex.test(formData.time)) {
-        newErrors.time = "Time must be in HH:MM format";
+        newErrors.time = "Time is required";
       } else {
         const [hour, minute] = formData.time.split(":").map(Number);
         if (hour > 24) {
@@ -262,100 +266,118 @@ export default function Form() {
 
   return (
     <>
-      <form
-        className={styles.contactForm}
-        onSubmit={handleSubmit}
-        disabled={loading}
-      >
-        <h3 className={styles.subtitle}>Add New Event</h3>
-        <div className={styles.formSection}>
-          <label htmlFor="event_type">Event:</label>
-          <br />
-          <input
-            type="text"
-            id="event_type"
-            name="event_type"
-            value={formData.event_type}
-            onChange={handleInputChanges}
-          />
-          <br />
-          {errors.event_type && (
-            <span className={styles.error}>{errors.event_type}</span>
-          )}
-        </div>
-
-        <div className={styles.formSection}>
-          <label htmlFor="date">Date:</label>
-          <br />
-          <input
-            type="text"
-            id="date"
-            name="date"
-            value={formData.date}
-            onChange={handleInputChanges}
-          />
-          <br />
-          {errors.date && <span className={styles.error}>{errors.date}</span>}
-        </div>
-
-        <div className={styles.formSection}>
-          <label htmlFor="time">Time:</label>
-          <br />
-          <input
-            type="text"
-            id="time"
-            name="time"
-            value={formData.time}
-            onChange={handleInputChanges}
-          />
-          <br />
-          {errors.time && <span className={styles.error}>{errors.time}</span>}
-        </div>
-
-        <div className={styles.formSection}>
-          <label htmlFor="location">Location:</label>
-          <br />
-          <input
-            type="text"
-            id="location"
-            name="location"
-            value={formData.location}
-            onChange={handleInputChanges}
-          />
-          <br />
-          {errors.location && (
-            <span className={styles.error}>{errors.location}</span>
-          )}
-        </div>
-
-        <div className={styles.formSection}>
-          <label htmlFor="team">Team:</label>
-          <br />
-          <input
-            type="text"
-            id="team"
-            name="team"
-            value={formData.team}
-            onChange={handleInputChanges}
-          />
-          <br />
-          {errors.team && <span className={styles.error}>{errors.team}</span>}
-        </div>
-
-        {/* Loading message */}
-        {loading && <div>Loading...</div>}
-
-        {/* Success message */}
-        {message && <div>{message}</div>}
-
-        <button
-          className={styles.requestButton}
-          type="submit"
+      <div className={styles.container}>
+        <form
+          className={styles.contactForm}
+          onSubmit={handleSubmit}
           disabled={loading}
         >
-          Add Event
-        </button>
-      </form>
+          <h3 className={styles.subtitle}>Add New Event</h3>
+          <div className={styles.formSection}>
+            <label htmlFor="event_type"></label>
+            <br />
+            <input
+              type="text"
+              placeholder="Event"
+              className={styles.placeholder}
+              id="event_type"
+              name="event_type"
+              value={formData.event_type}
+              onChange={handleInputChanges}
+            />
+            <br />
+            {errors.event_type && (
+              <span className={styles.error}>{errors.event_type}</span>
+            )}
+          </div>
+          <div className={styles.formSection}>
+            <label htmlFor="date"></label>
+            <br />
+            <input
+              type="date"
+              id="date"
+              name="date"
+              value={formData.date}
+              onChange={handleInputChanges}
+            />
+            <br />
+            {errors.date && <span className={styles.error}>{errors.date}</span>}
+          </div>
+
+          <div className={styles.formSection}>
+            <label htmlFor="time"></label>
+            <br />
+            <select
+              id="time"
+              name="time"
+              value={formData.time}
+              onChange={handleInputChanges}
+            >
+              <option value="">Select a time</option>
+              {times.map((time) => (
+                <option key={time} value={time}>
+                  {time}
+                </option>
+              ))}
+            </select>
+            <br />
+            {errors.time && <span className={styles.error}>{errors.time}</span>}
+          </div>
+
+          <div className={styles.formSection}>
+            <label htmlFor="location"></label>
+            <br />
+            <input
+              type="text"
+              placeholder="Location"
+              className={styles.placeholder}
+              id="location"
+              name="location"
+              value={formData.location}
+              onChange={handleInputChanges}
+            />
+            <br />
+            {errors.location && (
+              <span className={styles.error}>{errors.location}</span>
+            )}
+          </div>
+
+          <div className={styles.formSection}>
+            <label htmlFor="team"></label>
+            <br />
+            <select
+              id="team"
+              name="team"
+              value={formData.team}
+              onChange={handleInputChanges}
+            >
+              <option value="">Select a team</option>
+              {allowedTeams.map((team) => (
+                <option key={team} value={team}>
+                  {team}
+                </option>
+              ))}
+            </select>
+
+            <br />
+            {errors.team && <span className={styles.error}>{errors.team}</span>}
+          </div>
+
+          {/* Loading message */}
+          {loading && <div>Loading...</div>}
+
+          {/* Success message */}
+          {message && <div>{message}</div>}
+
+          <button
+            className={styles.requestButton}
+            type="submit"
+            disabled={loading}
+          >
+            ADD EVENT
+          </button>
+        </form>
+      </div>
     </>
   );
 }
