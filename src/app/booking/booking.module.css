@@ -1,0 +1,25 @@
+.bookingPage {
+}
+
+.bookingContainer {
+  max-width: 1440px;
+  margin: 120px auto;
+  display: flex;
+  flex-direction: row; /* Change this from column (default) to row */
+  justify-content: space-around;
+  align-items: center; /* Optional: Align items vertically in the center */
+}
+
+.largeLogo {
+  max-width: 35%;
+}
+
+@media (max-width: 860px) {
+  .largeLogo {
+    display: none;
+  }
+
+  .bookingContainer {
+    flex-direction: column; /* Stack items vertically on small screens */
+  }
+}
