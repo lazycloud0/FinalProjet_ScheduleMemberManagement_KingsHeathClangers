@@ -1,7 +1,6 @@
 .container {
   width: 30%;
 }
-
 .contactForm {
   font-family: "Montserrat", sans-serif;
   font-size: 100%;
@@ -24,17 +23,20 @@
   border-style: solid;
   border-color: #cccccc;
   border-width: 1px;
-  font-size: 120%;
+  font-size: 100%;
+  margin-top: 2%;
 }
 
 .subtitle {
   text-align: left;
   font-size: 180%;
   padding-top: 2%;
+  padding-bottom: 5%;
 }
 
 .formSection {
-  font-size: 120%;
+  font-size: 100%;
+  margin-bottom: 3%;
 }
 
 .placeholder::-webkit-input-placeholder {
@@ -57,6 +59,10 @@
 
 .error {
   color: red;
+}
+
+.label {
+  padding-bottom: 10px;
 }
 
 .optionList {

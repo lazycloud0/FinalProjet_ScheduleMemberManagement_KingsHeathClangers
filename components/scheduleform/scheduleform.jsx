@@ -307,19 +307,13 @@ export default function Form() {
           <div className={styles.formSection}>
             <label htmlFor="time"></label>
             <br />
-            <select
+            <input
+              type="time"
               id="time"
               name="time"
               value={formData.time}
               onChange={handleInputChanges}
-            >
-              <option value="">Select a time</option>
-              {times.map((time) => (
-                <option key={time} value={time}>
-                  {time}
-                </option>
-              ))}
-            </select>
+            />
             <br />
             {errors.time && <span className={styles.error}>{errors.time}</span>}
           </div>

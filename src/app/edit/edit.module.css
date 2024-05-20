@@ -1,0 +1,20 @@
+.schedulePage {
+}
+
+.container {
+  max-width: 1440px;
+  margin: 120px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.largeLogo {
+  max-width: 35%;
+}
+
+@media (max-width: 860px) {
+  .largeLogo {
+    display: none;
+  }
+}
