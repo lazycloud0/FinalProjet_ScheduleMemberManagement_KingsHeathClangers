@@ -36,52 +36,100 @@ import styles from "./calendar.module.css";
 // ];
 
 // Define a functional component named `CalendarComponent`.
-function CalendarComponent() {
-  // Define a state variable `events` and a function `setEvents` to update the state variable.
-  const [events, setEvents] = useState([]);
+// function CalendarComponent() {
+//   // Define a state variable `events` and a function `setEvents` to update the state variable.
+//   const [events, setEvents] = useState([]);
 
-  // Define a `useEffect` hook that performs a get request from supabase and map the desired data out.
-  useEffect(() => {
-    const getGames = async () => {
-      const { data: games } = await supabase.from("games").select("*");
+//   // Define a `useEffect` hook that performs a get request from supabase and map the desired data out.
+//   useEffect(() => {
+//     const getGames = async () => {
+//       const { data: games } = await supabase.from("games").select("*");
+//       const eventData = games.map((game) => ({
+//         title: game.event_type,
+//         date: game.date,
+//       }));
+//       setEvents(eventData);
+//     };
+//     getGames();
+//   }, []);
+//   // Return a JSX structure that represents the calendar UI.
+//   return (
+//     <div className={styles.calendar}>
+//       {/* Render the FullCalendar component with specific configurations and plugins */}
+//       <FullCalendar
+//         // Plugins to enable specific functionalities
+//         plugins={[
+//           dayGridPlugin,
+//           timeGridPlugin,
+//           interactionPlugin,
+//           bootstrap5Plugin,
+//         ]}
+//         // Specifies the initial view of the calendar
+//         initialView="dayGridMonth"
+//         // Indicates the theme system to use
+//         themeSystem="bootstrap5"
+//         // Configures the toolbar at the top of the calendar
+//         headerToolbar={{
+//           left: "title",
+//           center: "",
+//           right: "today,prev,next",
+//         }}
+//         // Sets the aspect ratio of the calendar
+//         aspectRatio={1.5}
+//         //Events array passed as a prop for the calendar to display
+//         events={events}
+//       />
+//     </div>
+//   );
+// }
+
+// // Export the `Calendar` component as the default export of the module.
+// export default CalendarComponent;
+function CalendarComponent() {
+  const [events, setEvents] = useState([]);
+  const [error, setError] = useState(null);
+
+  const fetchGames = async () => {
+    try {
+      const { data: games, error } = await supabase.from("games").select("*");
+
+      if (error) throw error;
+
       const eventData = games.map((game) => ({
         title: game.event_type,
         date: game.date,
       }));
       setEvents(eventData);
-    };
-    getGames();
-  }, []);
-  // Return a JSX structure that represents the calendar UI.
+    } catch (error) {
+      console.error("Error fetching games:", error.message);
+      setError(error.message); // Set the error message
+    }
+  };
+
+  useEffect(() => {
+    // Fetch initial data
+    fetchGames();
+  }, []); // Empty dependency array means this runs once on mount
+
   return (
     <div className={styles.calendar}>
-      {/* Render the FullCalendar component with specific configurations and plugins */}
-      <FullCalendar
-        // Plugins to enable specific functionalities
-        plugins={[
-          dayGridPlugin,
-          timeGridPlugin,
-          interactionPlugin,
-          bootstrap5Plugin,
-        ]}
-        // Specifies the initial view of the calendar
-        initialView="dayGridMonth"
-        // Indicates the theme system to use
-        themeSystem="bootstrap5"
-        // Configures the toolbar at the top of the calendar
-        headerToolbar={{
-          left: "title",
-          center: "",
-          right: "today,prev,next",
-        }}
-        // Sets the aspect ratio of the calendar
-        aspectRatio={1.5}
-        //Events array passed as a prop for the calendar to display
-        events={events}
-      />
+      {error? <p>Error: {error}</p> : (
+        <FullCalendar
+          plugins={[
+            dayGridPlugin,
+            timeGridPlugin,
+            interactionPlugin,
+            bootstrap5Plugin,
+          ]}
+          initialView="dayGridMonth"
+          themeSystem="bootstrap5"
+          headerToolbar={{ left: "title", center: "", right: "today,prev,next" }}
+          aspectRatio={1.5}
+          events={events}
+        />
+      )}
     </div>
   );
 }
 
-// Export the `Calendar` component as the default export of the module.
 export default CalendarComponent;
