@@ -47,6 +47,7 @@ function CalendarComponent() {
       const eventData = games.map((game) => ({
         title: game.event_type,
         date: game.date,
+        id: game.id,
       }));
       setEvents(eventData);
     };
