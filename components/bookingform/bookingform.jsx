@@ -4,6 +4,8 @@ import styles from "./bookingform.module.css";
 import { supabase } from "../../utils/supabase";
 
 export default function BookingForm() {
+  // Define a state variable `events` and a function `setEvents` to update the state variable.
+  const [events, setEvents] = useState([]);
   const [message, setMessage] = useState("");
   const [dbData, setDbData] = useState({
     field1: "",

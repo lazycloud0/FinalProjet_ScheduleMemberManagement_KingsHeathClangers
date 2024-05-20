@@ -47,6 +47,7 @@ function CalendarComponent() {
       const eventData = games.map((game) => ({
         title: game.event_type,
         date: game.date,
+        id: game.id,
       }));
       setEvents(eventData);
     };
@@ -78,6 +79,14 @@ function CalendarComponent() {
         aspectRatio={1.5}
         //Events array passed as a prop for the calendar to display
         events={events}
+        //When the user clicks on an event, the event details are displayed in a new page
+        eventClick={function (info) {
+          console.log(info); // Log the info object
+          const gameId = info.event._def.extendedProps.id;
+          const baseUrl = "/booking";
+          const fullUrl = `${baseUrl}/${gameId}`;
+          window.location.href = fullUrl;
+        }}
       />
     </div>
   );
