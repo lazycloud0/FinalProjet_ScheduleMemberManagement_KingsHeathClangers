@@ -24,6 +24,7 @@
     "@mui/icons-material": "^5.15.17",
     "@mui/material": "^5.15.17",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
+    "@supabase/ssr": "^0.3.0",
     "@supabase/supabase-js": "^2.43.2",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
