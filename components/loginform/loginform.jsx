@@ -55,7 +55,7 @@ export default function Login() {
       />
       {!showSignupForm ? (
         <div className={styles.loginContainer}>
-          <h2>Login</h2>
+          <h2 className={styles.header}>Login</h2>
           <form className={styles.form} onSubmit={handleSubmit}>
             <TextField
               label="Email Address"
@@ -83,8 +83,8 @@ export default function Login() {
           </form>
         </div>
       ) : (
-        <div className={styles.signupContainer}>
-          <h2>Sign Up</h2>
+        <div className={styles.loginContainer}>
+          <h2 className={styles.header}>Sign Up</h2>
           <form className={styles.form} onSubmit={handleSubmit}>
             <TextField
               label="First Name"
@@ -111,13 +111,6 @@ export default function Login() {
               fullWidth
               margin="normal"
             />
-            <Button
-              variant="contained"
-              className={styles.signupButton}
-              type="submit"
-            >
-              Sign Up
-            </Button>
             <Link
               href="/privacy-policy"
               underline="hover"
@@ -125,6 +118,13 @@ export default function Login() {
             >
               Privacy Policy
             </Link>
+            <Button
+              variant="contained"
+              className={styles.loginButton}
+              type="submit"
+            >
+              Sign Up
+            </Button>
           </form>
         </div>
       )}

@@ -53,7 +53,7 @@ const ContactForm = () => {
       <input
         className={styles.contactButton}
         type="submit"
-        value="Send"
+        value="SEND"
         disabled={isSubmitting}
       />
       {stateMessage && <p>{stateMessage}</p>}

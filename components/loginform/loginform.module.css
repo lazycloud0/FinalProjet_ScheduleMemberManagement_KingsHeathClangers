@@ -1,14 +1,16 @@
+.container {
+  width: 30%;
+}
+
 .loginContainer {
+  font-family: "Montserrat", sans-serif;
   width: 300px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.signupContainer {
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ccc;
+  border-width: 1px;
+  color: black;
+  width: 100%;
 }
 
 .loginButton {
@@ -16,13 +18,8 @@
   background-color: #e1682d;
   color: white;
   border-radius: 200px;
-}
-
-.signupButton {
-  margin-top: 10px;
-  background-color: #e1682d;
-  color: white;
-  border-radius: 200px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
 }
 
 .forgotPassword {
@@ -46,10 +43,24 @@
 }
 
 .form label {
-  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: black;
 }
 
 .form input {
   margin-top: 10px;
   padding: 10px;
+}
+
+.header {
+  text-align: left;
+  font-size: 180%;
+  padding-top: 2%;
+}
+
+@media (max-width: 860px) {
+  .container {
+    width: 90%;
+  }
 }
