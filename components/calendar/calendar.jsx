@@ -79,6 +79,7 @@ function CalendarComponent() {
         aspectRatio={1.5}
         //Events array passed as a prop for the calendar to display
         events={events}
+        //When the user clicks on an event, the event details are displayed in a new page
       />
     </div>
   );
