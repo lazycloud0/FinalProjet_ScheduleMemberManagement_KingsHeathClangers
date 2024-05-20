@@ -1,0 +1,72 @@
+.container {
+  width: 30%;
+}
+
+.subtitle {
+  text-align: left;
+  font-size: 180%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+}
+
+.formSection {
+  font-family: "Montserrat", sans-serif;
+  font-size: 100%;
+  background-color: #ffffff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #cccccc;
+  border-width: 1px;
+  width: 100%;
+  color: black;
+  margin-bottom: 3%;
+}
+
+.placeholder {
+  color: black;
+  font-size: 85%;
+}
+
+.requestButton {
+  background-color: #f25e05;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 120%;
+  margin-top: 20px;
+  width: 100%;
+  box-shadow:
+    0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  font-weight: 500;
+}
+
+.requestButton:hover {
+  background-color: #484d58;
+}
+
+@media (max-width: 860px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+
+  .formSection {
+    width: 90%;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    font-size: 100%;
+  }
+
+  .subtitle {
+    font-size: 170%;
+  }
+
+  .requestButton {
+    font-size: 100%;
+    padding: 8px 16px;
+  }
+}
