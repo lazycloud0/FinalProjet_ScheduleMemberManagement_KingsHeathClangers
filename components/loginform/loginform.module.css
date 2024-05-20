@@ -22,6 +22,10 @@
   font-size: 18px;
 }
 
+.loginButton:hover {
+  background-color: #484d58;
+}
+
 .forgotPassword {
   margin-top: 10px;
   text-align: right;

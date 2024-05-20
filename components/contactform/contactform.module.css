@@ -3,25 +3,13 @@
   display: flex;
   flex-direction: column;
   font-size: 120%;
-  background-color: #dfe1e2;
-  padding: 30px;
-  border-radius: 40px;
-  width: 40%;
-}
-
-.container {
-  width: 30%;
-}
-
-.loginContainer {
-  font-family: "Montserrat", sans-serif;
-  width: 300px;
-  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
   border-width: 1px;
+  padding: 20px;
+  border-radius: 5px;
   color: black;
-  width: 100%;
+  width: 30%;
 }
 
 .formContainer input[type="text"],
@@ -33,8 +21,7 @@
 }
 .subtitle {
   padding-bottom: 5%;
-  text-align: center;
-  font-size: 180%;
+  font-size: 160%;
 }
 
 .contactBox {
@@ -69,6 +56,10 @@
     0px 3px 6px rgba(0, 0, 0, 0.16),
     0px 3px 6px rgba(0, 0, 0, 0.23);
   font-weight: 500;
+}
+
+.contactButton:hover {
+  background-color: #484d58;
 }
 
 @media (max-width: 860px) {

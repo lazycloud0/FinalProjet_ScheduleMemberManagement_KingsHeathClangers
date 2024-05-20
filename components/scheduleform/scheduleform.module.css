@@ -6,7 +6,7 @@
   font-family: "Montserrat", sans-serif;
   font-size: 100%;
   background-color: #ffffff;
-  padding: 15px 30px;
+  padding: 15px 20px;
   border-radius: 5px;
   border-style: solid;
   border-color: #cccccc;
@@ -109,6 +109,10 @@
     0px 3px 6px rgba(0, 0, 0, 0.16),
     0px 3px 6px rgba(0, 0, 0, 0.23);
   font-weight: 500;
+}
+
+.requestButton:hover {
+  background-color: #484d58;
 }
 
 @media (max-width: 860px) {
