@@ -75,9 +75,9 @@ $danger: #f44336;
     border-color: $dark!important;
     color: $light!important;
 }
-    .fc-daygrid-event:hover {
-    /* Lighter background color when active */
-    background-color: $primary!important; 
+.fc-daygrid-event:hover {
+/* Lighter background color when active */
+background-color: $primary!important; 
     cursor: pointer;
 }
     
