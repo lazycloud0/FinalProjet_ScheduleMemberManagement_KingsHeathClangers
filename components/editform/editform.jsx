@@ -17,6 +17,7 @@ export default function EditForm() {
     time: "",
     team: "",
     location: "",
+    spots_available: 1, // Initialize with a default value of 1
   });
 
   const [touched, setTouched] = useState({
@@ -25,6 +26,7 @@ export default function EditForm() {
     time: false,
     team: false,
     location: false,
+    spots_available: false,
   });
 
   const [valid, setValid] = useState({
@@ -33,6 +35,7 @@ export default function EditForm() {
     time: true,
     team: true,
     location: true,
+    spots_available: true,
   });
 
   useEffect(() => {
@@ -61,6 +64,7 @@ export default function EditForm() {
             time: game.time,
             team: game.team,
             location: game.location,
+            spots_available: game.spots_available,
           });
           setForm({
             event_type: game.event_type,
@@ -68,6 +72,7 @@ export default function EditForm() {
             time: game.time,
             team: game.team,
             location: game.location,
+            spots_available: game.spots_available,
           });
         }
       };
@@ -96,6 +101,7 @@ export default function EditForm() {
       time: !!form.time,
       team: !!form.team,
       location: !!form.location,
+      spots_available: form.spots_available > 0,
     };
 
     setValid(newValid);
@@ -203,6 +209,23 @@ export default function EditForm() {
             </select>
             {!valid.team && touched.team && (
               <div style={{ color: "red" }}>Team is required</div>
+            )}
+          </div>
+          <div className={styles.formSection}>
+            <label className={styles.label} htmlFor="spots_available">
+              Total Spaces:
+            </label>
+            <input
+              type="number"
+              id="spots_available"
+              name="spots_available"
+              min="0"
+              max="500"
+              value={form.spots_available}
+              onChange={handleInputChange}
+            />
+            {!valid.spots_available && touched.spots_available && (
+              <div style={{ color: "red" }}>Number of spaces cannot be 0</div>
             )}
           </div>
 
