@@ -9,7 +9,7 @@ export default function Schedule() {
       <div className={styles.container}>
         <LargeLogo className={styles.largeLogo} />
         <Suspense fallback={<div>Loading...</div>}>
-          <Booking />
+          <Booking className={styles.mainBooking} />
         </Suspense>
       </div>
     </div>
