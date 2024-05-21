@@ -178,7 +178,7 @@
     border-style: solid !important;
     border-color: #cccccc !important;
     border-width: 1px !important;
-    padding: 4% 2% !important;
+    /* padding: 4% 2% !important; */
   }
 
   .formSection input[type="time"] {
@@ -192,7 +192,7 @@
     border-style: solid !important;
     border-color: #cccccc !important;
     border-width: 1px !important;
-    padding: 4% 2% !important;
+    /* padding: 4% 2% !important; */
   }
   .subtitle {
     font-size: 170%;
