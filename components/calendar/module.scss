@@ -17,8 +17,9 @@ $danger: #f44336;
 
 /* styling for today only */
 .btn.fc-today-button {
-    padding-left: 2rem!important; 
-    padding-right: 2rem!important;
+    padding-left: 1rem!important; 
+    padding-right: 1rem!important;
+    height: 22px!important;
   }
 
   .btn.fc-today-button:hover {
@@ -34,8 +35,11 @@ $danger: #f44336;
 
 /* styling for prev, next only */
 .btn-group >.btn.fc-prev-button,.btn-group >.btn.fc-next-button {
-    padding-left: 1rem!important; 
-    padding-right: 1rem!important; 
+    padding-left: 4px!important; 
+    padding-right: 4px!important;
+    height: 22px!important; 
+    white-space: nowrap;
+    text-align: center!important;
 }
 
 
@@ -81,7 +85,10 @@ background-color: $primary!important;
     cursor: pointer;
 }
     
-
+.fc-toolbar-title {
+    white-space: nowrap;
+font-size: 18px!important;
+ }
 
 
 // IMPORTANT! this must stay at the end of the file! */
