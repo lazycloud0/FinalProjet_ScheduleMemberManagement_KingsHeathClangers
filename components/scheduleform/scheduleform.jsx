@@ -11,7 +11,7 @@ const initialState = {
     time: "",
     location: "",
     team: "",
-    spots_available: 0, // New field for spots available
+    spots_available: "", // Initialize as an empty string for the default selection
   },
   errors: {},
   loading: false,
@@ -26,7 +26,10 @@ const times = Array.from({ length: 48 }, (v, i) => {
 });
 
 const allowedTeams = ["Men", "Women", "Under 14s", "Under 18s", "Open to All"];
-const spotsAvailableOptions = Array.from({ length: 501 }, (v, i) => i);
+const spotsAvailableOptions = [
+  "Number of spaces",
+  ...Array.from({ length: 500 }, (v, i) => i + 1),
+];
 
 const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
 const timeRegex = /^([0-1][0-9]|2[0-3]):[0-5][0-9]$/;
@@ -143,7 +146,7 @@ export default function Form() {
 
     if (name === "spots_available") {
       const spotsValue = parseInt(value, 10);
-      if (spotsValue < 0 || isNaN(spotsValue)) {
+      if (value === "Number of spaces" || spotsValue < 0 || isNaN(spotsValue)) {
         dispatch({
           type: "UPDATE_ERRORS",
           payload: {
@@ -214,7 +217,10 @@ export default function Form() {
         }
       }
 
-      if (formData.spots_available < 1) {
+      if (
+        formData.spots_available === "" ||
+        formData.spots_available === "Number of spaces"
+      ) {
         newErrors.spots_available = "Number of spaces is required";
       }
 
@@ -351,7 +357,7 @@ export default function Form() {
             {errors.team && <span className={styles.error}>{errors.team}</span>}
           </div>
           <div className={styles.formSection}>
-            <label htmlFor="spots_available">Number of spaces</label>
+            <label htmlFor="spots_available"></label>
             <br />
             <select
               id="spots_available"
@@ -359,8 +365,8 @@ export default function Form() {
               value={formData.spots_available}
               onChange={handleInputChanges}
             >
-              {spotsAvailableOptions.map((option) => (
-                <option key={option} value={option}>
+              {spotsAvailableOptions.map((option, index) => (
+                <option key={index} value={option}>
                   {option}
                 </option>
               ))}
