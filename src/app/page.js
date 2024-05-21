@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <LargeLogo className={styles.largeLogo} />
+      <button className={styles.loginButton}>LOGIN</button>
     </main>
   );
 }
