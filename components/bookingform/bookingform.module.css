@@ -28,6 +28,12 @@
   font-size: 85%;
 }
 
+.errorMessage {
+  color: red;
+  font-size: 120%;
+  margin-top: 3%;
+}
+
 .requestButton {
   background-color: #f25e05;
   color: white;

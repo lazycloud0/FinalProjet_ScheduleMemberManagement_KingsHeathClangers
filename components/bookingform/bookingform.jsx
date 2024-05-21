@@ -49,7 +49,6 @@ function Booking() {
 
             spots_available: game.spots_available,
             attendees: game.attendees,
-
           });
         }
       };
@@ -89,16 +88,13 @@ function Booking() {
             <p>Location: {event.location}</p>
             <p>Team: {event.team}</p>
 
-            <p>Total Spaces: {event.spots_available}</p>
-            <p>Remaining Places: {remainingPlaces}</p>
+            <p>
+              Remaining Spaces: {remainingPlaces} / {event.spots_available}
+            </p>
 
             {errorMessage && (
               <p className={styles.errorMessage}>{errorMessage}</p>
             )}
-
-
-            <p>Total spaces for the event: {event.spots_available}</p>{" "}
-            {/* Display spots_available */}
 
             <button className={styles.requestButton} onClick={handleBookIn}>
               BOOK IN
