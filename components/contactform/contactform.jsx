@@ -40,16 +40,26 @@ const ContactForm = () => {
   return (
     <form onSubmit={sendEmail} className={styles.formContainer}>
       <h2 className={styles.subtitle}>Contact Us</h2>
-      <label className={styles.contactLabel}>Name:</label>
-      <input className={styles.contactInput} type="text" name="user_name" />
-      <label className={styles.contactLabel}>
-        <br></br>Email:
-      </label>
-      <input className={styles.contactInput} type="email" name="user_email" />
-      <label className={styles.contactLabel}>
-        <br></br>Message:
-      </label>
-      <textarea className={styles.contactBox} name="message" />
+      <input
+        className={styles.contactInput}
+        type="text"
+        name="user_name"
+        placeholder="Name"
+        aria-label="Name"
+      />
+      <input
+        className={styles.contactInput}
+        type="email"
+        name="user_email"
+        placeholder="Email"
+        aria-label="Email"
+      />
+      <textarea
+        className={styles.contactBox}
+        name="message"
+        placeholder="Message"
+        aria-label="Message"
+      />
       <input
         className={styles.contactButton}
         type="submit"
