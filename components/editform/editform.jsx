@@ -130,7 +130,7 @@ export default function EditForm() {
     <div className={styles.container}>
       {event && (
         <form className={styles.contactForm} onSubmit={updateGame}>
-          <h3 className={styles.subtitle}>Edit Event</h3>
+          <h3 className={styles.subtitle}>Amend Event</h3>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="event_type">
               Event Type:
@@ -156,6 +156,7 @@ export default function EditForm() {
               name="date"
               value={form.date}
               onChange={handleInputChange}
+              className={styles.label}
             />
             {!valid.date && touched.date && (
               <div style={{ color: "red" }}>Date is required</div>
@@ -171,6 +172,7 @@ export default function EditForm() {
               name="time"
               value={form.time}
               onChange={handleInputChange}
+              className={styles.label}
             />
             {!valid.time && touched.time && (
               <div style={{ color: "red" }}>Time is required</div>
@@ -200,6 +202,7 @@ export default function EditForm() {
               name="team"
               value={form.team}
               onChange={handleInputChange}
+              className={styles.label}
             >
               {allowedTeams.map((team) => (
                 <option key={team} value={team}>
@@ -232,7 +235,10 @@ export default function EditForm() {
           <button className={styles.requestButton} type="submit">
             UPDATE EVENT
           </button>
-          <button className={styles.requestButton} onClick={deleteGame}>
+          <button
+            className={`${styles.requestButton} ${styles.deleteButton}`}
+            onClick={deleteGame}
+          >
             DELETE EVENT
           </button>
         </form>
