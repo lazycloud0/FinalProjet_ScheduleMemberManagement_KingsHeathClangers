@@ -156,6 +156,7 @@ export default function EditForm() {
               name="date"
               value={form.date}
               onChange={handleInputChange}
+              className={styles.label}
             />
             {!valid.date && touched.date && (
               <div style={{ color: "red" }}>Date is required</div>
@@ -171,6 +172,7 @@ export default function EditForm() {
               name="time"
               value={form.time}
               onChange={handleInputChange}
+              className={styles.label}
             />
             {!valid.time && touched.time && (
               <div style={{ color: "red" }}>Time is required</div>
@@ -200,6 +202,7 @@ export default function EditForm() {
               name="team"
               value={form.team}
               onChange={handleInputChange}
+              className={styles.label}
             >
               {allowedTeams.map((team) => (
                 <option key={team} value={team}>
