@@ -16,9 +16,7 @@ export default function EditConfirmation() {
   return (
     <div className={styles.container}>
       {message === "updated" && (
-        <h1 className={styles.successMessage}>
-          YOUR EVENT HAS BEEN UPDATED SUCCESSFULLY
-        </h1>
+        <h1 className={styles.successMessage}>EVENT SUCCESSFULLY UPDATED</h1>
       )}
       {message === "deleted" && (
         <h1 className={styles.successMessage}>
