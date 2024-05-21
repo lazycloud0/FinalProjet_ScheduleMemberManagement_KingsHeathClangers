@@ -50,7 +50,7 @@ function CalendarComponent() {
           center: "",
           right: "today,prev,next",
         }}
-        aspectRatio={1.5}
+        height="auto"
         events={events}
         eventClick={handleEventClick} // Add eventClick handler
       />
