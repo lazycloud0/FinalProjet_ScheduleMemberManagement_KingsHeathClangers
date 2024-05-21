@@ -54,6 +54,11 @@
   text-align: center; /* Center the text */
 }
 
+.linkDecoration {
+  text-decoration: none;
+  color: inherit;
+}
+
 .loginButton:hover {
   background-color: #484d58;
 }
