@@ -5,13 +5,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 /*The large logo is centered and starts off this size*/
 .largeLogo {
-  height: 300px;
-  width: 300px;
-  margin-bottom: 40px;
+  height: 250px;
+  width: 250px;
+  margin-bottom: 20px;
 }
 
 /*The large logo increases in size when the screen size increases*/
@@ -34,4 +35,30 @@
     height: 700px;
     width: 700px;
   }
+}
+
+/*Login button*/
+.loginButton {
+  background-color: #f25e05;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 150px;
+  box-shadow:
+    0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  font-weight: 500;
+  text-align: center; /* Center the text */
+}
+
+.linkDecoration {
+  text-decoration: none;
+  color: inherit;
+}
+
+.loginButton:hover {
+  background-color: #484d58;
 }
