@@ -10,6 +10,7 @@ function Booking() {
   const router = useRouter(); // Initialize useRouter
   const [eventUUID, setEventUUID] = useState(null);
   const [event, setEvent] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const uuid = searchParams.get("eventUUID");
@@ -45,6 +46,8 @@ function Booking() {
             ),
             team: game.team,
             location: game.location,
+            spots_available: game.spots_available,
+            attendees: game.attendees,
           });
         }
       };
@@ -53,12 +56,24 @@ function Booking() {
   }, [eventUUID]);
 
   const handleBookIn = () => {
-    // Handle book in action here
+    const remainingPlaces =
+      event.spots_available - (event.attendees?.length || 0);
+    if (remainingPlaces <= 0) {
+      setErrorMessage("No available spaces for this event");
+    } else {
+      // Handle book in action here
+      setErrorMessage("");
+      // Perform the booking operation
+    }
   };
 
   const handleEditDelete = () => {
     router.push(`/edit?eventUUID=${eventUUID}`);
   };
+
+  const remainingPlaces = event
+    ? event.spots_available - (event.attendees?.length || 0)
+    : 0;
 
   return (
     <div className={styles.container}>
@@ -71,6 +86,12 @@ function Booking() {
             <p>Time: {event.time}</p>
             <p>Location: {event.location}</p>
             <p>Team: {event.team}</p>
+            <p>Total Spaces: {event.spots_available}</p>
+            <p>Remaining Places: {remainingPlaces}</p>
+
+            {errorMessage && (
+              <p className={styles.errorMessage}>{errorMessage}</p>
+            )}
 
             <button className={styles.requestButton} onClick={handleBookIn}>
               BOOK IN
