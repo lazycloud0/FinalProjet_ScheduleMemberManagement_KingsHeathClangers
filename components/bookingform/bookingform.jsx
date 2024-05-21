@@ -82,14 +82,30 @@ function Booking() {
         event ? (
           <div className={styles.formSection}>
             <h1 className={styles.subtitle}>Event</h1>
-            <p>Title: {event.title}</p>
-            <p>Date: {event.date}</p>
-            <p>Time: {event.time}</p>
-            <p>Location: {event.location}</p>
-            <p>Team: {event.team}</p>
+            <p className={styles.list}>
+              <b>Title:</b>
+              <br></br> {event.title}
+            </p>
+            <p className={styles.list}>
+              <b>Date:</b>
+              <br></br> {event.date}
+            </p>
+            <p className={styles.list}>
+              <b>Time:</b>
+              <br></br> {event.time}
+            </p>
+            <p className={styles.list}>
+              <b>Location:</b>
+              <br></br> {event.location}
+            </p>
+            <p className={styles.list}>
+              <b>Team:</b>
+              <br></br> {event.team}
+            </p>
 
-            <p>
-              Remaining Spaces: {remainingPlaces} / {event.spots_available}
+            <p className={styles.list}>
+              <b>Remaining Spaces:</b>
+              <br></br> {remainingPlaces} / {event.spots_available}
             </p>
 
             {errorMessage && (
@@ -100,7 +116,7 @@ function Booking() {
               BOOK IN
             </button>
             <button className={styles.requestButton} onClick={handleEditDelete}>
-              EDIT / DELETE
+              AMEND EVENT
             </button>
           </div>
         ) : (
