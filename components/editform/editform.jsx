@@ -130,7 +130,7 @@ export default function EditForm() {
     <div className={styles.container}>
       {event && (
         <form className={styles.contactForm} onSubmit={updateGame}>
-          <h3 className={styles.subtitle}>Edit Event</h3>
+          <h3 className={styles.subtitle}>Amend Event</h3>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="event_type">
               Event Type:
@@ -232,7 +232,10 @@ export default function EditForm() {
           <button className={styles.requestButton} type="submit">
             UPDATE EVENT
           </button>
-          <button className={styles.requestButton} onClick={deleteGame}>
+          <button
+            className={`${styles.requestButton} ${styles.deleteButton}`}
+            onClick={deleteGame}
+          >
             DELETE EVENT
           </button>
         </form>
