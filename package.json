@@ -29,11 +29,10 @@
     "bootstrap-icons": "^1.11.3",
     "next": "14.2.3",
     "next-fonts": "^1.5.1",
-    "node-sass": "^9.0.0",
     "react": "^18",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18",
-    "sass": "^1.77.1",
+    "react-router-dom": "^6.23.1",
     "styled-components": "^6.1.11",
     "supabase": "^1.167.4"
   },

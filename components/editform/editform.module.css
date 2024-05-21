@@ -125,16 +125,52 @@
   font-size: 120%;
   margin-top: 20px;
   width: 100%;
+  box-shadow:
+    0px 3px 6px rgba(0, 0, 0, 0.16),
+    0px 3px 6px rgba(0, 0, 0, 0.23);
+  font-weight: 500;
+}
+
+.requestButton:hover {
+  background-color: #484d58;
 }
 
 @media (max-width: 860px) {
   .container {
     width: 90%;
+    margin: auto;
   }
   .contactForm {
     width: 90%;
+    padding: 10px 20px; /* Adjust padding for smaller screens */
+  }
+  .formSection input[type="date"] {
+    width: 100% !important;
+    padding: 10px !important;
+    margin: 5px 0 !important;
+    border-radius: 0px !important;
+    border: 1px solid #ccc !important;
+    background-color: #ffffff !important;
+    border-radius: 5px !important;
+    border-style: solid !important;
+    border-color: #cccccc !important;
+    border-width: 1px !important;
+    padding: 4% 2% !important;
   }
 
+  .formSection input[type="time"] {
+    width: 100% !important;
+    padding: 10px !important;
+    margin: 5px 0 !important;
+    border-radius: 0px !important;
+    border: 1px solid #ccc !important;
+    background-color: #ffffff !important;
+    border-radius: 5px !important;
+    border-style: solid !important;
+    border-color: #cccccc !important;
+    border-width: 1px !important;
+    padding: 4% 2% !important;
+  }
   .subtitle {
     font-size: 170%;
   }
@@ -145,5 +181,6 @@
 
   .requestButton {
     font-size: 100%;
+    padding: 8px 16px; /* Adjust button size for smaller screens */
   }
 }

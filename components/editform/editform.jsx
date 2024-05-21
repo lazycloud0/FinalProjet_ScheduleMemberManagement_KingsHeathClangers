@@ -1,13 +1,15 @@
 "use client";
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation"; // Import useRouter and useSearchParams from next/navigation
 import { supabase } from "../../utils/supabase";
 import styles from "./editform.module.css";
 
-let UUID = "776a4b75-4d52-4920-a244-efe8d8f18c53";
 const allowedTeams = ["Men", "Women", "Under 14s", "Under 18s", "Open to All"];
 
 export default function EditForm() {
+  const router = useRouter(); // Initialize useRouter
+  const searchParams = useSearchParams(); // Initialize useSearchParams
+  const [eventUUID, setEventUUID] = useState(null);
   const [event, setEvent] = useState(null);
   const [form, setForm] = useState({
     event_type: "",
@@ -17,65 +19,111 @@ export default function EditForm() {
     location: "",
   });
 
+  const [touched, setTouched] = useState({
+    event_type: false,
+    date: false,
+    time: false,
+    team: false,
+    location: false,
+  });
+
+  const [valid, setValid] = useState({
+    event_type: true,
+    date: true,
+    time: true,
+    team: true,
+    location: true,
+  });
+
   useEffect(() => {
-    const getGame = async () => {
-      const { data: game, error } = await supabase
-        .from("games")
-        .select("*")
-        .eq("id", UUID)
-        .single();
+    const uuid = searchParams.get("eventUUID");
+    if (uuid) {
+      setEventUUID(uuid);
+    }
+  }, [searchParams]);
 
-      if (error) {
-        console.error("Error fetching game: ", error);
-      } else if (game) {
-        setEvent({
-          id: game.id,
-          event_type: game.event_type,
-          date: game.date,
-          time: game.time,
-          team: game.team,
-          location: game.location,
-        });
-        setForm({
-          event_type: game.event_type,
-          date: game.date,
-          time: game.time,
-          team: game.team,
-          location: game.location,
-        });
-      }
-    };
-    getGame();
-  }, []);
+  useEffect(() => {
+    if (eventUUID) {
+      const getGame = async () => {
+        const { data: game, error } = await supabase
+          .from("games")
+          .select("*")
+          .eq("id", eventUUID)
+          .single();
 
-  const deleteGame = async () => {
-    const { error } = await supabase.from("games").delete().eq("id", UUID);
+        if (error) {
+          console.error("Error fetching game: ", error);
+        } else if (game) {
+          setEvent({
+            id: game.id,
+            event_type: game.event_type,
+            date: game.date,
+            time: game.time,
+            team: game.team,
+            location: game.location,
+          });
+          setForm({
+            event_type: game.event_type,
+            date: game.date,
+            time: game.time,
+            team: game.team,
+            location: game.location,
+          });
+        }
+      };
+      getGame();
+    }
+  }, [eventUUID]);
+
+  const deleteGame = async (e) => {
+    e.preventDefault();
+    const { error } = await supabase.from("games").delete().eq("id", eventUUID);
 
     if (error) {
       console.error("Error deleting game: ", error);
     } else {
       setEvent(null);
+      router.push("/editconfirmation?message=deleted");
     }
   };
 
-  const updateGame = async () => {
-    const { error } = await supabase.from("games").update(form).eq("id", UUID);
+  const updateGame = async (e) => {
+    e.preventDefault();
 
-    if (error) {
-      console.error("Error updating game: ", error);
-    } else {
-      setEvent(form);
+    const newValid = {
+      event_type: !!form.event_type,
+      date: !!form.date,
+      time: !!form.time,
+      team: !!form.team,
+      location: !!form.location,
+    };
+
+    setValid(newValid);
+
+    if (Object.values(newValid).every(Boolean)) {
+      const { error } = await supabase
+        .from("games")
+        .update(form)
+        .eq("id", eventUUID);
+
+      if (error) {
+        console.error("Error updating game: ", error);
+      } else {
+        setEvent(form);
+        router.push("/editconfirmation?message=updated");
+      }
     }
   };
 
   const handleInputChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    setTouched({ ...touched, [e.target.name]: true });
   };
 
   return (
     <div className={styles.container}>
       {event && (
-        <form className={styles.contactForm}>
+        <form className={styles.contactForm} onSubmit={updateGame}>
           <h3 className={styles.subtitle}>Edit Event</h3>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="event_type">
@@ -88,6 +136,9 @@ export default function EditForm() {
               value={form.event_type}
               onChange={handleInputChange}
             />
+            {!valid.event_type && touched.event_type && (
+              <div style={{ color: "red" }}>Event Type is required</div>
+            )}
           </div>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="date">
@@ -100,6 +151,9 @@ export default function EditForm() {
               value={form.date}
               onChange={handleInputChange}
             />
+            {!valid.date && touched.date && (
+              <div style={{ color: "red" }}>Date is required</div>
+            )}
           </div>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="time">
@@ -112,6 +166,9 @@ export default function EditForm() {
               value={form.time}
               onChange={handleInputChange}
             />
+            {!valid.time && touched.time && (
+              <div style={{ color: "red" }}>Time is required</div>
+            )}
           </div>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="location">
@@ -124,6 +181,9 @@ export default function EditForm() {
               value={form.location}
               onChange={handleInputChange}
             />
+            {!valid.location && touched.location && (
+              <div style={{ color: "red" }}>Location is required</div>
+            )}
           </div>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="team">
@@ -141,9 +201,12 @@ export default function EditForm() {
                 </option>
               ))}
             </select>
+            {!valid.team && touched.team && (
+              <div style={{ color: "red" }}>Team is required</div>
+            )}
           </div>
 
-          <button className={styles.requestButton} onClick={updateGame}>
+          <button className={styles.requestButton} type="submit">
             UPDATE EVENT
           </button>
           <button className={styles.requestButton} onClick={deleteGame}>
