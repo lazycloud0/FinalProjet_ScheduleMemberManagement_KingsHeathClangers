@@ -269,112 +269,106 @@ export default function Form() {
   }
 
   return (
-    <>
-      <div className={styles.container}>
-        <form
-          className={styles.contactForm}
-          onSubmit={handleSubmit}
-          disabled={loading}
-        >
-          <h3 className={styles.subtitle}>Add New Event</h3>
-          <div className={styles.formSection}>
-            <label htmlFor="event_type">Event Name:</label>
-            <input
-              type="text"
-              id="event_type"
-              name="event_type"
-              value={formData.event_type}
-              onChange={handleInputChanges}
-            />
-            {errors.event_type && (
-              <span className={styles.error}>{errors.event_type}</span>
-            )}
-          </div>
-          <div className={styles.formSection}>
-            <label htmlFor="date">Date:</label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              value={formData.date}
-              onChange={handleInputChanges}
-              className={styles.dateAndTimeInputBox}
-            />
-            {errors.date && <span className={styles.error}>{errors.date}</span>}
-          </div>
-          <div className={styles.formSection}>
-            <label htmlFor="time">Time:</label>
-            <input
-              type="time"
-              id="time"
-              name="time"
-              value={formData.time}
-              onChange={handleInputChanges}
-              className={styles.dateAndTimeInputBox}
-            />
-            {errors.time && <span className={styles.error}>{errors.time}</span>}
-          </div>
-          <div className={styles.formSection}>
-            <label htmlFor="location">Location:</label>
-            <input
-              type="text"
-              id="location"
-              name="location"
-              value={formData.location}
-              onChange={handleInputChanges}
-            />
-            {errors.location && (
-              <span className={styles.error}>{errors.location}</span>
-            )}
-          </div>
-          <div className={styles.formSection}>
-            <label htmlFor="team">Select a Team:</label>
-            <select
-              id="team"
-              name="team"
-              value={formData.team}
-              onChange={handleInputChanges}
-              className={styles.placeholderText}
-            >
-              <option value=""></option>
-              {allowedTeams.map((team) => (
-                <option key={team} value={team}>
-                  {team}
-                </option>
-              ))}
-            </select>
-            {errors.team && <span className={styles.error}>{errors.team}</span>}
-          </div>
-          <div className={styles.formSection}>
-            <label htmlFor="spots_available">Number of Spaces:</label>
-            <select
-              id="spots_available"
-              name="spots_available"
-              value={formData.spots_available}
-              onChange={handleInputChanges}
-              className={styles.placeholderText}
-            >
-              {spotsAvailableOptions.map((option, index) => (
-                <option key={index} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-            {errors.spots_available && (
-              <span className={styles.error}>{errors.spots_available}</span>
-            )}
-          </div>
-          {loading && <div>Loading...</div>}
-          {message && <div>{message}</div>}
-          <button
-            className={styles.requestButton}
-            type="submit"
-            disabled={loading}
+    <div className={styles.container}>
+      <form
+        className={styles.scheduleForm}
+        onSubmit={handleSubmit}
+        disabled={loading}
+      >
+        <h3 className={styles.subtitle}>Add New Event</h3>
+        <div className={styles.formSection}>
+          <label htmlFor="event_type">Event Name:</label>
+          <input
+            type="text"
+            id="event_type"
+            name="event_type"
+            value={formData.event_type}
+            onChange={handleInputChanges}
+          />
+          {errors.event_type && (
+            <span className={styles.error}>{errors.event_type}</span>
+          )}
+        </div>
+        <div className={styles.formSection}>
+          <label htmlFor="date">Date:</label>
+          <input
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
+            onChange={handleInputChanges}
+            className={styles.dateAndTimeInputBox}
+          />
+          {errors.date && <span className={styles.error}>{errors.date}</span>}
+        </div>
+        <div className={styles.formSection}>
+          <label htmlFor="time">Time:</label>
+          <input
+            type="time"
+            id="time"
+            name="time"
+            value={formData.time}
+            onChange={handleInputChanges}
+            className={styles.dateAndTimeInputBox}
+          />
+          {errors.time && <span className={styles.error}>{errors.time}</span>}
+        </div>
+        <div className={styles.formSection}>
+          <label htmlFor="location">Location:</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            value={formData.location}
+            onChange={handleInputChanges}
+          />
+          {errors.location && (
+            <span className={styles.error}>{errors.location}</span>
+          )}
+        </div>
+        <div className={styles.formSection}>
+          <label htmlFor="team">Select a Team:</label>
+          <select
+            id="team"
+            name="team"
+            value={formData.team}
+            onChange={handleInputChanges}
+            className={styles.placeholderText}
           >
-            ADD EVENT
-          </button>
-        </form>
-      </div>
-    </>
+            <option value=""></option>
+            {allowedTeams.map((team) => (
+              <option key={team} value={team}>
+                {team}
+              </option>
+            ))}
+          </select>
+          {errors.team && <span className={styles.error}>{errors.team}</span>}
+        </div>
+        <div className={styles.formSection}>
+          <label htmlFor="spots_available">Number of Spaces:</label>
+          <select
+            id="spots_available"
+            name="spots_available"
+            value={formData.spots_available}
+            onChange={handleInputChanges}
+            className={styles.placeholderText}
+          >
+            {spotsAvailableOptions.map((option, index) => (
+              <option key={index} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+          {errors.spots_available && (
+            <span className={styles.error}>{errors.spots_available}</span>
+          )}
+        </div>
+        {loading && <div>Loading...</div>}
+        {message && <div>{message}</div>}
+        <button className={styles.addButton} type="submit" disabled={loading}>
+          ADD EVENT
+        </button>
+      </form>
+    </div>
   );
 }
