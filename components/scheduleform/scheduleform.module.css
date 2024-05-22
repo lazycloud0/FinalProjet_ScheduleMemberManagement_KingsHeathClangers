@@ -1,122 +1,53 @@
 .container {
-  width: 30%;
+  width: 100%;
 }
-
-.contactForm {
+.scheduleForm {
   font-family: "Montserrat", sans-serif;
-  font-size: 100%;
+  font-size: 1rem;
   background-color: #ffffff;
-  padding: 15px 20px;
+  padding: 15px 30px;
   border-radius: 5px;
   border-style: solid;
   border-color: #cccccc;
   border-width: 1px;
-  width: 100%;
   color: black;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
-.contactForm input[type="text"],
-.contactForm input[type="search"] {
-  background-color: #ffffff; /* Replace #yourColor with the color you want */
+.scheduleForm input[type="text"],
+.scheduleForm input[type="date"],
+.scheduleForm input[type="time"],
+.scheduleForm select {
+  background-color: #ffffff;
   color: black;
-  padding: 2% 2%;
-  width: 100%;
+  padding: 4% 2%;
   border-radius: 5px;
   border-style: solid;
   border-color: #cccccc;
   border-width: 1px;
-  font-size: 120%;
+  font-size: 1rem;
+  margin-top: 2%;
+  width: 80vw;
+  height: 50px;
 }
-
 .subtitle {
   text-align: left;
-  font-size: 180%;
+  font-size: 1.8rem;
   padding-top: 2%;
-  margin-bottom: 15px;
+  padding-bottom: 5%;
 }
-
 .formSection {
-  font-size: 120%;
+  font-size: 1rem;
+  margin-bottom: 3%;
 }
-
-.placeholder::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: black;
-  font-size: 85%;
-}
-.placeholder::-moz-placeholder {
-  /* Firefox 19+ */
-  color: black;
-}
-.placeholder:-ms-input-placeholder {
-  /* IE 10+ */
-  color: black;
-}
-.placeholder:-moz-placeholder {
-  /* Firefox 18- */
-  color: black;
-}
-
-.error {
-  color: red;
-}
-
-.optionList {
-  background-color: #ffffff; /* Replace #yourColor with the color you want */
-  color: black;
-  padding: 2%;
-  width: 100%;
-}
-
-.formSection select {
-  width: 100%; /* Full width */
-  padding: 10px; /* Some padding */
-  border-radius: 4px; /* Rounded corners */
-  border: 1px solid #ccc; /* Gray border */
-  appearance: none; /* Remove default appearance */
-  background-color: #ffffff; /* Light gray background */
-  border-radius: 5px;
-  border-style: solid;
-  border-color: #cccccc;
-  border-width: 1px;
-  padding: 4% 2%;
-}
-
-.formSection input[type="date"] {
-  width: 100% !important;
-  padding: 10px !important;
-  margin: 5px 0 !important;
-  border-radius: 0px !important;
-  border: 1px solid #ccc !important;
-  background-color: #ffffff !important;
-  border-radius: 5px !important;
-  border-style: solid !important;
-  border-color: #cccccc !important;
-  border-width: 1px !important;
-  padding: 4% 2% !important;
-}
-
-.formSection input[type="time"] {
-  width: 100% !important;
-  padding: 10px !important;
-  margin: 5px 0 !important;
-  border-radius: 0px !important;
-  border: 1px solid #ccc !important;
-  background-color: #ffffff !important;
-  border-radius: 5px !important;
-  border-style: solid !important;
-  border-color: #cccccc !important;
-  border-width: 1px !important;
-  padding: 4% 2% !important;
-}
-
-.requestButton {
+.addButton {
   background-color: #f25e05;
   color: white;
   border: none;
   border-radius: 30px;
   padding: 10px 20px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 120%;
   margin-top: 20px;
   width: 100%;
   box-shadow:
@@ -124,74 +55,36 @@
     0px 3px 6px rgba(0, 0, 0, 0.23);
   font-weight: 500;
 }
-
-.requestButton:hover {
+.addButton:hover {
   background-color: #484d58;
 }
 
 @media (max-width: 860px) {
-  .container {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  }
-  .contactForm {
+  .scheduleForm {
     width: 90%;
+    padding: 10px 20px;
   }
-
   .subtitle {
-    font-size: 170%;
+    font-size: 1.7rem;
   }
-  .formSection {
-    margin-bottom: 10px;
-    font-size: 100%;
-  }
-
-  .requestButton {
-    font-size: 100%;
-  }
-
-  .formSection input[type="date"] {
-    width: 100% !important;
-    padding: 10px !important;
-    margin: 5px 0 !important;
-    border-radius: 0px !important;
-    border: 1px solid #ccc !important;
-    background-color: #ffffff !important;
-    border-radius: 5px !important;
-    border-style: solid !important;
-    border-color: #cccccc !important;
-    border-width: 1px !important;
-    padding: 4% 2% !important;
-  }
-
-  .formSection input[type="time"] {
-    width: 100% !important;
-    padding: 10px !important;
-    margin: 5px 0 !important;
-    border-radius: 0px !important;
-    border: 1px solid #ccc !important;
-    background-color: #ffffff !important;
-    border-radius: 5px !important;
-    border-style: solid !important;
-    border-color: #cccccc !important;
-    border-width: 1px !important;
-    padding: 4% 2% !important;
+  .addButton {
+    font-size: 1rem;
+    padding: 8px 16px;
   }
 }
 
-.placeholderText {
-  color: #000000;
+@media (min-width: 861px) {
+  .scheduleForm {
+    width: 75%;
+  }
+  .scheduleForm input[type="text"],
+  .scheduleForm input[type="date"],
+  .scheduleForm input[type="time"],
+  .scheduleForm select {
+    width: 40vw;
+  }
 }
 
-.dateAndTimeInputBox {
-  height: 50px !important;
-  width: 310px !important;
-}
-
-.formSection label,
-.formSection input {
-  display: block;
-  margin-bottom: 10px; /* Adjust this value to increase or decrease the gap */
+.error {
+  color: red;
 }
