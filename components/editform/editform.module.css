@@ -178,7 +178,8 @@
 } */
 
 .datInput {
-  width: 100% !important;
+  height: 42px !important;
+  width: 217px !important;
   margin-top: 5px !important;
   margin-bottom: 5px !important;
   border-radius: 5px !important;
@@ -187,4 +188,5 @@
   border-width: 1px !important;
   padding: 8px 4px !important;
   color: black !important;
+  background-color: #ffffff !important;
 }
