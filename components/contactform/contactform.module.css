@@ -12,6 +12,10 @@
   width: 30%;
 }
 
+.error {
+  color: red;
+}
+
 .formContainer input[type="text"],
 .formContainer input[type="email"] {
   background-color: #ffffff; /* Replace #yourColor with the color you want */

@@ -1,19 +1,25 @@
 .container {
   width: 30%;
+  height: 50%;
   font-family: "Montserrat", sans-serif;
   padding: 15px 20px;
 
   color: black;
-  margin: 0 auto; /* Center the container */
+  margin: 5% auto; /* Center the container */
 }
 
 .successMessage {
   text-align: center; /* Center the text */
-  font-size: 150%;
+  font-size: 160%;
   padding-top: 2%;
   color: #000000; /* Use the same color as the requestButton */
 }
-
+.thankYouMessage {
+  text-align: center;
+  font-size: 120%;
+  margin-top: 3%;
+  color: #000000;
+}
 .returnButton {
   background-color: #f25e05;
   color: white;
@@ -22,7 +28,7 @@
   padding: 10px 20px;
   cursor: pointer;
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 10%;
   width: 100%;
   box-shadow:
     0px 3px 6px rgba(0, 0, 0, 0.16),
