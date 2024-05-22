@@ -354,10 +354,9 @@ export default function Form() {
               name="team"
               value={formData.team}
               onChange={handleInputChanges}
+              className={styles.placeholderText}
             >
-              <option value="" className={styles.placeholderText}>
-                Select a team
-              </option>
+              <option value="">Select a team</option>
               {allowedTeams.map((team) => (
                 <option key={team} value={team}>
                   {team}
