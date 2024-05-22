@@ -70,7 +70,6 @@
 .formSection select {
   width: 100%; /* Full width */
   padding: 10px; /* Some padding */
-  margin: 5px 0; /* Some margin */
   border-radius: 4px; /* Rounded corners */
   border: 1px solid #ccc; /* Gray border */
   appearance: none; /* Remove default appearance */
@@ -189,4 +188,10 @@
 .dateAndTimeInputBox {
   height: 42px !important;
   width: 270px !important;
+}
+
+.formSection label,
+.formSection input {
+  display: block;
+  margin-bottom: 10px; /* Adjust this value to increase or decrease the gap */
 }
