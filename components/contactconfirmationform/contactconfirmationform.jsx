@@ -16,7 +16,9 @@ export default function EditConfirmation() {
   return (
     <div className={styles.container}>
       <h1 className={styles.successMessage}>MESSAGE SENT SUCCESSFULY</h1>
-      <h3>Thank you for contacting Kings Heath Clangers</h3>
+      <p className={styles.thankYouMessage}>
+        Thank you for contacting Kings Heath Clangers
+      </p>
       <button className={styles.returnButton} onClick={handleReturn}>
         RETURN TO HOME PAGE
       </button>{" "}
