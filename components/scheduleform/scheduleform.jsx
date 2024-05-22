@@ -278,12 +278,11 @@ export default function Form() {
         >
           <h3 className={styles.subtitle}>Add New Event</h3>
           <div className={styles.formSection}>
-            <label htmlFor="event_type"></label>
+            <label htmlFor="event_type">Event Name:</label>
+            <b />
             <br />
             <input
               type="text"
-              placeholder="Event Name"
-              className={styles.placeholder}
               id="event_type"
               name="event_type"
               value={formData.event_type}
@@ -295,7 +294,8 @@ export default function Form() {
             )}
           </div>
           <div className={styles.formSection}>
-            <label htmlFor="date"></label>
+            <label htmlFor="date">Date:</label>
+            <b />
             <br />
             <input
               type="date"
@@ -303,14 +303,14 @@ export default function Form() {
               name="date"
               value={formData.date}
               onChange={handleInputChanges}
-              placeholder="DD/MM/YYYY"
-              className={styles.placeholderText}
+              className={styles.dateAndTimeInputBox}
             />
             <br />
             {errors.date && <span className={styles.error}>{errors.date}</span>}
           </div>
           <div className={styles.formSection}>
-            <label htmlFor="time"></label>
+            <label htmlFor="time">Time:</label>
+            <b />
             <br />
             <input
               type="time"
@@ -318,19 +318,17 @@ export default function Form() {
               name="time"
               value={formData.time}
               onChange={handleInputChanges}
-              placeholder="HH:MM"
-              className={styles.placeholderText}
+              className={styles.dateAndTimeInputBox}
             />
             <br />
             {errors.time && <span className={styles.error}>{errors.time}</span>}
           </div>
           <div className={styles.formSection}>
-            <label htmlFor="location"></label>
+            <label htmlFor="location">Location:</label>
+            <b />
             <br />
             <input
               type="text"
-              placeholder="Location"
-              className={styles.placeholder}
               id="location"
               name="location"
               value={formData.location}
@@ -342,7 +340,8 @@ export default function Form() {
             )}
           </div>
           <div className={styles.formSection}>
-            <label htmlFor="team"></label>
+            <label htmlFor="team">Select a Team:</label>
+            <b />
             <br />
             <select
               id="team"
@@ -351,7 +350,7 @@ export default function Form() {
               onChange={handleInputChanges}
               className={styles.placeholderText}
             >
-              <option value="">Select a team</option>
+              <option value=""></option>
               {allowedTeams.map((team) => (
                 <option key={team} value={team}>
                   {team}
@@ -362,7 +361,7 @@ export default function Form() {
             {errors.team && <span className={styles.error}>{errors.team}</span>}
           </div>
           <div className={styles.formSection}>
-            <label htmlFor="spots_available"></label>
+            <label htmlFor="spots_available">Number of Spaces:</label>
             <br />
             <select
               id="spots_available"

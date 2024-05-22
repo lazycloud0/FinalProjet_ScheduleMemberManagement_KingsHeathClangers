@@ -31,6 +31,7 @@
   text-align: left;
   font-size: 180%;
   padding-top: 2%;
+  margin-bottom: 15px;
 }
 
 .formSection {
@@ -180,4 +181,9 @@
 
 .placeholderText {
   color: #000000;
+}
+
+.dateAndTimeInputBox {
+  height: 42px !important;
+  width: 270px !important;
 }
