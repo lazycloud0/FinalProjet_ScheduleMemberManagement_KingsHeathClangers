@@ -177,3 +177,7 @@
     padding: 4% 2% !important;
   }
 }
+
+.placeholderText {
+  color: #000000;
+}
