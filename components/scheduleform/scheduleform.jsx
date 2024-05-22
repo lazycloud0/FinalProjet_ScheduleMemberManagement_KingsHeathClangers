@@ -279,8 +279,6 @@ export default function Form() {
           <h3 className={styles.subtitle}>Add New Event</h3>
           <div className={styles.formSection}>
             <label htmlFor="event_type">Event Name:</label>
-            <b />
-            <br />
             <input
               type="text"
               id="event_type"
@@ -288,15 +286,12 @@ export default function Form() {
               value={formData.event_type}
               onChange={handleInputChanges}
             />
-            <br />
             {errors.event_type && (
               <span className={styles.error}>{errors.event_type}</span>
             )}
           </div>
           <div className={styles.formSection}>
             <label htmlFor="date">Date:</label>
-            <b />
-            <br />
             <input
               type="date"
               id="date"
@@ -305,13 +300,10 @@ export default function Form() {
               onChange={handleInputChanges}
               className={styles.dateAndTimeInputBox}
             />
-            <br />
             {errors.date && <span className={styles.error}>{errors.date}</span>}
           </div>
           <div className={styles.formSection}>
             <label htmlFor="time">Time:</label>
-            <b />
-            <br />
             <input
               type="time"
               id="time"
@@ -320,13 +312,10 @@ export default function Form() {
               onChange={handleInputChanges}
               className={styles.dateAndTimeInputBox}
             />
-            <br />
             {errors.time && <span className={styles.error}>{errors.time}</span>}
           </div>
           <div className={styles.formSection}>
             <label htmlFor="location">Location:</label>
-            <b />
-            <br />
             <input
               type="text"
               id="location"
@@ -334,15 +323,12 @@ export default function Form() {
               value={formData.location}
               onChange={handleInputChanges}
             />
-            <br />
             {errors.location && (
               <span className={styles.error}>{errors.location}</span>
             )}
           </div>
           <div className={styles.formSection}>
             <label htmlFor="team">Select a Team:</label>
-            <b />
-            <br />
             <select
               id="team"
               name="team"
@@ -357,12 +343,10 @@ export default function Form() {
                 </option>
               ))}
             </select>
-            <br />
             {errors.team && <span className={styles.error}>{errors.team}</span>}
           </div>
           <div className={styles.formSection}>
             <label htmlFor="spots_available">Number of Spaces:</label>
-            <br />
             <select
               id="spots_available"
               name="spots_available"
@@ -376,7 +360,6 @@ export default function Form() {
                 </option>
               ))}
             </select>
-            <br />
             {errors.spots_available && (
               <span className={styles.error}>{errors.spots_available}</span>
             )}
