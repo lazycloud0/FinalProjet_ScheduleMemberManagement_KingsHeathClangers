@@ -177,7 +177,7 @@
 
 .datInput {
   height: 42px !important;
-  width: 217px !important;
+  width: 260px !important;
   margin-top: 5px !important;
   margin-bottom: 5px !important;
   border-radius: 5px !important;
@@ -187,4 +187,5 @@
   padding: 8px 4px !important;
   color: black !important;
   background-color: #ffffff !important;
+  text-align: left !important;
 }
