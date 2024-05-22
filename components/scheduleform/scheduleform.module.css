@@ -131,7 +131,10 @@
 
 @media (max-width: 860px) {
   .container {
-    width: 90%;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
   }
   .contactForm {
     width: 90%;
