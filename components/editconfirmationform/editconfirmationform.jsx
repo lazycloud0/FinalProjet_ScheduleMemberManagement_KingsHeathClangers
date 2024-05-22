@@ -16,12 +16,10 @@ export default function EditConfirmation() {
   return (
     <div className={styles.container}>
       {message === "updated" && (
-        <h1 className={styles.successMessage}>EVENT SUCCESSFULLY UPDATED</h1>
+        <h1 className={styles.successMessage}>EVENT UPDATED SUCCESSFULLY</h1>
       )}
       {message === "deleted" && (
-        <h1 className={styles.successMessage}>
-          THE EVENT HAS BEEN DELETED SUCCESSFULLY
-        </h1>
+        <h1 className={styles.successMessage}>EVENT DELETED SUCCESSFULLY</h1>
       )}
       <button className={styles.returnButton} onClick={handleReturn}>
         RETURN TO THE CALENDAR

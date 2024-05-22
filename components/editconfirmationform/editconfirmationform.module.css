@@ -2,10 +2,7 @@
   width: 30%;
   font-family: "Montserrat", sans-serif;
   padding: 15px 20px;
-  border-radius: 5px;
-  border-style: solid;
-  border-color: #cccccc;
-  border-width: 1px;
+
   color: black;
   margin: 0 auto; /* Center the container */
 }

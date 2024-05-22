@@ -6,13 +6,14 @@ import EditConfirmationForm from "/components/editconfirmationform/editconfirmat
 
 export default function Contact() {
   return (
-    <div className={styles.contactPage}>
-      <div className={styles.container}>
-        <LargeLogo className={styles.largeLogo} />
-        <Suspense fallback={<div>Loading...</div>}>
-          <EditConfirmationForm />
-        </Suspense>
-      </div>
+    <div className={styles.container}>
+      <LargeLogo className={styles.largeLogo} />
+      <Suspense
+        className={styles.confirmation}
+        fallback={<div>Loading...</div>}
+      >
+        <EditConfirmationForm />
+      </Suspense>
     </div>
   );
 }

@@ -15,12 +15,14 @@ export default function EditConfirmation() {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.successMessage}>MESSAGE SENT SUCCESSFULY</h1>
+      <h1 className={styles.successMessage}>
+        MESSAGE SENT <br></br>SUCCESSFULLY
+      </h1>
       <p className={styles.thankYouMessage}>
-        Thank you for contacting Kings Heath Clangers
+        Thank you for contacting <br></br>Kings Heath Clangers
       </p>
       <button className={styles.returnButton} onClick={handleReturn}>
-        RETURN TO HOME PAGE
+        RETURN TO THE HOME PAGE
       </button>{" "}
       {/* Add button */}
     </div>
