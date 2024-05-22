@@ -303,6 +303,8 @@ export default function Form() {
               name="date"
               value={formData.date}
               onChange={handleInputChanges}
+              placeholder="DD/MM/YYYY"
+              className={styles.placeholderText}
             />
             <br />
             {errors.date && <span className={styles.error}>{errors.date}</span>}
@@ -316,6 +318,8 @@ export default function Form() {
               name="time"
               value={formData.time}
               onChange={handleInputChanges}
+              placeholder="HH:MM"
+              className={styles.placeholderText}
             />
             <br />
             {errors.time && <span className={styles.error}>{errors.time}</span>}
@@ -346,7 +350,9 @@ export default function Form() {
               value={formData.team}
               onChange={handleInputChanges}
             >
-              <option value="">Select a team</option>
+              <option value="" className={styles.placeholderText}>
+                Select a team
+              </option>
               {allowedTeams.map((team) => (
                 <option key={team} value={team}>
                   {team}
@@ -364,6 +370,7 @@ export default function Form() {
               name="spots_available"
               value={formData.spots_available}
               onChange={handleInputChanges}
+              className={styles.placeholderText}
             >
               {spotsAvailableOptions.map((option, index) => (
                 <option key={index} value={option}>
