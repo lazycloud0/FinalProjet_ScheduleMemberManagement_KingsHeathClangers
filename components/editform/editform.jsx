@@ -146,33 +146,35 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Event Type is required</div>
             )}
           </div>
-          <div className={styles.formSection}>
-            <label className={styles.label} htmlFor="date">
+          <div className={styles.datSection}>
+            <label className={styles.datlabel} htmlFor="date">
               Date:
             </label>
+            <br />
             <input
               type="date"
               id="date"
               name="date"
               value={form.date}
               onChange={handleInputChange}
-              className={styles.label}
+              className={styles.datInput}
             />
             {!valid.date && touched.date && (
               <div style={{ color: "red" }}>Date is required</div>
             )}
           </div>
-          <div className={styles.formSection}>
-            <label className={styles.label} htmlFor="time">
+          <div className={styles.datSection}>
+            <label className={styles.datlabel} htmlFor="time">
               Time:
             </label>
+            <br />
             <input
               type="time"
               id="time"
               name="time"
               value={form.time}
               onChange={handleInputChange}
-              className={styles.label}
+              className={styles.datInput}
             />
             {!valid.time && touched.time && (
               <div style={{ color: "red" }}>Time is required</div>
