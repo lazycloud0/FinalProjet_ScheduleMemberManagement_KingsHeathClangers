@@ -282,7 +282,7 @@ export default function Form() {
             <br />
             <input
               type="text"
-              placeholder="Event"
+              placeholder="Event Name"
               className={styles.placeholder}
               id="event_type"
               name="event_type"
