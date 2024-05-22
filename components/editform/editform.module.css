@@ -172,11 +172,6 @@
 
 /* Date and Time CSS only */
 
-/* .datSection {
-  display: flex;
-  flex-direction: column;
-} */
-
 .datInput {
   height: 42px !important;
   width: 270px !important;
@@ -189,5 +184,4 @@
   padding: 8px 4px !important;
   color: black !important;
   background-color: #ffffff !important;
-  text-align: left !important;
 }
