@@ -122,8 +122,15 @@ export default function EditForm() {
   };
 
   const handleInputChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setTouched({ ...touched, [e.target.name]: true });
+    let { name, value } = e.target;
+
+    // Capitalize the first letter if the field is 'event_type' or 'location'
+    if (name === "event_type" || name === "location") {
+      value = value.charAt(0).toUpperCase() + value.slice(1);
+    }
+
+    setForm({ ...form, [name]: value });
+    setTouched({ ...touched, [name]: true });
   };
 
   return (

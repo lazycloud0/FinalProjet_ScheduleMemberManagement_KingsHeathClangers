@@ -71,7 +71,12 @@ export default function Form() {
   const { formData, errors, loading } = state;
 
   function handleInputChanges(e) {
-    const { name, value } = e.target;
+    let { name, value } = e.target;
+
+    // Capitalize the first letter if the field is 'event_type' or 'location'
+    if (name === "event_type" || name === "location") {
+      value = value.charAt(0).toUpperCase() + value.slice(1);
+    }
 
     dispatch({
       type: "UPDATE_FORM_DATA",
