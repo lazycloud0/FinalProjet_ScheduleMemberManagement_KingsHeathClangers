@@ -1,107 +1,47 @@
 .container {
-  width: 30%;
+  width: 100%;
 }
 .contactForm {
   font-family: "Montserrat", sans-serif;
-  font-size: 100%;
+  font-size: 1rem;
   background-color: #ffffff;
   padding: 15px 30px;
   border-radius: 5px;
   border-style: solid;
   border-color: #cccccc;
   border-width: 1px;
-  width: 100%;
   color: black;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .contactForm input[type="text"],
-.contactForm input[type="search"] {
-  background-color: #ffffff; /* Replace #yourColor with the color you want */
+.contactForm input[type="search"],
+.contactForm input[type="number"],
+.contactForm input[type="date"],
+.contactForm input[type="time"],
+.contactForm select {
+  background-color: #ffffff;
   color: black;
   padding: 4% 2%;
-  width: 100%;
   border-radius: 5px;
   border-style: solid;
   border-color: #cccccc;
   border-width: 1px;
-  font-size: 100%;
+  font-size: 1rem;
   margin-top: 2%;
+  width: 80vw;
+  height: 50px;
 }
-
 .subtitle {
   text-align: left;
-  font-size: 180%;
+  font-size: 1.8rem;
   padding-top: 2%;
   padding-bottom: 5%;
 }
-
 .formSection {
-  font-size: 100%;
+  font-size: 1rem;
   margin-bottom: 3%;
 }
-
-.placeholder::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: black;
-  font-size: 85%;
-}
-.placeholder::-moz-placeholder {
-  /* Firefox 19+ */
-  color: black;
-}
-.placeholder:-ms-input-placeholder {
-  /* IE 10+ */
-  color: black;
-}
-.placeholder:-moz-placeholder {
-  /* Firefox 18- */
-  color: black;
-}
-
-.error {
-  color: red;
-}
-
-.label {
-  padding-bottom: 10px;
-  color: black;
-}
-
-.optionList {
-  background-color: #ffffff; /* Replace #yourColor with the color you want */
-  color: black;
-  padding: 2%;
-  width: 100%;
-}
-
-.formSection select {
-  width: 100%; /* Full width */
-  padding: 10px; /* Some padding */
-  margin: 5px 0; /* Some margin */
-  border-radius: 4px; /* Rounded corners */
-  border: 1px solid #ccc; /* Gray border */
-  appearance: none; /* Remove default appearance */
-  background-color: #ffffff; /* Light gray background */
-  border-radius: 5px;
-  border-style: solid;
-  border-color: #cccccc;
-  border-width: 1px;
-  padding: 4% 2%;
-}
-
-.formSection input[type="number"] {
-  width: 100% !important;
-  padding: 10px !important;
-  margin: 5px 0 !important;
-  border-radius: 0px !important;
-  border: 1px solid #ccc !important;
-  background-color: #ffffff !important;
-  border-radius: 5px !important;
-  border-style: solid !important;
-  border-color: #cccccc !important;
-  border-width: 1px !important;
-  padding: 4% 2% !important;
-}
-
 .requestButton {
   background-color: #f25e05;
   color: white;
@@ -117,77 +57,39 @@
     0px 3px 6px rgba(0, 0, 0, 0.23);
   font-weight: 500;
 }
-
 .requestButton:hover {
   background-color: #484d58;
 }
-
 .deleteButton {
   background-color: #484d58;
 }
-
 .deleteButton:hover {
   background-color: rgb(27, 26, 26);
 }
-
 @media (max-width: 860px) {
-  .container {
-    width: 100%;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-  }
   .contactForm {
     width: 90%;
-    padding: 10px 20px; /* Adjust padding for smaller screens */
+    padding: 10px 20px;
   }
-
   .subtitle {
-    font-size: 170%;
+    font-size: 1.7rem;
   }
-  .formSection {
-    margin-bottom: 10px;
-    font-size: 100%;
-  }
-
-  .formSection input[type="number"] {
-    width: 100% !important;
-    padding: 10px !important;
-    margin: 5px 0 !important;
-    border-radius: 0px !important;
-    border: 1px solid #ccc !important;
-    background-color: #ffffff !important;
-    border-radius: 5px !important;
-    border-style: solid !important;
-    border-color: #cccccc !important;
-    border-width: 1px !important;
-    padding: 4% 2% !important;
-  }
-
   .requestButton {
-    font-size: 100%;
-    padding: 8px 16px; /* Adjust button size for smaller screens */
+    font-size: 1rem;
+    padding: 8px 16px;
   }
 }
 
-/* Date and Time CSS only */
-
-.datInput {
-  height: 50px !important;
-  width: 310px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  border-radius: 5px !important;
-  border-style: solid !important;
-  border-color: #cccccc !important;
-  border-width: 1px !important;
-  padding: 8px 4px !important;
-  color: black !important;
-  background-color: #ffffff !important;
-}
-
-@media (min-width: 1440px) {
-  .dataInput {
-    width: 360px !important;
+@media (min-width: 861px) {
+  .contactForm {
+    width: 75%;
+  }
+  .contactForm input[type="text"],
+  .contactForm input[type="search"],
+  .contactForm input[type="number"],
+  .contactForm input[type="date"],
+  .contactForm input[type="time"],
+  .contactForm select {
+    width: 40vw;
   }
 }
