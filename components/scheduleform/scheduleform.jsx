@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useReducer } from "react";
 import styles from "./scheduleform.module.css";
-import { supabase } from "../../utils/supabase";
+import { supabase } from "../../src/utils/supabase/superbase.js";
 
 // Initial state for form data and errors
 const initialState = {
