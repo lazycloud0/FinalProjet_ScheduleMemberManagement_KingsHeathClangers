@@ -7,7 +7,8 @@ import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Box from "@mui/material/Box";
 import Link from "@mui/material/Link";
-import styles from "./loginform.module.css"; // Import the CSS module for styling
+import styles from "./loginform.module.css";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 export default function Login() {
   // Initialise state variables for login
@@ -87,117 +88,140 @@ export default function Login() {
     setSignupFormReady(passwordValid);
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#484d58",
+      },
+      secondary: {
+        main: "#f25e05",
+      },
+    },
+    components: {
+      MuiFormHelperText: {
+        styleOverrides: {
+          root: {
+            color: "grey!important",
+            fontWeight: "bold",
+            paddingTop: "5px",
+            opacity: "50%",
+          },
+        },
+      },
+    },
+  });
+
   // Render the login form
   return (
-    <Box className={styles.container}>
-      <FormControlLabel
-        control={<Switch checked={showSignupForm} onChange={handleToggle} />}
-        label={switchLabel}
-      />
-      {!showSignupForm ? (
-        <div className={styles.loginContainer}>
-          <h2 className={styles.header}>Login</h2>
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <TextField
-              label="Email Address"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-            />
-            <TextField
-              label="Password"
-              type="password"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-            />
-            <Link href="#" underline="hover" className={styles.forgotPassword}>
-              Forgot Password?
-            </Link>
-            <Button
-              variant="contained"
-              className={styles.loginButton}
-              type="submit"
-            >
-              Login
-            </Button>
-          </form>
-        </div>
-      ) : (
-        <div className={styles.loginContainer}>
-          <h2 className={styles.header}>Sign Up</h2>
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <TextField
-              label="First Name"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              error={!firstNameValid} // Step 3: Update TextField to display error
-              helperText={!firstNameValid ? "First name is required" : ""} // Display error message if invalid
-              onChange={validateFirstName} // Step 4: Call validation function on input change
-            />
-            <TextField
-              label="Last Name"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              error={!lastNameValid} // Step 3: Update TextField to display error
-              helperText={!lastNameValid ? "Last name is required" : ""} // Display error message if invalid
-              onChange={validateLastName} // Step 4: Call validation function on input change
-            />
-            <TextField
-              label="Email Address"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              error={!emailValid} // Display error if email is not valid
-              helperText={
-                !emailValid ? "Please enter a valid email address." : ""
-              } // Show error message
-              onChange={validateEmail} // Call validation function on input change
-            />
-            <TextField
-              label="Password"
-              type="password"
-              variant="outlined"
-              fullWidth
-              margin="normal"
-              error={!passwordValid} // Display error if password is not valid
-              helperText={
-                !passwordValid
-                  ? "Password must be at least 8 characters long, include one uppercase letter, one symbol and one number."
-                  : ""
-              } // Show error message
-              onChange={validatePassword} // Call validation function on input change
-            />
-            <Link
-              href="/privacy-policy"
-              underline="hover"
-              className={styles.privacyPolicy}
-            >
-              Privacy Policy
-            </Link>
-            <Button
-              variant="contained"
-              className={styles.loginButton}
-              type="submit"
-              disabled={!signupFormReady} // Disable button if form is not ready
-            >
-              Sign Up
-            </Button>
-            {!signupFormReady && (
-              <div style={{ color: "red", marginTop: "10px" }}>
-                Please fill out all fields correctly.
-              </div>
-            )}
-          </form>
-        </div>
-      )}
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box className={styles.container}>
+        <FormControlLabel
+          control={<Switch checked={showSignupForm} onChange={handleToggle} />}
+          label={switchLabel}
+        />
+        {!showSignupForm ? (
+          <div className={styles.loginContainer}>
+            <h2 className={styles.header}>Login</h2>
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <TextField
+                label="Email Address"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+              <TextField
+                label="Password"
+                type="password"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+              />
+              <Link
+                href="#"
+                underline="hover"
+                className={styles.forgotPassword}
+              >
+                Forgot Password?
+              </Link>
+              <Button
+                variant="contained"
+                className={styles.loginButton}
+                type="submit"
+              >
+                Login
+              </Button>
+            </form>
+          </div>
+        ) : (
+          <div className={styles.loginContainer}>
+            <h2 className={styles.header}>Sign Up</h2>
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <TextField
+                label="First Name"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                error={!firstNameValid} // Step 3: Update TextField to display error
+                helperText={!firstNameValid ? "First name is required" : ""} // Display error message if invalid
+                onChange={validateFirstName} // Step 4: Call validation function on input change
+              />
+              <TextField
+                label="Last Name"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                error={!lastNameValid} // Step 3: Update TextField to display error
+                helperText={!lastNameValid ? "Last name is required" : ""} // Display error message if invalid
+                onChange={validateLastName} // Step 4: Call validation function on input change
+              />
+              <TextField
+                label="Email Address"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                error={!emailValid} // Display error if email is not valid
+                helperText={
+                  !emailValid ? "Please enter a valid email address." : ""
+                } // Show error message
+                onChange={validateEmail} // Call validation function on input change
+              />
+              <TextField
+                label="Password"
+                type="password"
+                variant="outlined"
+                fullWidth
+                margin="normal"
+                error={!passwordValid} // Display error if password is not valid
+                helperText={
+                  !passwordValid
+                    ? "Password must be at least 8 characters long, including one uppercase letter, one symbol and one number."
+                    : ""
+                } // Show error message
+                onChange={validatePassword} // Call validation function on input change
+              />
+              <Link
+                href="/privacy-policy"
+                underline="hover"
+                className={styles.privacyPolicy}
+              >
+                Privacy Policy
+              </Link>
+              <Button
+                variant="contained"
+                className={styles.loginButton}
+                type="submit"
+                disabled={!signupFormReady} // Disable button if form is not ready
+              >
+                Sign Up
+              </Button>
+            </form>
+          </div>
+        )}
+      </Box>
+    </ThemeProvider>
   );
 }
 
-// Placeholder function for authentication logic
 function authenticateUser(username, password) {
   // This function should contain the logic to authenticate the user,
   // such as sending a request to a server with the username and password.
