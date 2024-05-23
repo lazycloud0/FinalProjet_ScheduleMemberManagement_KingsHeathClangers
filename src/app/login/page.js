@@ -149,4 +149,3 @@ export default function LoginPage() {
 //   );
 // }
 
-// http://localhost:3000/api/auth/confirm?token_hash=pkce_ac1246981b266ef70f43ff79e36373d4c17d7cbc68f344edf132997e&type=signup
