@@ -6,7 +6,6 @@ import { createClient } from "@/utils/supabase/server";
 
 export default async function Home() {
   const canInitSupabaseClient = () => {
-
     try {
       createClient();
       return true;
@@ -17,11 +16,7 @@ export default async function Home() {
 
   const isSupabaseConnected = canInitSupabaseClient();
 
-
-
-
   return (
-
     <>
       <main className={styles.main}>
         <LargeLogo className={styles.largeLogo} />
@@ -39,14 +34,13 @@ export default async function Home() {
       </main>
     </>
 
-//     <main className={styles.main}>
-//       <LargeLogo className={styles.largeLogo} />
-//       <button className={styles.loginButton}>
-//         <Link href="/login" className={styles.linkDecoration}>
-//           LOGIN
-//         </Link>
-//       </button>
-//     </main>
-
+    //     <main className={styles.main}>
+    //       <LargeLogo className={styles.largeLogo} />
+    //       <button className={styles.loginButton}>
+    //         <Link href="/login" className={styles.linkDecoration}>
+    //           LOGIN
+    //         </Link>
+    //       </button>
+    //     </main>
   );
 }

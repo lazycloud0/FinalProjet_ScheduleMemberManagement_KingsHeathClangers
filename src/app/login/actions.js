@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+//import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 
@@ -9,19 +9,24 @@ export async function login(formData) {
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
-  const data = {
-    email: formData.get("email"),
-    password: formData.get("password"),
-  };
+  //const data = {
+  const email = formData.get("email");
+  const password = formData.get("password");
+  //
 
-  const { error } = await supabase.auth.signInWithPassword(data);
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
   if (error) {
     redirect("/error");
   }
 
-  revalidatePath("/", "layout");
+  //revalidatePath("/", "layout");
   redirect("/");
+
+  // error handling
 }
 
 export async function signup(formData) {
@@ -29,17 +34,24 @@ export async function signup(formData) {
 
   // type-casting here for convenience
   // in practice, you should validate your inputs
-  const data = {
-    email: formData.get("email"),
-    password: formData.get("password"),
-  };
+  //const data = {
+  const email = formData.get("email");
+  const password = formData.get("password");
+  //};
 
-  const { error } = await supabase.auth.signUp(data);
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+  });
 
   if (error) {
-    redirect("/error");
+    console.log(error);
+    //redirect("/error");
+    // error for signing up twice
+    // error handling (account existing, etc)
   }
 
-  revalidatePath("/", "layout");
+  //revalidatePath("/", "layout");
+  // return true
   redirect("/");
 }
