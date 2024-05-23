@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter from next/navigation
-import { supabase } from "../../src/utils/supabase/superbase.js";
+import { supabase } from "../../utils/supabase";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
