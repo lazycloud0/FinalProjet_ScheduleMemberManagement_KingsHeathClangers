@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation"; // Import useRouter and useSearchParams from next/navigation
-import { supabase } from "../../src/utils/supabase/superbase.js";
+import { supabase } from "../../utils/supabase";
 import styles from "./editform.module.css";
 
 const allowedTeams = ["Men", "Women", "Under 14s", "Under 18s", "Open to All"];

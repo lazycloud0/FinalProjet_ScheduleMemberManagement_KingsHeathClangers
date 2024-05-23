@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation"; // Import useRouter from next/navigation
-import { supabase } from "../../src/utils/supabase/superbase.js"; // Adjust this import according to your setup
+import { supabase } from "../../utils/supabase"; // Adjust this import according to your setup
 import styles from "./bookingform.module.css";
 
 function Booking() {
