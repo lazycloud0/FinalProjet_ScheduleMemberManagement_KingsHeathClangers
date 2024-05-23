@@ -1,15 +1,15 @@
 import React, { Suspense } from "react";
-import styles from "./booking.module.css";
+import styles from "./contactconfirmation.module.css";
 import LargeLogo from "../../../components/logos/largeLogo";
-import Booking from "/components/bookingform/bookingform.jsx";
+import ContactConfirmationForm from "/components/contactconfirmationform/contactconfirmationform.jsx";
 
-export default function Schedule() {
+export default function Contact() {
   return (
-    <div className={styles.schedulePage}>
+    <div className={styles.contactPage}>
       <div className={styles.container}>
         <LargeLogo className={styles.largeLogo} />
         <Suspense fallback={<div>Loading...</div>}>
-          <Booking className={styles.mainBooking} />
+          <ContactConfirmationForm />
         </Suspense>
       </div>
     </div>

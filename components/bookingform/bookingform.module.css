@@ -8,6 +8,11 @@
   padding-top: 2%;
   padding-bottom: 5%;
 }
+.list {
+  margin-bottom: 2%;
+  font-size: 120%;
+  color: black;
+}
 
 .formSection {
   font-family: "Montserrat", sans-serif;
@@ -26,6 +31,12 @@
 .placeholder {
   color: black;
   font-size: 85%;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 120%;
+  margin-top: 3%;
 }
 
 .requestButton {
@@ -50,8 +61,10 @@
 
 @media (max-width: 860px) {
   .container {
-    width: 90%;
+    width: 100%;
     margin: auto;
+    display: flex;
+    justify-content: center;
   }
 
   .formSection {
@@ -63,6 +76,11 @@
 
   .subtitle {
     font-size: 170%;
+  }
+  .list {
+    margin-bottom: 2%;
+    font-size: 90%;
+    color: black;
   }
 
   .requestButton {

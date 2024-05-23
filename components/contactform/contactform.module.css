@@ -12,15 +12,25 @@
   width: 30%;
 }
 
+.error {
+  color: red;
+}
+
 .formContainer input[type="text"],
 .formContainer input[type="email"] {
   background-color: #ffffff; /* Replace #yourColor with the color you want */
   color: #484d58;
   padding: 2%;
+  margin-top: 25px;
+  margin-bottom: 10px;
   width: 100%;
+  border-radius: 5px; /* Add this line */
+  border-color: lightgrey; /* Add this line */
+  border-style: solid;
+  border-width: 1px;
 }
+
 .subtitle {
-  padding-bottom: 5%;
   font-size: 160%;
 }
 
@@ -30,17 +40,15 @@
   padding: 2%;
   width: 100%;
   height: 60%;
+  margin-top: 30px;
+  border-radius: 5px; /* Add this line */
+  border-color: lightgrey; /* Add this line */
 }
 
 .contact {
   padding-bottom: 5%;
   text-align: center;
   font-size: 180%;
-}
-
-.contactLabel {
-  margin-bottom: 10px;
-  font-size: 120%;
 }
 
 .contactButton {
@@ -69,10 +77,6 @@
 
   .subtitle {
     font-size: 170%;
-  }
-  .contactLabel {
-    margin-bottom: 10px;
-    font-size: 100%;
   }
 
   .contactButton {

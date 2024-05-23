@@ -1,6 +1,3 @@
-.schedulePage {
-}
-
 .container {
   max-width: 1440px;
   margin: 120px auto;
@@ -14,6 +11,10 @@
 }
 
 @media (max-width: 860px) {
+  .container {
+    margin: 120px 0;
+  }
+
   .largeLogo {
     display: none;
   }

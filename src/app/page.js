@@ -1,5 +1,6 @@
 import LargeLogo from "../../components/logos/largeLogo";
 import styles from "./page.module.css";
+import Link from "next/link";
 import AuthButton from "../../components/auth/AuthButton.jsx";
 import { createClient } from "@/utils/supabase/server";
 
@@ -16,7 +17,11 @@ export default async function Home() {
 
   const isSupabaseConnected = canInitSupabaseClient();
 
+
+
+
   return (
+
     <>
       <main className={styles.main}>
         <LargeLogo className={styles.largeLogo} />
@@ -33,5 +38,15 @@ export default async function Home() {
         </div>
       </main>
     </>
+
+//     <main className={styles.main}>
+//       <LargeLogo className={styles.largeLogo} />
+//       <button className={styles.loginButton}>
+//         <Link href="/login" className={styles.linkDecoration}>
+//           LOGIN
+//         </Link>
+//       </button>
+//     </main>
+
   );
 }

@@ -2,7 +2,7 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation"; // Import useRouter correctly
-import styles from "./editconfirmationform.module.css"; // Import your CSS module
+import styles from "./contactconfirmationform.module.css"; // Import your CSS module
 
 export default function EditConfirmation() {
   const searchParams = useSearchParams();
@@ -10,19 +10,19 @@ export default function EditConfirmation() {
   const message = searchParams.get("message");
 
   const handleReturn = () => {
-    router.push("/whatson"); // Redirect to /whatson page
+    router.push("/"); // Redirect to /whatson page
   };
 
   return (
     <div className={styles.container}>
-      {message === "updated" && (
-        <h1 className={styles.successMessage}>EVENT UPDATED SUCCESSFULLY</h1>
-      )}
-      {message === "deleted" && (
-        <h1 className={styles.successMessage}>EVENT DELETED SUCCESSFULLY</h1>
-      )}
+      <h1 className={styles.successMessage}>
+        MESSAGE SENT <br></br>SUCCESSFULLY
+      </h1>
+      <p className={styles.thankYouMessage}>
+        Thank you for contacting <br></br>Kings Heath Clangers
+      </p>
       <button className={styles.returnButton} onClick={handleReturn}>
-        RETURN TO THE CALENDAR
+        RETURN TO THE HOME PAGE
       </button>{" "}
       {/* Add button */}
     </div>

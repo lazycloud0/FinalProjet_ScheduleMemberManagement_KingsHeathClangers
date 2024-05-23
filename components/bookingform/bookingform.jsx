@@ -10,6 +10,7 @@ function Booking() {
   const router = useRouter(); // Initialize useRouter
   const [eventUUID, setEventUUID] = useState(null);
   const [event, setEvent] = useState(null);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     const uuid = searchParams.get("eventUUID");
@@ -45,6 +46,9 @@ function Booking() {
             ),
             team: game.team,
             location: game.location,
+
+            spots_available: game.spots_available,
+            attendees: game.attendees,
           });
         }
       };
@@ -53,12 +57,24 @@ function Booking() {
   }, [eventUUID]);
 
   const handleBookIn = () => {
-    // Handle book in action here
+    const remainingPlaces =
+      event.spots_available - (event.attendees?.length || 0);
+    if (remainingPlaces <= 0) {
+      setErrorMessage("No available spaces for this event");
+    } else {
+      // Handle book in action here
+      setErrorMessage("");
+      // Perform the booking operation
+    }
   };
 
   const handleEditDelete = () => {
     router.push(`/edit?eventUUID=${eventUUID}`);
   };
+
+  const remainingPlaces = event
+    ? event.spots_available - (event.attendees?.length || 0)
+    : 0;
 
   return (
     <div className={styles.container}>
@@ -66,17 +82,41 @@ function Booking() {
         event ? (
           <div className={styles.formSection}>
             <h1 className={styles.subtitle}>Event</h1>
-            <p>Title: {event.title}</p>
-            <p>Date: {event.date}</p>
-            <p>Time: {event.time}</p>
-            <p>Location: {event.location}</p>
-            <p>Team: {event.team}</p>
+            <p className={styles.list}>
+              <b>Title:</b>
+              <br></br> {event.title}
+            </p>
+            <p className={styles.list}>
+              <b>Date:</b>
+              <br></br> {event.date}
+            </p>
+            <p className={styles.list}>
+              <b>Time:</b>
+              <br></br> {event.time}
+            </p>
+            <p className={styles.list}>
+              <b>Location:</b>
+              <br></br> {event.location}
+            </p>
+            <p className={styles.list}>
+              <b>Team:</b>
+              <br></br> {event.team}
+            </p>
+
+            <p className={styles.list}>
+              <b>Remaining Spaces:</b>
+              <br></br> {remainingPlaces} / {event.spots_available}
+            </p>
+
+            {errorMessage && (
+              <p className={styles.errorMessage}>{errorMessage}</p>
+            )}
 
             <button className={styles.requestButton} onClick={handleBookIn}>
               BOOK IN
             </button>
             <button className={styles.requestButton} onClick={handleEditDelete}>
-              EDIT / DELETE
+              AMEND EVENT
             </button>
           </div>
         ) : (

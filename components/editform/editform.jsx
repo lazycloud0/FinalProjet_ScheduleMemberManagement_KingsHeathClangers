@@ -17,6 +17,7 @@ export default function EditForm() {
     time: "",
     team: "",
     location: "",
+    spots_available: 1, // Initialize with a default value of 1
   });
 
   const [touched, setTouched] = useState({
@@ -25,6 +26,7 @@ export default function EditForm() {
     time: false,
     team: false,
     location: false,
+    spots_available: false,
   });
 
   const [valid, setValid] = useState({
@@ -33,6 +35,7 @@ export default function EditForm() {
     time: true,
     team: true,
     location: true,
+    spots_available: true,
   });
 
   useEffect(() => {
@@ -61,6 +64,7 @@ export default function EditForm() {
             time: game.time,
             team: game.team,
             location: game.location,
+            spots_available: game.spots_available,
           });
           setForm({
             event_type: game.event_type,
@@ -68,6 +72,7 @@ export default function EditForm() {
             time: game.time,
             team: game.team,
             location: game.location,
+            spots_available: game.spots_available,
           });
         }
       };
@@ -96,6 +101,7 @@ export default function EditForm() {
       time: !!form.time,
       team: !!form.team,
       location: !!form.location,
+      spots_available: form.spots_available > 0,
     };
 
     setValid(newValid);
@@ -116,15 +122,22 @@ export default function EditForm() {
   };
 
   const handleInputChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    setTouched({ ...touched, [e.target.name]: true });
+    let { name, value } = e.target;
+
+    // Capitalize the first letter if the field is 'event_type' or 'location'
+    if (name === "event_type" || name === "location") {
+      value = value.charAt(0).toUpperCase() + value.slice(1);
+    }
+
+    setForm({ ...form, [name]: value });
+    setTouched({ ...touched, [name]: true });
   };
 
   return (
     <div className={styles.container}>
       {event && (
         <form className={styles.contactForm} onSubmit={updateGame}>
-          <h3 className={styles.subtitle}>Edit Event</h3>
+          <h3 className={styles.subtitle}>Amend Event</h3>
           <div className={styles.formSection}>
             <label className={styles.label} htmlFor="event_type">
               Event Type:
@@ -140,31 +153,35 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Event Type is required</div>
             )}
           </div>
-          <div className={styles.formSection}>
-            <label className={styles.label} htmlFor="date">
+          <div className={styles.datSection}>
+            <label className={styles.datlabel} htmlFor="date">
               Date:
             </label>
+            <br />
             <input
               type="date"
               id="date"
               name="date"
               value={form.date}
               onChange={handleInputChange}
+              className={styles.datInput}
             />
             {!valid.date && touched.date && (
               <div style={{ color: "red" }}>Date is required</div>
             )}
           </div>
-          <div className={styles.formSection}>
-            <label className={styles.label} htmlFor="time">
+          <div className={styles.datSection}>
+            <label className={styles.datlabel} htmlFor="time">
               Time:
             </label>
+            <br />
             <input
               type="time"
               id="time"
               name="time"
               value={form.time}
               onChange={handleInputChange}
+              className={styles.datInput}
             />
             {!valid.time && touched.time && (
               <div style={{ color: "red" }}>Time is required</div>
@@ -194,6 +211,7 @@ export default function EditForm() {
               name="team"
               value={form.team}
               onChange={handleInputChange}
+              className={styles.label}
             >
               {allowedTeams.map((team) => (
                 <option key={team} value={team}>
@@ -205,11 +223,31 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Team is required</div>
             )}
           </div>
+          <div className={styles.formSection}>
+            <label className={styles.label} htmlFor="spots_available">
+              Total Spaces:
+            </label>
+            <input
+              type="number"
+              id="spots_available"
+              name="spots_available"
+              min="0"
+              max="500"
+              value={form.spots_available}
+              onChange={handleInputChange}
+            />
+            {!valid.spots_available && touched.spots_available && (
+              <div style={{ color: "red" }}>Number of spaces cannot be 0</div>
+            )}
+          </div>
 
           <button className={styles.requestButton} type="submit">
             UPDATE EVENT
           </button>
-          <button className={styles.requestButton} onClick={deleteGame}>
+          <button
+            className={`${styles.requestButton} ${styles.deleteButton}`}
+            onClick={deleteGame}
+          >
             DELETE EVENT
           </button>
         </form>
