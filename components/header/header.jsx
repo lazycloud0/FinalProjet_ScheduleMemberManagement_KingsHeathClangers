@@ -58,6 +58,7 @@ export default function Header() {
           <li className={styles.navitem}>
             <Link
               href="https://kingsheathclangers.godaddysites.com/ols/products/clangers-t-shirt"
+              target="_blank"
               passHref
               className={styles.navlink}
               onClick={handleLinkClick}
