@@ -74,6 +74,14 @@ export default function EditForm() {
             location: game.location,
             spots_available: game.spots_available,
           });
+          setTouched({
+            event_type: true,
+            date: true,
+            time: true,
+            team: true,
+            location: true,
+            spots_available: true,
+          });
         }
       };
       getGame();

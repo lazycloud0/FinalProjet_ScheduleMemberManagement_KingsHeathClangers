@@ -61,10 +61,14 @@
   background-color: #484d58;
 }
 .deleteButton {
-  background-color: #484d58;
+  background-color: #ffffff;
+  color: #484d58;
+  border-style: solid;
+  border-color: #484d58;
 }
 .deleteButton:hover {
-  background-color: rgb(27, 26, 26);
+  background-color: #484d58;
+  color: #ffffff;
 }
 @media (max-width: 860px) {
   .contactForm {
