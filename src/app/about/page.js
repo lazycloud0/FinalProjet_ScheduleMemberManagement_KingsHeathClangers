@@ -1,3 +1,10 @@
+import React from "react";
+import AboutPage from "/components/aboutpage/aboutpage.jsx";
+//random
 export default function About() {
-  return <p>Hello from About page!</p>;
+  return (
+    <div>
+      <AboutPage />
+    </div>
+  );
 }
