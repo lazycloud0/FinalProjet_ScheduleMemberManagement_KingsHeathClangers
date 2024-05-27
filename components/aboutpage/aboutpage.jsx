@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./aboutpage.module.css";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
@@ -17,10 +18,13 @@ export default function AboutPage() {
           life.
         </p>
       </section>
-      <img
+      <Image
         src="/teamphoto.jpg"
-        alt="A team photo of Kings Heath Community Basketball Club"
+        alt="A team photo of Kings Heath Community Basketball Club Men's Team"
+        width={400}
+        height={225}
         className={styles.teamPhoto}
+        priority
       />
       <section className={styles.mission}>
         <h1 className={styles.title}>Mission</h1>
@@ -48,12 +52,14 @@ export default function AboutPage() {
       <section className={styles.leagues}>
         <h1 className={styles.title}>Achievements</h1>
         <p className={styles.text}>
-          Currently{" "}
-          <span className={styles.singleWord}>Division 3 Championships</span> in
-          West Midlands Basketball league and current holders of the{" "}
-          <span className={styles.singleWord}>Babe Clay Rosebowl Cup</span>, we
-          have exceeded expectations in our first season and have ambitious
-          goals for our Youth, {"Women's"} and {"Men's"} teams.
+          Current holders of the{" "}
+          <span className={styles.singleWord}>Babe Clay Rosebowl Cup</span> and{" "}
+          <span className={styles.singleWord}>
+            West Midlands Basketball League Division 3 Champion
+          </span>
+          , we have exceeded expectations in our{" "}
+          <span className={styles.singleWord}>first season</span> and have
+          ambitious goals for our Youth, {"Women's"} and {"Men's"} teams.
         </p>
       </section>
       <section className={styles.images}>
@@ -63,16 +69,16 @@ export default function AboutPage() {
         <h1 className={styles.title}>Timetable</h1>
         <h3 className={styles.timeTableSubtitle}>Mondays:</h3>
         <p className={styles.groups}>Open Scrimmage:</p>
-        <p>18:00 (18+ Only)</p>
+        <p>17:45-19:45 (18+ Only)</p>
         <h3 className={styles.timeTableSubtitle}>Saturdays:</h3>
-        <p className={styles.groups}>Under {"15's"} Training:</p>{" "}
-        <p className={styles.time}>12:00-13:30</p>
-        <p className={styles.groups}>Under {"18's"} Training:</p>{" "}
-        <p className={styles.time}>13:30-15:00</p>
         <p className={styles.groups}>{"Women's"} Training:</p>
         <p className={styles.time}>12:00-13:00 (Female Coach)</p>
+        <p className={styles.groups}>Under {"15's"} Training:</p>{" "}
+        <p className={styles.time}>12:00-13:30</p>
         <p className={styles.groups}>{"Men's"} Training:</p>
         <p className={styles.time}>13:00-15:00 (Members Only)</p>
+        <p className={styles.groups}>Under {"18's"} Training:</p>{" "}
+        <p className={styles.time}>13:30-15:00</p>
         <h3 className={styles.timeTableSubtitle}>Sundays:</h3>
         <p className={styles.groups}>Games:</p>
         <p className={styles.lastTime}>18:00</p>
