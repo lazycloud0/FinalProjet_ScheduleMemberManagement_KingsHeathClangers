@@ -57,8 +57,7 @@
   padding: 15px;
 }
 
-.singleWord,
-.supportText1 {
+.singleWord {
   font-weight: bold;
   font-style: italic;
 }
@@ -112,9 +111,26 @@
   margin-top: 15px;
 }
 
+.supportText1 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.supportText,
+.supportText2 {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
 .logos {
-  height: 100px;
-  width: 100px;
+  height: 60px;
+  width: 60px;
+}
+
+.socialMediaContainer {
+  display: flex;
+  justify-content: space-around;
 }
 
 @media (min-width: 768px) {

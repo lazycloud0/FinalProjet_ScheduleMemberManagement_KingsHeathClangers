@@ -7,6 +7,7 @@ import InstagramLogo2 from "../logos/instagramLogo2.jsx";
 import YoutubeLogo2 from "../logos/youtubeLogo2.jsx";
 import ShoppingCart from "../logos/shoppingCart.jsx";
 import ContactLogo from "../logos/contactLogo.jsx";
+import Link from "next/link";
 
 export default function AboutPage() {
   return (
@@ -113,19 +114,51 @@ export default function AboutPage() {
         <div className={styles.supportTextContainer}>
           <p className={styles.supportText}>Got an idea for an event?</p>
           <p className={styles.supportText1}>Let us know!</p>
-          <ContactLogo className={styles.logos} />
+          <Link href="/contact" passHref>
+            <ContactLogo className={styles.logos} />{" "}
+          </Link>
           <p className={styles.supportText2}>
             Want your own Kings Heath Clangers top or hoodie?
           </p>
           <p className={styles.supportText1}>Buy one now!</p>
-          <ShoppingCart className={styles.logos} />
+          <a
+            href="https://kingsheathclangers.godaddysites.com/ols/products/clangers-t-shirt"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.logos}
+          >
+            <ShoppingCart className={styles.logos} />
+          </a>
           <p className={styles.supportText2}>
-            Want to keep up with the latest information or tell your friends?
+            Want the latest information or to tell your friends?
           </p>
           <p className={styles.supportText1}> Follow and share!</p>
-          <FacebookLogo2 className={styles.logos} />
-          <YoutubeLogo2 className={styles.logos} />
-          <InstagramLogo2 className={styles.logos} />
+          <div className={styles.socialMediaContainer}>
+            <a
+              href="https://www.facebook.com/profile.php?id=61558708410607"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.logos}
+            >
+              <FacebookLogo2 className={styles.logos} />
+            </a>
+            <a
+              href="https://www.youtube.com/@khclangers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.logos}
+            >
+              <YoutubeLogo2 className={styles.logos} />
+            </a>
+            <a
+              href="https://www.instagram.com/khclangers/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.logos}
+            >
+              <InstagramLogo2 className={styles.logos} />
+            </a>
+          </div>
         </div>
       </section>
     </div>

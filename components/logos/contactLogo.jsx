@@ -1,6 +1,12 @@
 import * as React from "react";
 const ContactLogo = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={100} height={100} {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={50}
+    height={50}
+    viewBox="0 0 72 72"
+    {...props}
+  >
     <g fill="none" fillRule="evenodd">
       <path
         fill="#000"
