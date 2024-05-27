@@ -2,6 +2,11 @@
 import React from "react";
 import styles from "./aboutpage.module.css";
 import Image from "next/image";
+import FacebookLogo2 from "../logos/facebookLogo2.jsx";
+import InstagramLogo2 from "../logos/instagramLogo2.jsx";
+import YoutubeLogo2 from "../logos/youtubeLogo2.jsx";
+import ShoppingCart from "../logos/shoppingCart.jsx";
+import ContactLogo from "../logos/contactLogo.jsx";
 
 export default function AboutPage() {
   return (
@@ -90,6 +95,38 @@ export default function AboutPage() {
         <h3 className={styles.timeTableSubtitle}>Sundays:</h3>
         <p className={styles.groups}>Games:</p>
         <p className={styles.lastTime}>18:00</p>
+      </section>
+      <section className={styles.team}>
+        <h1 className={styles.title}>Team</h1>
+        <p className={styles.text}>
+          Our team is a <span className={styles.singleWord}>diverse</span>{" "}
+          community of <span className={styles.singleWord}>champions</span>{" "}
+          selected on{" "}
+          <span className={styles.singleWord}>content of character</span> first
+          and foremost. We are passionate about basketball and are always
+          looking for ways to improve ourselves, other players in the younger
+          community, and achieve our personal and team goals.
+        </p>
+      </section>
+      <section className={styles.support}>
+        <h1 className={styles.title}>Support</h1>
+        <div className={styles.supportTextContainer}>
+          <p className={styles.supportText}>Got an idea for an event?</p>
+          <p className={styles.supportText1}>Let us know!</p>
+          <ContactLogo className={styles.logos} />
+          <p className={styles.supportText2}>
+            Want your own Kings Heath Clangers top or hoodie?
+          </p>
+          <p className={styles.supportText1}>Buy one now!</p>
+          <ShoppingCart className={styles.logos} />
+          <p className={styles.supportText2}>
+            Want to keep up with the latest information or tell your friends?
+          </p>
+          <p className={styles.supportText1}> Follow and share!</p>
+          <FacebookLogo2 className={styles.logos} />
+          <YoutubeLogo2 className={styles.logos} />
+          <InstagramLogo2 className={styles.logos} />
+        </div>
       </section>
     </div>
   );
