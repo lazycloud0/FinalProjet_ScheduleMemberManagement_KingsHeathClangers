@@ -48,7 +48,15 @@ export default function AboutPage() {
           community-orientated value for all our members to follow
         </p>
       </section>
-      <video src="/khcvideo.mp4" controls className={styles.video}></video>
+      <iframe
+        width="560"
+        height="210"
+        src="https://www.youtube.com/embed/XIXNy2boKDI?vq=hd1080"
+        title="YouTube video of the story of Kings Heath Community Basketball Club"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className={styles.video}
+      ></iframe>
       <section className={styles.leagues}>
         <h1 className={styles.title}>Achievements</h1>
         <p className={styles.text}>

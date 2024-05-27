@@ -62,6 +62,10 @@
   color: black;
 }
 
+.video {
+  border: none;
+}
+
 .teamPhoto,
 .video {
   border-radius: 10px;
