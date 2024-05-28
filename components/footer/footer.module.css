@@ -10,7 +10,9 @@
 }
 
 .container {
-  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -49,9 +51,12 @@
 .legalStuff {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   font-weight: bold;
   padding-top: 5px;
   padding-bottom: 5px;
+  width: 100%;
+  font-size: 140%;
 }
 
 .nothing {
