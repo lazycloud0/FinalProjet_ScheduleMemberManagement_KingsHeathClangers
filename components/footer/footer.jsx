@@ -10,7 +10,6 @@ export default function Footer() {
   return (
     <div className={styles.footerMenu}>
       <div className={styles.container}>
-        
         <div className={styles.footerIcons}>
           <a
             href="https://www.facebook.com/profile.php?id=61558708410607"
