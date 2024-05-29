@@ -57,7 +57,7 @@ export default function AboutPage() {
       <iframe
         width="560"
         height="210"
-        src="https://www.youtube.com/embed/XIXNy2boKDI?vq=hd1080"
+        src="https://www.youtube.com/embed/IsKipNxIhCo"
         title="YouTube video of the story of Kings Heath Community Basketball Club"
         allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
@@ -104,6 +104,15 @@ export default function AboutPage() {
           An Vertical Image Carousel will go here
         </p>
       </section>
+      <iframe
+        width="560"
+        height="210"
+        src="https://www.youtube.com/embed/b7MK2lBmCM8"
+        title="YouTube video of where the Kings Heath Clangers got their name from"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className={styles.video}
+      ></iframe>
       <section className={styles.team}>
         <h1 className={styles.title}>Team</h1>
         <p className={styles.text}>
