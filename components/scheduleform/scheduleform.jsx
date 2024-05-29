@@ -27,7 +27,7 @@ const times = Array.from({ length: 48 }, (v, i) => {
 
 const allowedTeams = ["Men", "Women", "Under 14s", "Under 18s", "Open to All"];
 const spotsAvailableOptions = [
-  "Number of spaces",
+  "0",
   ...Array.from({ length: 500 }, (v, i) => i + 1),
 ];
 
@@ -151,7 +151,7 @@ export default function Form() {
 
     if (name === "spots_available") {
       const spotsValue = parseInt(value, 10);
-      if (value === "Number of spaces" || spotsValue < 0 || isNaN(spotsValue)) {
+      if (value === "0" || spotsValue < 1 || isNaN(spotsValue)) {
         dispatch({
           type: "UPDATE_ERRORS",
           payload: {
@@ -222,10 +222,7 @@ export default function Form() {
         }
       }
 
-      if (
-        formData.spots_available === "" ||
-        formData.spots_available === "Number of spaces"
-      ) {
+      if (formData.spots_available === "" || formData.spots_available === "0") {
         newErrors.spots_available = "Number of spaces is required";
       }
 
