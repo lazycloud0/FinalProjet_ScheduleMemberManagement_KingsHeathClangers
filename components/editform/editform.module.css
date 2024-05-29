@@ -89,12 +89,13 @@
   .contactForm {
     width: 100%;
   }
-  .contactForm input[type="text"],
-  .contactForm input[type="search"],
-  .contactForm input[type="number"],
-  .contactForm input[type="date"],
-  .contactForm input[type="time"],
-  .contactForm select {
+  .scheduleForm input[type="text"],
+  .scheduleForm input[type="team"],
+  .scheduleForm select {
     min-width: 100%;
+  }
+  .scheduleForm input[type="date"],
+  .scheduleForm input[type="time"] {
+    min-width: 94%;
   }
 }
