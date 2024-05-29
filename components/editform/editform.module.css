@@ -17,7 +17,6 @@
 }
 
 .contactForm input[type="text"],
-.contactForm input[type="search"],
 .contactForm input[type="number"],
 .contactForm input[type="location"],
 .contactForm input[type="date"],
@@ -86,16 +85,18 @@
     font-size: 1rem;
     padding: 8px 16px;
   }
-  .contactForm {
+  .formSection {
     width: 100%;
   }
-  .scheduleForm input[type="text"],
-  .scheduleForm input[type="team"],
-  .scheduleForm select {
+  .contactForm input[type="text"],
+  .contactForm input[type="team"],
+  .contactForm input[type="number"],
+  .contactForm input[type="location"],
+  .contactForm select {
     min-width: 100%;
   }
-  .scheduleForm input[type="date"],
-  .scheduleForm input[type="time"] {
+  .contactForm input[type="date"],
+  .contactForm input[type="time"] {
     min-width: 94%;
   }
 }
