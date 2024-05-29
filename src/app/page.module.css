@@ -8,10 +8,16 @@
   flex-direction: column;
 }
 
+.h1 {
+  margin: 5%;
+  margin-top: 10%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 200%;
+  font-weight: 500;
+}
 /*The large logo is centered and starts off this size*/
 .largeLogo {
-  height: 300px;
-  width: 300px;
+  max-width: 40%;
   margin-bottom: 20px;
 }
 

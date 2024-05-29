@@ -19,7 +19,7 @@ export default async function Home() {
   return (
     <>
       <main className={styles.main}>
-        <h1>Welcome to the Home of</h1>
+        <h1 className={styles.h1}>WELCOME TO THE HOME OF</h1>
         <LargeLogo className={styles.largeLogo} />
 
         <div
