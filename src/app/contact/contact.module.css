@@ -9,6 +9,9 @@
 .largeLogo {
   max-width: 40%;
 }
+.contactPage {
+  height: 100vh;
+}
 
 @media (max-width: 860px) {
   .largeLogo {
