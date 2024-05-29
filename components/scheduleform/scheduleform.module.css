@@ -33,12 +33,12 @@
 }
 .subtitle {
   text-align: left;
-  font-size: 120%;
+  font-size: 180%;
   padding-top: 2%;
   padding-bottom: 5%;
 }
 .formSection {
-  font-size: 1rem;
+  font-size: 100%;
   margin-bottom: 3%;
 }
 .addButton {
@@ -87,7 +87,7 @@
   }
   .scheduleForm input[type="date"],
   .scheduleForm input[type="time"] {
-    min-width: 100%;
+    min-width: 94%;
   }
 }
 /* 
