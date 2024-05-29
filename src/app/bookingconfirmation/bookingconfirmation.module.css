@@ -1,5 +1,5 @@
 .container {
-  max-width: 1440px;
+  max-width: 1024px;
   margin: 100px auto;
   display: flex;
   flex-direction: row;
@@ -8,8 +8,8 @@
 }
 
 .largeLogo {
-  max-width: 50%;
-  padding: 5%;
+  max-width: 30%;
+  margin: 5%;
 }
 
 @media (max-width: 860px) {
