@@ -19,7 +19,7 @@
 /*The large logo is centered and starts off this size*/
 .largeLogo {
   max-width: 40%;
-  margin-bottom: 20px;
+  margin-bottom: 80px;
 }
 
 /*The large logo increases in size when the screen size increases*/
