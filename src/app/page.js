@@ -21,26 +21,10 @@ export default async function Home() {
       <main className={styles.main}>
         <LargeLogo className={styles.largeLogo} />
 
-        <div
-          className="flex-1 w-full flex flex-col gap-20 items-center"
-          style={{ margin: "100px !important" }}
-        >
-          {/* <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16"> */}
-          <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-            {isSupabaseConnected && <AuthButton />}
-          </div>
-          {/* </nav> */}
+        <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
+          {isSupabaseConnected && <AuthButton />}
         </div>
       </main>
     </>
-
-    //     <main className={styles.main}>
-    //       <LargeLogo className={styles.largeLogo} />
-    //       <button className={styles.loginButton}>
-    //         <Link href="/login" className={styles.linkDecoration}>
-    //           LOGIN
-    //         </Link>
-    //       </button>
-    //     </main>
   );
 }

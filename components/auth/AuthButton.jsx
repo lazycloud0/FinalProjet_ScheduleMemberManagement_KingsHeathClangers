@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import styles from "./AuthButton.module.css";
 
 export default async function AuthButton() {
   const supabase = createClient();
@@ -21,15 +22,14 @@ export default async function AuthButton() {
     <div className="flex items-center gap-4">
       Hey, {user.email}!
       <form action={signOut}>
-        <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
+        <button className={styles.loginButton}>
           Logout
         </button>
       </form>
     </div>
   ) : (
     <Link
-      href="/login"
-      className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
+      href="/login" className={styles.loginButton}
     >
       Login
     </Link>

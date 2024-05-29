@@ -1,6 +1,7 @@
 // import React from "react";
 import LargeLogo from "../../../components/logos/largeLogo";
 import styles from "./login.module.css";
+
 // import LoginForm from "/components/loginform/loginform.jsx";
 
 // export default function Login() {
@@ -22,13 +23,19 @@ export default function LoginPage() {
       <div className={styles.LoginPage}>
         <div className={styles.container}>
           <LargeLogo className={styles.largeLogo} />
-          <form>
+          <form className={styles.form}>
             <label htmlFor="email">Email:</label>
             <input id="email" name="email" type="email" required />
             <label htmlFor="password">Password:</label>
             <input id="password" name="password" type="password" required />
-            <button formAction={login}>Log in</button>
-            <button formAction={signup}>Sign up</button>
+            <span>
+              <button formAction={login} className={styles.loginButton}>
+                Log in
+              </button>
+              <button formAction={signup} className={styles.loginButton}>
+                Sign up
+              </button>
+            </span>
           </form>
         </div>
       </div>
