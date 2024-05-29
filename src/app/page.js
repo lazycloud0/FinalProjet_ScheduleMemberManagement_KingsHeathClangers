@@ -19,6 +19,7 @@ export default async function Home() {
   return (
     <>
       <main className={styles.main}>
+        <h1>Welcome to the Home of</h1>
         <LargeLogo className={styles.largeLogo} />
 
         <div
@@ -26,9 +27,9 @@ export default async function Home() {
           style={{ margin: "100px !important" }}
         >
           {/* <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16"> */}
-          <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
+          {/* <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
             {isSupabaseConnected && <AuthButton />}
-          </div>
+          </div> */}
           {/* </nav> */}
         </div>
       </main>
