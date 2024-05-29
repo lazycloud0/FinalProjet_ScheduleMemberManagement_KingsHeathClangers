@@ -36,7 +36,7 @@ export default function Footer() {
             <InstagramLogo2 className={styles.socialIconY} />
           </a>
         </div>
-        <div className={styles.legalStuff}>
+        {/* <div className={styles.legalStuff}>
           <h6>Legal Stuff</h6>
 
           <h6>Privacy Policy</h6>
@@ -44,7 +44,7 @@ export default function Footer() {
           <h6>SiteMap</h6>
 
           <h6>Contact</h6>
-        </div>
+        </div> */}
         <div className={styles.copyright}>
           <h6> &copy; 2024 Kings Heath Clangers</h6>
         </div>

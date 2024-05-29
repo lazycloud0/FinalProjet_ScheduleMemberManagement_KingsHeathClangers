@@ -19,7 +19,7 @@ import { login, signup } from "./actions";
 export default function LoginPage() {
   return (
     <>
-      <div className={styles.LoginPage}>
+      <div className={styles.loginPage}>
         <div className={styles.container}>
           <LargeLogo className={styles.largeLogo} />
           <form>
@@ -148,7 +148,6 @@ export default function LoginPage() {
 //     </div>
 //   );
 // }
-
 
 // import React from "react";
 // import LargeLogo from "../../../components/logos/largeLogo";
