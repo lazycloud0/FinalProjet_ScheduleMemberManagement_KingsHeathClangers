@@ -70,6 +70,12 @@
   .footerMenu {
     position: static;
   }
+  .footerIcons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 2.5%;
+  }
   .copyright {
     font-size: 70%;
   }
