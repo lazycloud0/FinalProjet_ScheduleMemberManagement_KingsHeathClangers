@@ -4,11 +4,9 @@ import Form from "/components/scheduleform/scheduleform.jsx";
 
 export default function Schedule() {
   return (
-    <div className={styles.schedulePage}>
-      <div className={styles.container}>
-        <LargeLogo className={styles.largeLogo} />
-        <Form />
-      </div>
+    <div className={styles.container}>
+      <LargeLogo className={styles.largeLogo} />
+      <Form className={styles.scheduleForm} />
     </div>
   );
 }
