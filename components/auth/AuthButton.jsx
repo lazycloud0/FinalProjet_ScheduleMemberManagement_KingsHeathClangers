@@ -22,15 +22,11 @@ export default async function AuthButton() {
     <div className="flex items-center gap-4">
       Hey, {user.email}!
       <form action={signOut}>
-        <button className={styles.loginButton}>
-          Logout
-        </button>
+        <button className={styles.loginButton}>Logout</button>
       </form>
     </div>
   ) : (
-    <Link
-      href="/login" className={styles.loginButton}
-    >
+    <Link href="/login" className={styles.loginButton}>
       Login
     </Link>
   );
