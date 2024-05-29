@@ -57,7 +57,7 @@ export default function Header() {
           </li>
           <li className={styles.navitem}>
             <a
-              href="https://kingsheathclangers.godaddysites.com/ols/products/clangers-t-shirt"
+              href="https://kingsheathclangers.godaddysites.com/ols/products/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.navlink}
