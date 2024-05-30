@@ -1,7 +1,7 @@
 /*The size of the main is full screen and is display for the logo placement*/
 .main {
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,18 +18,19 @@
 }
 /*The large logo is centered and starts off this size*/
 .largeLogo {
-  max-width: 40%;
+  max-width: 30%;
   margin-bottom: 80px;
 }
 
 /*The large logo increases in size when the screen size increases*/
-@media (min-width: 1024px) {
+/*not needed*/
+/* @media (min-width: 1024px) {
   .largeLogo {
     height: 400px;
     width: 400px;
   }
-}
-
+} */
+/* 
 @media (min-width: 1440px) {
   .largeLogo {
     height: 450px;
@@ -42,7 +43,7 @@
     height: 700px;
     width: 700px;
   }
-}
+} */
 
 /*Login button*/
 .loginButton {
