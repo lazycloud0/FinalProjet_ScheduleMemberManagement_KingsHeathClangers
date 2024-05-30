@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 .footerMenu {
-  position: fixed;
-  left: 0;
+  position: relative;
   bottom: 0;
-  background-color: #dfe1e2;
-  margin-top: 100px;
+  left: 0;
   width: 100%;
+  background-color: #dfe1e2;
   z-index: 1;
+  box-sizing: border-box;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.103);
+  text-align: center;
 }
+
 .container {
-  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin: 0 auto;
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -19,11 +24,12 @@
   text-decoration: none;
   color: #161617;
 }
+
 .footerIcons {
   display: flex;
   justify-content: space-evenly;
-  border-bottom-style: solid;
   align-items: center;
+  padding-top: 1%;
 }
 
 .socialIcon {
@@ -37,26 +43,39 @@
 }
 
 .copyright {
-  border-bottom-style: solid;
   text-align: center;
   margin: 0 auto;
   padding-top: 5px;
   padding-bottom: 5px;
+  font-size: 150%;
 }
 
 .legalStuff {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   font-weight: bold;
   padding-top: 5px;
   padding-bottom: 5px;
+  width: 100%;
+  font-size: 140%;
 }
 
 .nothing {
   font-weight: lighter;
 }
 
-@media (max-width: 450px) {
+/* Media query for devices with max-width of 650px */
+@media screen and (max-width: 650px) {
+  .footerMenu {
+    position: static;
+  }
+  .footerIcons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 2.5%;
+  }
   .copyright {
     font-size: 70%;
   }
