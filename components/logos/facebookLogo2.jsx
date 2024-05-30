@@ -16,12 +16,3 @@ const FacebookLogo2 = (props) => (
   </svg>
 );
 export default FacebookLogo2;
-
-
-
-
-
-
-
-
-

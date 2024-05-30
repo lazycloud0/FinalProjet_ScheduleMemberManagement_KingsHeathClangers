@@ -20,7 +20,7 @@ import { login, signup } from "./actions";
 export default function LoginPage() {
   return (
     <>
-      <div className={styles.LoginPage}>
+      <div className={styles.loginPage}>
         <div className={styles.container}>
           <LargeLogo className={styles.largeLogo} />
           <form className={styles.form}>
