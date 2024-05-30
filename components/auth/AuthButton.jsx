@@ -15,19 +15,27 @@ export default async function AuthButton() {
 
     const supabase = createClient();
     await supabase.auth.signOut();
-    return redirect("/login");
+    return redirect("/");
   };
 
   return user ? (
-    <div className="flex items-center gap-4">
-      Hey, {user.email}!
-      <form action={signOut}>
-        <button className={styles.loginButton}>Logout</button>
-      </form>
-    </div>
+    <>
+      <main>
+        <div className={styles.div}>
+          <h2 className={styles.h2}>Hello, {user.email}!</h2>
+        </div>
+        <div className={styles.div}>
+          <form action={signOut}>
+            <button className={styles.loginButton}>Logout</button>
+          </form>
+        </div>
+      </main>
+    </>
   ) : (
-    <Link href="/login" className={styles.loginButton}>
-      Login
-    </Link>
+    <>
+      <Link href="/login" className={styles.loginButton}>
+        Login
+      </Link>
+    </>
   );
 }

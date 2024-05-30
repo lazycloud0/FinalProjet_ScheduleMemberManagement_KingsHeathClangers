@@ -1,5 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
+import LargeLogo from "../../../components/logos/largeLogo";
+import styles from "./protected.module.css";
 
 export default async function PrivatePage() {
   const supabase = createClient();
@@ -10,8 +12,11 @@ export default async function PrivatePage() {
   }
 
   return (
-    <div>
-      <h3>Hello {data.user.email}</h3>
-    </div>
+    <main className={styles.main}>
+      <div>
+        <LargeLogo className={styles.largeLogo} />
+        <h1 className={styles.h1}>Hello {data.user.email}</h1>
+      </div>
+    </main>
   );
 }
