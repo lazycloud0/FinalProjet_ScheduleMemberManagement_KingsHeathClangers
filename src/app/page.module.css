@@ -23,6 +23,7 @@
 }
 
 /*The large logo increases in size when the screen size increases*/
+/*not needed*/
 /* @media (min-width: 1024px) {
   .largeLogo {
     height: 400px;
