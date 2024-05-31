@@ -18,7 +18,7 @@
 }
 /*The large logo is centered and starts off this size*/
 .largeLogo {
-  max-width: 30%;
+  width: 30%;
   margin-bottom: 80px;
 }
 
