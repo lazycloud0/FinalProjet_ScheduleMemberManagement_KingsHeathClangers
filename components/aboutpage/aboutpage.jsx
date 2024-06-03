@@ -8,6 +8,7 @@ import YoutubeLogo2 from "../logos/youtubeLogo2.jsx";
 import ShoppingCart from "../logos/shoppingCart.jsx";
 import ContactLogo from "../logos/contactLogo.jsx";
 import Link from "next/link";
+import CarouselHorizontal from "../carouselHorizontal/carouselH";
 
 export default function AboutPage() {
   return (
@@ -77,9 +78,7 @@ export default function AboutPage() {
         </p>
       </section>
       <section className={styles.images}>
-        <p className={styles.horizontalCarousel}>
-          An Horizontal Image Carousel will go here
-        </p>
+        <CarouselHorizontal />
       </section>
       <section className={styles.timetable}>
         <h1 className={styles.title}>Timetable</h1>
