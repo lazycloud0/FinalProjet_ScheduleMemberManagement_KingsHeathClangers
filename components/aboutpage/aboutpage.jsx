@@ -8,6 +8,8 @@ import YoutubeLogo2 from "../logos/youtubeLogo2.jsx";
 import ShoppingCart from "../logos/shoppingCart.jsx";
 import ContactLogo from "../logos/contactLogo.jsx";
 import Link from "next/link";
+import CarouselHorizontal from "../carouselHorizontal/carouselH";
+import CarouselVertical from "../carouselVertical/carouselV";
 
 export default function AboutPage() {
   return (
@@ -76,11 +78,8 @@ export default function AboutPage() {
           ambitious goals for our Youth, {"Women's"} and {"Men's"} teams.
         </p>
       </section>
-      <section className={styles.images}>
-        <p className={styles.horizontalCarousel}>
-          An Horizontal Image Carousel will go here
-        </p>
-      </section>
+      <CarouselHorizontal />
+
       <section className={styles.timetable}>
         <h1 className={styles.title}>Timetable</h1>
         <h3 className={styles.timeTableSubtitle}>Mondays:</h3>
@@ -100,9 +99,8 @@ export default function AboutPage() {
         <p className={styles.lastTime}>18:00</p>
       </section>
       <section className={styles.images}>
-        <p className={styles.verticalCarousel}>
-          An Vertical Image Carousel will go here
-        </p>
+        <p className={styles.verticalCarousel}></p>
+        <CarouselVertical />
       </section>
       <iframe
         width="560"
