@@ -1,6 +1,8 @@
 import { imagesH } from "../../src/app/carouselimages/carouselH.js";
 import styles from "./carouselH.module.css";
 import { useState } from "react";
+import RightArrow from "../logos/rightArrow.jsx";
+import LeftArrow from "../logos/leftArrow.jsx";
 
 export default function CarouselHorizontal() {
   const [index, setIndex] = useState(0);
@@ -22,17 +24,11 @@ export default function CarouselHorizontal() {
   let images = imagesH[index];
 
   return (
-    <div className={styles.carousel}>
-      <div className={styles.slide_direction}>
-        <img src={images} />
-        <div>
-          <button onClick={handleClick1} className={styles.right}>
-            Previous
-          </button>
-          <button onClick={handleClick2} className={styles.left}>
-            Next
-          </button>
-        </div>
+    <div className={styles.slide_direction}>
+      <img src={images} className={styles.images} />
+      <div className={styles.arrowContainer}>
+        <LeftArrow onClick={handleClick1} className={styles.leftButton} />
+        <RightArrow onClick={handleClick2} className={styles.rightButton} />
       </div>
     </div>
   );

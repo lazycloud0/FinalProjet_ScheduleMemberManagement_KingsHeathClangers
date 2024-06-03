@@ -78,9 +78,8 @@ export default function AboutPage() {
           ambitious goals for our Youth, {"Women's"} and {"Men's"} teams.
         </p>
       </section>
-      <section className={styles.images}>
-        <CarouselHorizontal />
-      </section>
+      <CarouselHorizontal />
+
       <section className={styles.timetable}>
         <h1 className={styles.title}>Timetable</h1>
         <h3 className={styles.timeTableSubtitle}>Mondays:</h3>
