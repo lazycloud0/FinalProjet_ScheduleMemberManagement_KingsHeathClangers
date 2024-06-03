@@ -28,6 +28,13 @@
   transform: translateY(-50%);
 }
 
+@media (min-width: 768px) {
+  .images {
+    height: 610px;
+    width: 100%;
+  }
+  }
+
 /* .carousel {
     position: relative;
     width: 80%;
