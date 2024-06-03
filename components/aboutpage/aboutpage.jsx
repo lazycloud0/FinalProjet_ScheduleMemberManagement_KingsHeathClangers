@@ -80,7 +80,6 @@ export default function AboutPage() {
       </section>
       <section className={styles.images}>
         <CarouselHorizontal />
-        <CarouselVertical />
       </section>
       <section className={styles.timetable}>
         <h1 className={styles.title}>Timetable</h1>
@@ -101,9 +100,8 @@ export default function AboutPage() {
         <p className={styles.lastTime}>18:00</p>
       </section>
       <section className={styles.images}>
-        <p className={styles.verticalCarousel}>
-          An Vertical Image Carousel will go here
-        </p>
+        <p className={styles.verticalCarousel}></p>
+        <CarouselVertical />
       </section>
       <iframe
         width="560"
