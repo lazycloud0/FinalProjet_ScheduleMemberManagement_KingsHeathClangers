@@ -1,12 +1,12 @@
 "use client";
-import imagesH from "@/app/carouselimages/carouselH";
+import imagesH from "../../src/app/carouselimages/carouselH.js";
 
 import styles from "./carouselH.module.css"; // Indicates this script runs on the client side
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const CarouselHorizontal = ({ images = [] }) => {
+const CarouselHorizontal = ({ images = [imagesH] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {

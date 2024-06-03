@@ -9,6 +9,7 @@ import ShoppingCart from "../logos/shoppingCart.jsx";
 import ContactLogo from "../logos/contactLogo.jsx";
 import Link from "next/link";
 import CarouselHorizontal from "../carouselHorizontal/carouselH";
+import CarouselVertical from "../carouselVertical/carouselV";
 
 export default function AboutPage() {
   return (
@@ -79,6 +80,7 @@ export default function AboutPage() {
       </section>
       <section className={styles.images}>
         <CarouselHorizontal />
+        <CarouselVertical />
       </section>
       <section className={styles.timetable}>
         <h1 className={styles.title}>Timetable</h1>

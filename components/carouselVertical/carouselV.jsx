@@ -1,12 +1,12 @@
 "use client";
 import imagesV from "@/app/carouselimages/carouselV";
 
-import styles from "./carouselH.module.css"; // Indicates this script runs on the client side
+import styles from "./carouselV.module.css"; // Indicates this script runs on the client side
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const CarouselHorizontal = ({ images = [] }) => {
+const CarouselVertical = ({ images = [imagesV] }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNext = () => {
@@ -71,4 +71,4 @@ const CarouselHorizontal = ({ images = [] }) => {
   );
 };
 
-export default CarouselHorizontal;
+export default CarouselVertical;
