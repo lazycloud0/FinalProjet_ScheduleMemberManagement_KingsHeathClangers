@@ -1,6 +1,5 @@
 export const imagesH = [
   "/hCarousel/hor1.jpg",
-  "/hCarousel/hor2.jpeg",
   "/hCarousel/hor3.jpg",
   "/hCarousel/hor4.jpeg",
   "/hCarousel/hor5.jpg",
