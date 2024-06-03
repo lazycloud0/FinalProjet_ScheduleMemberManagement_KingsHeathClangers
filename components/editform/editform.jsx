@@ -146,7 +146,7 @@ export default function EditForm() {
       {event && (
         <form className={styles.contactForm} onSubmit={updateGame}>
           <h3 className={styles.subtitle}>Amend Event</h3>
-          <div className={styles.formSection}>
+          <div className={styles.datSection1}>
             <label className={styles.label} htmlFor="event_type">
               Event Type:
             </label>
@@ -161,7 +161,7 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Event Type is required</div>
             )}
           </div>
-          <div className={styles.datSection}>
+          <div className={styles.datSection1}>
             <label className={styles.datlabel} htmlFor="date">
               Date:
             </label>
@@ -178,7 +178,7 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Date is required</div>
             )}
           </div>
-          <div className={styles.datSection}>
+          <div className={styles.datSection1}>
             <label className={styles.datlabel} htmlFor="time">
               Time:
             </label>
@@ -195,8 +195,8 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Time is required</div>
             )}
           </div>
-          <div className={styles.formSection}>
-            <label className={styles.label} htmlFor="location">
+          <div className={styles.datSection1}>
+            <label className={styles.datlabel} htmlFor="location">
               Location:
             </label>
             <input
@@ -210,7 +210,7 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Location is required</div>
             )}
           </div>
-          <div className={styles.formSection}>
+          <div className={styles.datSection1}>
             <label className={styles.label} htmlFor="team">
               Team:
             </label>
@@ -231,7 +231,7 @@ export default function EditForm() {
               <div style={{ color: "red" }}>Team is required</div>
             )}
           </div>
-          <div className={styles.formSection}>
+          <div className={styles.datSection1}>
             <label className={styles.label} htmlFor="spots_available">
               Total Spaces:
             </label>

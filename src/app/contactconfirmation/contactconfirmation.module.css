@@ -1,5 +1,6 @@
 .container {
   max-width: 1440px;
+  height: 100vh;
   margin: 100px auto;
   display: flex;
   flex-direction: row;
@@ -8,7 +9,7 @@
 }
 
 .largeLogo {
-  max-width: 50%;
+  max-width: 30%;
   padding: 5%;
 }
 

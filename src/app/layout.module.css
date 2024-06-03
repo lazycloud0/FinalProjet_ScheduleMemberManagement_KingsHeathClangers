@@ -1,0 +1,21 @@
+.header {
+  background-color: #cdcfd0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.093); /* Added shadow */
+}
+.footer {
+  position: relative; /* Changed from relative to fixed */
+  bottom: 0; /* Added this line */
+  background-color: #dfe1e2;
+  width: 100%;
+  z-index: 1;
+  box-sizing: border-box;
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.103); /* Added shadow */
+}
+
+.footerMenu {
+  position: static; /* Footer will be in the normal flow of the document */
+}
