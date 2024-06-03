@@ -78,7 +78,9 @@ export default function AboutPage() {
           ambitious goals for our Youth, {"Women's"} and {"Men's"} teams.
         </p>
       </section>
-      <div className={styles.horizontalCarousel}><CarouselHorizontal /></div>
+      <div className={styles.horizontalCarousel}>
+        <CarouselHorizontal />
+      </div>
 
       <section className={styles.timetable}>
         <h1 className={styles.title}>Timetable</h1>
@@ -98,7 +100,9 @@ export default function AboutPage() {
         <p className={styles.groups}>Games:</p>
         <p className={styles.lastTime}>18:00</p>
       </section>
-      <div className={styles.verticalCarousel}><CarouselVertical /></div>
+      <div className={styles.verticalCarousel}>
+        <CarouselVertical />
+      </div>
       <iframe
         width="560"
         height="210"
