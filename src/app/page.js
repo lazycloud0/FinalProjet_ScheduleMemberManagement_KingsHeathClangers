@@ -18,8 +18,10 @@ export default async function Home() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>WELCOME TO THE HOME OF</h1>
-      <LargeLogo className={styles.largeLogo} />
+      <section className={styles.welcome}>
+        <h1 className={styles.title}>WELCOME TO THE HOME OF</h1>
+        <LargeLogo className={styles.largeLogo} />
+      </section>
 
       {/* <div
         className="flex-1 w-full flex flex-col gap-20 items-center"
