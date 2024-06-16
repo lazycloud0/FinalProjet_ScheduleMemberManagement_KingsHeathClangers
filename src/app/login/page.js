@@ -21,21 +21,22 @@ export default function LoginPage() {
   return (
     <>
       <div className={styles.loginPage}>
+        {/* <div className={styles.container}> */}
+        {/* <LargeLogo className={styles.largeLogo} /> */}
+        {/* </div> */}
         <div className={styles.container}>
-          <LargeLogo className={styles.largeLogo} />
           <form className={styles.form}>
             <label htmlFor="email">Email:</label>
             <input id="email" name="email" type="email" required />
             <label htmlFor="password">Password:</label>
             <input id="password" name="password" type="password" required />
-            <span>
-              <button formAction={login} className={styles.loginButton}>
-                Log in
-              </button>
-              <button formAction={signup} className={styles.loginButton}>
-                Sign up
-              </button>
-            </span>
+
+            <button formAction={login} className={styles.loginButton}>
+              Log in
+            </button>
+            <button formAction={signup} className={styles.loginButton}>
+              Sign up
+            </button>
           </form>
         </div>
       </div>

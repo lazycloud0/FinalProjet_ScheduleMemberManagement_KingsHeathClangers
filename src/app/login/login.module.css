@@ -1,14 +1,16 @@
+.loginPage {
+  height: 75vh;
+}
+
 .container {
-  max-width: 30%;
-  height: 100vh;
+  max-width: 60%;
+  height: 120vh;
   margin: 120px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.loginPage {
-  height: 100vh;
-}
+
 .largeLogo {
   max-width: 30%;
   margin-bottom: 80px;
