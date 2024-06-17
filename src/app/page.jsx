@@ -20,9 +20,8 @@ export default async function Home() {
       <section className={styles.welcome}>
         <h1 className={styles.title}>WELCOME TO THE HOME OF</h1>
         <LargeLogo className={styles.largeLogo} />
-          {isSupabaseConnected && <AuthButton />}
+        {isSupabaseConnected && <AuthButton />}
       </section>
-
-      </main>
+    </main>
   );
 }

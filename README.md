@@ -19,7 +19,6 @@ Syntax Squad is a School of Code team who came together in the final four weeks 
 
 After learning that the current method of scheduling games/training was a low-tech groupchat polling system, a solution had to be found, and the idea for King's Heath Clangers' website was founded. It would be able to improve the booking process for players whilst simultaneously giving easy access to coaches/admin staff to schedule new games.
 
-
 This fantastic team was made up by the following developers:
 
 Ayodimeji Akinbolude
@@ -30,5 +29,3 @@ Jules Smith
 Albert Szupsynski
 
 CRUD Functions
-
-
