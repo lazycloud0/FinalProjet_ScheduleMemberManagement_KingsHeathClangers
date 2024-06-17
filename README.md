@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+King's Heath Clangers Website
 
-## Getting Started
+A web application designed to make scheduling games/training sessions and booking places at those sessions easier.
 
-First, run the development server:
+How To
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The deployed site is live at https://kingsheathclangers.me/. All players should be directed here and should not be given access to this repository.
+If you are looking to use the development environment:
+Clone down this repo to your local machine.
+Use npm install.
+Create a .env file and input the NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY which will have been provided if you have authorisation to use this repository.
+If you believe you should have access, but do not have these credentials, please contact the team at Syntax Squad to discuss.
+Use npm run dev to see your local changes.
+Any git pushes will reflect in the deployment environment through the Continuous Deployment phase of this project via Vercel.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Syntax Squad
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Syntax Squad is a School of Code team who came together in the final four weeks of their bootcamp to plan, build and deploy a solution to a unique problem posed by their stakeholder, King's Heath Community Basketball Club.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+After learning that the current method of scheduling games/training was a low-tech groupchat polling system, a solution had to be found, and the idea for King's Heath Clangers' website was founded. It would be able to improve the booking process for players whilst simultaneously giving easy access to coaches/admin staff to schedule new games.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+This fantastic team was made up by the following developers:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ayodimeji Akinbolude
+Kelsey Baker
+Jose Luis Quinones Castro
+Winnie Lau
+Jules Smith
+Albert Szupsynski
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+CRUD Functions
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
