@@ -35,6 +35,10 @@ function Booking() {
         if (error) {
           console.error("Error fetching game: ", "Unable to fetch game data");
         } else if (game) {
+          // Convert time from CET to UK time (-1 hour)
+          const eventTime = new Date(`1970-01-01T${game.time}Z`);
+          eventTime.setHours(eventTime.getHours() - 1);
+
           const event = {
             id: game.id,
             title: game.event_type,
@@ -44,21 +48,24 @@ function Booking() {
               month: "long",
               day: "2-digit",
             }),
-            time: new Date(`1970-01-01T${game.time}Z`).toLocaleTimeString(
-              "en-GB",
-              { hour: "2-digit", minute: "2-digit" },
-            ),
+            time: eventTime.toLocaleTimeString("en-GB", {
+              hour: "2-digit",
+              minute: "2-digit",
+            }),
             team: game.team,
             location: game.location,
             spots_available: game.spots_available,
             attendees: game.attendees,
           };
+
           setEvent(event);
+
           if (event.spots_available - (event.attendees?.length || 0) <= 0) {
             setErrorMessage("No available spaces for this event");
           }
         }
       };
+
       getGame();
     }
   }, [eventUUID]);
