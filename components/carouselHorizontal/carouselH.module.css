@@ -1,0 +1,97 @@
+.images {
+  border-radius: 10px;
+  box-shadow:
+    0px 2px 6px rgba(0, 0, 0, 0.2),
+    0px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 450px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.rightButton,
+.leftButton {
+  width: 10%;
+}
+
+.slide_direction {
+  position: relative;
+}
+
+.arrowContainer {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+  .images {
+    width: 100%;
+    height: 600px;
+  }
+}
+
+/* .carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+/* .slide_direction {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.leftButton,
+.rightButton {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.leftButton svg,
+.rightButton svg {
+  fill: white;
+}
+
+.indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+} */
+
+/* .dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: rgba(255, 255, 255, 1);
+}  */

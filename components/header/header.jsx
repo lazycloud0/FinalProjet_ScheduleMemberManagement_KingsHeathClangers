@@ -56,15 +56,15 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.navitem}>
-            <Link
-              href="https://kingsheathclangers.godaddysites.com/ols/products/clangers-t-shirt"
+            <a
+              href="https://kingsheathclangers.godaddysites.com/ols/products/"
               target="_blank"
-              passHref
+              rel="noopener noreferrer"
               className={styles.navlink}
               onClick={handleLinkClick}
             >
               Merch
-            </Link>
+            </a>
           </li>
           <li className={styles.navitem}>
             <Link

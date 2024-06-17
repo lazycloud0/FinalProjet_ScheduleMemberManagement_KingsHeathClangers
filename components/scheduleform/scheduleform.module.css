@@ -1,9 +1,8 @@
 .container {
-  width: 100%;
+  width: 60%;
 }
 .scheduleForm {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 120%;
   background-color: #ffffff;
   padding: 15px 30px;
   border-radius: 5px;
@@ -17,27 +16,28 @@
 .scheduleForm input[type="text"],
 .scheduleForm input[type="date"],
 .scheduleForm input[type="time"],
+.scheduleForm input[type="team"],
 .scheduleForm select {
   background-color: #ffffff;
   color: black;
-  padding: 4% 2%;
+  padding-left: 4px;
   border-radius: 5px;
   border-style: solid;
   border-color: #cccccc;
   border-width: 1px;
-  font-size: 1rem;
-  margin-top: 2%;
-  width: 80vw;
-  height: 50px;
+  font-size: 100%;
+  margin-top: 1%;
+  width: 100%;
+  height: 40px;
 }
 .subtitle {
   text-align: left;
-  font-size: 1.8rem;
+  font-size: 180%;
   padding-top: 2%;
   padding-bottom: 5%;
 }
 .formSection {
-  font-size: 1rem;
+  font-size: 100%;
   margin-bottom: 3%;
 }
 .addButton {
@@ -55,15 +55,16 @@
     0px 3px 6px rgba(0, 0, 0, 0.23);
   font-weight: 500;
 }
+
+.error {
+  color: red;
+}
+
 .addButton:hover {
   background-color: #484d58;
 }
 
 @media (max-width: 860px) {
-  .scheduleForm {
-    width: 90%;
-    padding: 10px 20px;
-  }
   .subtitle {
     font-size: 1.7rem;
   }
@@ -71,20 +72,31 @@
     font-size: 1rem;
     padding: 8px 16px;
   }
-}
-
-@media (min-width: 861px) {
-  .scheduleForm {
-    width: 75%;
+  .container {
+    width: 100%;
+    margin: 2%;
   }
+  .scheduleForm {
+    width: 100%;
+  }
+  .scheduleForm input[type="text"],
+  .scheduleForm input[type="team"],
+  .scheduleForm select {
+    min-width: 100%;
+  }
+  .scheduleForm input[type="date"],
+  .scheduleForm input[type="time"] {
+    min-width: 94%;
+  }
+}
+/* 
+@media (min-width: 1441px) {
   .scheduleForm input[type="text"],
   .scheduleForm input[type="date"],
   .scheduleForm input[type="time"],
+  .scheduleForm input[type="team"],
   .scheduleForm select {
-    width: 40vw;
+    width: 100%;
   }
 }
-
-.error {
-  color: red;
-}
+*/

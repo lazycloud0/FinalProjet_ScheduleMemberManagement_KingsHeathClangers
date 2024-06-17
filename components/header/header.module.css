@@ -1,11 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
 .header {
   background-color: #cdcfd0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 100;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.093); /* Added shadow */
 }
 
 .navitem {
@@ -15,7 +14,6 @@
 
 .navlink {
   /*The individual links in the navigation bar*/
-  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-size: 18px;

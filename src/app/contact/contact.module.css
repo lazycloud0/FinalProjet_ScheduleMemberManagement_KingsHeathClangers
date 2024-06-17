@@ -1,5 +1,5 @@
 .container {
-  max-width: 1440px;
+  max-width: 1024px;
   margin: 120px auto;
   display: flex;
   flex-direction: row;
@@ -8,6 +8,9 @@
 
 .largeLogo {
   max-width: 40%;
+}
+.contactPage {
+  height: 100vh;
 }
 
 @media (max-width: 860px) {

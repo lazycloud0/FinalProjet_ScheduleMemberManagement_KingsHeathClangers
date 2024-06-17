@@ -9,7 +9,7 @@ export default function Edit() {
       <div className={styles.container}>
         <LargeLogo className={styles.largeLogo} />
         <Suspense fallback={<div>Loading...</div>}>
-          <EditForm />
+          <EditForm className={styles.scheduleForm} />
         </Suspense>
       </div>
     </div>
