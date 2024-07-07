@@ -1,4 +1,5 @@
 import { imagesV } from "../../src/app/carouselimages/carouselV.js";
+import { altTextsV } from "../../src/app/carouselimages/carouselV.js";
 import styles from "./carouselV.module.css";
 import { useState } from "react";
 import LeftArrow from "../logos/leftArrow.jsx";
@@ -22,10 +23,11 @@ export default function CarouselVertical() {
     }
   }
   let images = imagesV[index];
+  let altText = altTextsV[index];
 
   return (
     <div className={styles.slide_direction}>
-      <img src={images} className={styles.images} />
+      <img src={images} alt={altText} className={styles.images} />
       <div className={styles.arrowContainer}>
         <LeftArrow onClick={handleClick1} className={styles.leftButton} />
         <RightArrow onClick={handleClick2} className={styles.rightButton} />
