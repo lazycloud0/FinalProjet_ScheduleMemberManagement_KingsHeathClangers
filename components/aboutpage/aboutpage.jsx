@@ -138,6 +138,7 @@ export default function AboutPage() {
           <p className={styles.supportText1}>Buy one now!</p>
           <a
             href="https://kingsheathclangers.godaddysites.com/ols/products/clangers-t-shirt"
+            aria-label="Visit the Kings Heath Clangers online clothing store"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.logos}
@@ -151,6 +152,7 @@ export default function AboutPage() {
           <div className={styles.socialMediaContainer}>
             <a
               href="https://www.facebook.com/profile.php?id=61558708410607"
+              aria-label="Visit the Kings Heath Clangers Facebook page"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.logos}
@@ -159,6 +161,7 @@ export default function AboutPage() {
             </a>
             <a
               href="https://www.youtube.com/@khclangers"
+              aria-label="Visit the Kings Heath Clangers YouTube channel"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.logos}
@@ -167,6 +170,7 @@ export default function AboutPage() {
             </a>
             <a
               href="https://www.instagram.com/khclangers/"
+              aria-label="Visit the Kings Heath Clangers Instagram page"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.logos}

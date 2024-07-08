@@ -16,7 +16,7 @@
 .team,
 .support {
   width: 100%;
-  color: white;
+  color: #000000;
 }
 
 /*Text aligning all elements*/
@@ -84,7 +84,7 @@
   margin-top: 30px;
   margin-bottom: 5px;
   font-size: 1.5rem;
-  color: #000000;
+  color: #ffffff;
 }
 
 .groups {

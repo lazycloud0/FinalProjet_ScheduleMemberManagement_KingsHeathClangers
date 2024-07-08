@@ -55,12 +55,12 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
-          setStateMessage("");
+          setStateMessage("Message sent successfully!");
           setIsSubmitting(false);
           setTimeout(() => {
             setStateMessage(null);
-            router.push("/contactconfirmation"); // navigate to the confirmation page
-          }, 1); // hide message after 5 seconds
+            router.push("/contactconfirmation");
+          }, 5000); // hide message after 5 seconds
         },
         (error) => {
           setStateMessage("Something went wrong, please try again later");
@@ -78,9 +78,11 @@ const ContactForm = () => {
   return (
     <form onSubmit={sendEmail} className={styles.formContainer}>
       <h2 className={styles.subtitle}>Contact Us</h2>
+      <label htmlFor="user_name" className={styles.visuallyHidden}>Name</label>
       <input
         className={styles.contactInput}
         type="text"
+        id="user_name"
         name="user_name"
         placeholder="Name"
         aria-label="Name"
@@ -88,9 +90,11 @@ const ContactForm = () => {
         onChange={(e) => setUserName(e.target.value)}
       />
       {errors.userName && <p className={styles.error}>{errors.userName}</p>}
+      <label htmlFor="user_email" className={styles.visuallyHidden}>Email</label>
       <input
         className={styles.contactInput}
         type="email"
+        id="user_email"
         name="user_email"
         placeholder="Email"
         aria-label="Email"
@@ -98,8 +102,10 @@ const ContactForm = () => {
         onChange={(e) => setUserEmail(e.target.value)}
       />
       {errors.userEmail && <p className={styles.error}>{errors.userEmail}</p>}
+      <label htmlFor="message" className={styles.visuallyHidden}>Message</label>
       <textarea
         className={styles.contactBox}
+        id="message"
         name="message"
         placeholder="Message"
         aria-label="Message"
@@ -112,8 +118,9 @@ const ContactForm = () => {
         type="submit"
         value="SEND"
         disabled={isSubmitting}
+        aria-label="Send message"
       />
-      {stateMessage && <p>{stateMessage}</p>}
+      {stateMessage && <p role="alert" aria-live="polite">{stateMessage}</p>}
     </form>
   );
 };
