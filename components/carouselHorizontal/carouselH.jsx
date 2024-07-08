@@ -1,4 +1,5 @@
 import { imagesH } from "../../src/app/carouselimages/carouselH.js";
+import { altTextsH } from "../../src/app/carouselimages/carouselH.js";
 import styles from "./carouselH.module.css";
 import { useState } from "react";
 import RightArrow from "../logos/rightArrow.jsx";
@@ -22,10 +23,11 @@ export default function CarouselHorizontal() {
     }
   }
   let images = imagesH[index];
+  let altText = altTextsH[index];
 
   return (
     <div className={styles.slide_direction}>
-      <img src={images} className={styles.images} />
+      <img src={images} alt={altText} className={styles.images} />
       <div className={styles.arrowContainer}>
         <LeftArrow onClick={handleClick1} className={styles.leftButton} />
         <RightArrow onClick={handleClick2} className={styles.rightButton} />
