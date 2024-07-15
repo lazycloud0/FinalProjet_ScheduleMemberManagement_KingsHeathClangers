@@ -7,7 +7,7 @@
 <p align="center"><img src="./public/smallLogo_1.svg" alt="drawing" style="width: 60px;" /></p>
 
 <h2 align="center">About the Project</h2>
-<p align="left">This project is a mobile and desktop friendly web application that supports the Kings Health Clangers Basketball Club organise and schedule themsevles all in one place. The application enables the club to have easy acces to event information and the main features are: users have the ability to create and amend events, control spaces and availability of training sessions and games and for users to book their place.</p>
+<p align="left">This project is a responsive web application that supports the Kings Health Clangers Basketball Club organise and schedule themsevles all in one place. The application enables the club to have easy acces to event information and the main features are: users have the ability to create and amend events, control spaces and availability of training sessions and games and for users to book their place.</p>
 
 <h2 align="center">How it works</h2>
 <h3>User Journey:</h3>
@@ -73,6 +73,14 @@ This fantastic team was made up by the following developers:
 ![image](https://github.com/lazycloud0/khc/assets/149110361/4369ec94-8aba-47a2-aa9c-edb313130e46)
 ![image](https://github.com/lazycloud0/khc/assets/149110361/4ce5d0da-3c50-44bf-bdf2-32e36860b63f)
 ![image](https://github.com/lazycloud0/khc/assets/149110361/0c19eada-4611-4886-86c3-2c1756f57ef2)
+
+<h2 align="center">Code Snippets</h2>
+
+![Screenshot 2024-07-15 122422](https://github.com/user-attachments/assets/db0de165-dbf9-41e8-8ef0-afd1d6a5e729)
+![image](https://github.com/user-attachments/assets/e182a65c-24c6-42d1-9bbf-34e95f629fba)
+
+
+
 
 <h2 align="center">Running this Project</h2>
 To run this project locally, you will need to do the following: <br><br>
